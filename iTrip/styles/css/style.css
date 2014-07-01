@@ -1,0 +1,12 @@
+body {
+  background-color: #c4ffc4; }
+  body header {
+    background-color: #ffffc4;
+    height: 70px; }
+    body header nav.navigation {
+      float: right;
+      margin: 2% 0;
+      margin-right: 5%; }
+      body header nav.navigation ul li {
+        float: left;
+        padding: 0 5px; }
