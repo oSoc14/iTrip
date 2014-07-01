@@ -1,25 +1,162 @@
-body
+$font-regularText: 'DINNextLTPro-LightCondensed', sans-serif;
+$font-title: 'DINNextLTPro-MediumCond', sans-serif;
+$font-button: 'HelveticaRoundedLTStd-BdCn', sans-serif;
+
+html
 {
-	background-color: #c4ffc4;
+	height: 100%;
+	margin:0;
 
-	header
+	body
 	{
-		background-color: #ffffc4;
-		height: 70px;
+		//background-color: #c4ffc4;
+		background-image: url('../../images/home_background.jpg');
+		background-position: center center ;
+		background-repeat:   no-repeat ;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover;
 
-		nav.navigation
+	  	display: block;
+	  	position: relative;
+		 height: 100%;
+		 margin:0;
+
+		.row
 		{
-			float:right;
-			margin: 2% 0;
-			margin-right: 5%;
+			margin-right: 0;
+		}
 
-			ul
+		header
+		{
+			background-color: #ffffff;
+			height: 100px;
+			border-top: 10px solid #ffbb00;
+
+			#homeButton
 			{
-				li
+				background-image: url('../../images/logo-iTrip.png');
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: 138px;
+				padding: 22px 60px;
+				margin-left: 20px;
+				margin-top: 14px;
+				color: transparent;
+				display: inline-block;
+			}
+
+
+			nav.navigation
+			{
+				float:right;
+				font-family: $font-button;
+				margin: 2% 0;
+				margin-top: 35px;
+				font-size: 18px;
+
+				ul
 				{
-					float: left;
-					padding: 0 5px;
+					li
+					{
+						float: left;
+						padding: 0 15px;
+
+						a
+						{
+							color: #033b93;
+							text-decoration: none;
+						}
+					}
 				}
+			}
+		}
+
+		.welcomeBox
+		{
+			border-top: 1px solid #033b93;
+			background-color: #ffffff;
+			width: 49%;
+			margin: 5% 25.5%;
+			padding: 30px 5px 5px 5px;
+			position: relative;
+			color: #033b93;
+			font-family: $font-regularText;
+			font-size: 22px;
+			line-height: 30px;
+
+			h1
+			{
+				font-family: $font-title;
+				font-size: 28px;
+			}
+
+			#planTripButton
+			{
+				margin: 8% 0%;
+				width: 100%;
+				height: 78px;
+				/* padding: 9px; */
+				text-align: center;
+				display: inline-block;
+				border: none;
+				background-image: url('../../images/travel_button.png');
+				background-position: top center;
+				background-repeat: no-repeat;
+				background-size: 244px;
+				background-color: #ffffff;
+				color: #ffffff;
+				font-size: 40px;
+				font-family: $font-button;
+			}
+
+			.extraInfo
+			{
+				text-align: center;
+				color: #707070;
+				font-size: 18px;
+
+				a
+				{
+					text-decoration: underline;
+					color: #707070;
+					font-weight: bold;
+				}
+			}
+			
+		}
+
+		.downloadApp
+		{
+			position: absolute;
+			// background-color: #ff9fff;
+			height: 100px;
+			//float: right;
+			bottom:5px;
+			right: 25px;
+
+
+			#iphoneApp
+			{
+				display: block;
+				background-image: url('../../images/android_app.png');
+				background-position: top center;
+				background-repeat: no-repeat;
+				color: transparent;
+				background-size: 132px;
+				padding: 15px 0;
+			}
+			
+			#androidApp
+			{
+				background-image: url('../../images/iphone_app.png');
+				background-position: top center;
+				background-repeat: no-repeat;
+				color: transparent;
+				background-size: 132px;
+				padding: 15px 0;
+				display: block;
 			}
 		}
 	}
