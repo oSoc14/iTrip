@@ -1,26 +1,23 @@
 @font-face {
 	font-family: 'DINNextLTPro-Condensed';
-	src: url(../../../fonts/DINNextLTPro-Condensed.otf);
-	src: local('DINNextLTPro-Condensed'), url(../../../fonts/DINNextLTPro-Condensed.otf) format('opentype');
+	src: url(../../fonts/DINNextLTPro-Condensed.otf);
+	src: local('DINNextLTPro-Condensed'), url(../../fonts/DINNextLTPro-Condensed.otf) format('font/opentype');
 }
 
 @font-face {
 	font-family: 'DINNextLTPro-LightCondensed';
-	src: url(../../../fonts/DINNextLTPro-LightCondensed.otf);
-	src: local('DINNextLTPro-LightCondensed'), url(../../../fonts/DINNextLTPro-LightCondensed.otf) format('opentype');
+	src: url(../../fonts/DINNextLTPro-LightCondensed.otf);
+	src: local('DINNextLTPro-LightCondensed'), url(../../fonts/DINNextLTPro-LightCondensed.otf) format('font/opentype');
 }
 
 @font-face {
 	font-family: 'DINNextLTPro-MediumCond';
-	src: url(../../../fonts/DINNextLTPro-MediumCond.otf);
-	src: local('DINNextLTPro-MediumCond'), url(../../../fonts/DINNextLTPro-MediumCond.otf) format('opentype');
+	src: url(../../fonts/DINNextLTPro-MediumCond.otf);
+	src: local('DINNextLTPro-MediumCond'), url(../../fonts/DINNextLTPro-MediumCond.otf) format('font/opentype');
 }
 
 @font-face {
-	font-family: 'HelveticaRoundedLTStd-BdCn';
-	src: url(../../../fonts/HelveticaRoundedLTStd-BdCn.otf);
-	src: local('HelveticaRoundedLTStd-BdCn'), url(../../../fonts/HelveticaRoundedLTStd-BdCn.otf) format('opentype');
+	font-family: 'HelveticaRounded-BoldCond';
+	src: url(../../fonts/HelveticaRounded-BoldCond.otf);
+	src: local('HelveticaRoundedLTStd-BdCn'), url(../../fonts/HelveticaRounded-BoldCond.otf) format('font/opentype');
 }
-
-
-

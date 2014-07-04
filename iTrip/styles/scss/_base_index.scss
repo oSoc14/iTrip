@@ -1,37 +1,37 @@
 $font-regularText: 'DINNextLTPro-LightCondensed', sans-serif;
 $font-title: 'DINNextLTPro-MediumCond', sans-serif;
-$font-button: 'HelveticaRoundedLTStd-BdCn', sans-serif;
+$font-button: 'HelveticaRounded-BoldCond', sans-serif;
+$font-subText: 'DINNextLTPro-Condensed', sans-serif;
 
 html
 {
 	height: 100%;
 	margin:0;
+	//background-color: red;
 
 	body
 	{
 		//background-color: #c4ffc4;
-		background-image: url('../../images/home_background.jpg');
+		/* background-image: url('../../images/home_background.jpg');
 		background-position: center center ;
 		background-repeat:   no-repeat ;
 		-webkit-background-size: cover;
 	  	-moz-background-size: cover;
 	  	-o-background-size: cover;
-	  	background-size: cover;
-
+	  	background-size: cover; */
+	  	background-color: #d8e1e5;
 	  	display: block;
 	  	position: relative;
 		 height: 100%;
 		 margin:0;
+		 color: #033b93;
 
-		.row
-		{
-			margin-right: 0;
-		}
 
 		header
 		{
-			background-color: #ffffff;
-			height: 100px;
+			background-color: #ffffff; 
+			
+			height: 80px;
 			border-top: 10px solid #ffbb00;
 
 			#homeButton
@@ -39,21 +39,51 @@ html
 				background-image: url('../../images/logo-iTrip.png');
 				background-position: center center;
 				background-repeat: no-repeat;
-				background-size: 138px;
-				padding: 22px 60px;
+				background-size: 100px;
+				padding: 13px 33px;
 				margin-left: 20px;
 				margin-top: 14px;
 				color: transparent;
 				display: inline-block;
 			}
 
+			.languages
+			{
+				font-size: 13px;
+				position: absolute;
+				top: -5px;
+				right: 30px;
+
+				li
+				{
+					float: left;
+					padding-left:5px;
+					a
+					{
+						color: #b3b3b3;
+						text-decoration: none;
+
+						font-family: $font-button;
+					}
+
+					a:hover
+					{
+						text-decoration: underline;
+					}
+
+					a.activeLanguage
+					{
+						text-decoration: underline;
+					}
+				}
+			}
 
 			nav.navigation
 			{
 				float:right;
 				font-family: $font-button;
 				margin: 2% 0;
-				margin-top: 35px;
+				/* margin-top: 35px; */
 				font-size: 18px;
 
 				ul
@@ -68,96 +98,473 @@ html
 							color: #033b93;
 							text-decoration: none;
 						}
+
+						.active
+						{
+							color: #ffbb00;
+						}
 					}
 				}
 			}
 		}
 
-		.welcomeBox
+		.overlay
 		{
-			border-top: 1px solid #033b93;
-			background-color: #ffffff;
-			width: 49%;
-			margin: 5% 25.5%;
-			padding: 30px 5px 5px 5px;
-			position: relative;
-			color: #033b93;
-			font-family: $font-regularText;
-			font-size: 22px;
-			line-height: 30px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: 10;
+			background-color: rgba(0,0,0,0.5);
+		}
 
-			h1
+		#searchTrip
+		{
+			.title
 			{
 				font-family: $font-title;
-				font-size: 28px;
+				font-size: 30px;
+				margin-left: 15px;
+				margin-top: 5px;
 			}
 
-			#planTripButton
+			#searchPanel
 			{
-				margin: 8% 0%;
-				width: 100%;
-				height: 78px;
-				/* padding: 9px; */
-				text-align: center;
-				display: inline-block;
-				border: none;
-				background-image: url('../../images/travel_button.png');
-				background-position: top center;
-				background-repeat: no-repeat;
-				background-size: 244px;
-				background-color: #ffffff;
-				color: #ffffff;
-				font-size: 40px;
-				font-family: $font-button;
-			}
+				/* margin-top: -10px; */
+				margin-top: -13px;
 
-			.extraInfo
-			{
-				text-align: center;
-				color: #707070;
-				font-size: 18px;
-
-				a
+				#searchPanelWrapper
 				{
-					text-decoration: underline;
-					color: #707070;
-					font-weight: bold;
+					margin-top: -5px;
+
+					background-color: #ffffff;
+					
+					h2
+					{
+						font-size: 20px;
+						font-family: $font-title;
+					}
+
+					p
+					{
+						color: #bfbfbf;
+						font-size: 16px;
+						font-family:$font-subText;
+					}
+
+					input#customLocation
+					{
+						border-radius: 5px 0 0 5px;
+						border: 2px solid #033b93;
+					}
+
+					input#submitCustomLocation
+					{
+						border-radius: 0 5px 5px 0;
+					}
+
+					input#submitCurrentLocation
+					{
+						border-radius: 5px;
+					}
+					// MOBILE MEDIA QUERIES --> MARGIN-RIGHT & MARGIN-LEFT:0
+					// LINE 319 IN _BOOTSTRAP.SCSS (MARGIN COMMENTED OUT)
+					.row
+					{
+						//margin-right: -15px;
+						/* margin-top: 10px;; */
+					}
+
+					#customLocation
+					{
+						float: left;
+						padding: 8px;
+						width: 165px;
+					}
+
+					#sliderPart
+					{
+						margin-top: 20px;
+
+						#slider
+						{
+							margin-top: 5px;
+							height: 0;
+
+							.ui-slider-handle
+							{
+								background: #f6f6f6 url("../../images/slider.png") 50% 50% no-repeat;
+								padding: 10px;
+								background-size: 20px;
+								border:none;
+								border-radius: 9px;
+								margin: -5px;
+							}
+
+							.ui-widget-header
+							{
+								border: 1px solid #e78f08;
+								background: #f6f6f6 url("../../images/custom_slider_background.png") 50% 50% repeat-x;
+								color: #ffffff;
+								font-weight: bold;
+							}
+						}
+					}
+// HERE A SOLUTION FOR THE CALENDAR AND NUMBERS OVERLAP
+					#calendarPart
+					{
+						margin-top: 20px;
+						#calendars
+						{
+							
+							#fromDate
+							{
+								float: left;
+
+								p
+								{
+									text-align: center;
+
+								}
+
+								#fromWrapper
+								{
+									/* position:relative; */
+									font-family: $font-title;
+									.showSelectedDay
+									{
+										position: absolute;
+										top:-20px;
+										width: 100%;	
+										font-family: $font-button;
+										color: #ffbb00;
+										font-size: 38px;
+									}
+
+									.showSelectedMonth
+									{
+										position: absolute;
+										top:-15px;
+										width: 75px;
+										font-size: 16px;
+										color: #ffffff;
+									}
+
+									.ui-datepicker-trigger
+									{
+										width: 75px;
+										background-image: url('../../images/calendar.png');
+										background-size: 100%;
+										padding: 35px;
+										background-repeat: no-repeat;
+										border:none;
+										background-color: #ffffff;
+
+										font-family: $font-button;
+										color: #ffbb00;
+										font-size: 38px;
+
+									}
+
+									.ui-datepicker-trigger:hover
+									{
+										cursor: pointer;
+									}
+								}
+
+
+								
+
+								#fromCalendar
+								{
+									/* background-color: #0000ff;
+									width: 70px;
+									height: 70px;
+									cursor:pointer;
+	 */
+	 								display: none;
+								}
+
+								#selectedToDate
+								{
+									text-align: center;
+								}
+							}
+
+							.betweenCalendars
+							{
+								background-image: url('../../images/arrow.png');
+								background-repeat: no-repeat;
+								background-size: 16px;
+								padding: 8px 10px;
+								background-position: center center;
+								/* position: absolute;
+								top: 30px;
+								left: 105px; */
+								margin-top: 30px;
+								margin-left: 12px;
+								float: left;
+								width: 20px;
+							}
+
+							#toDate
+							{
+								float: right;
+
+								p
+								{
+									text-align: center;
+								}
+
+								#toWrapper
+								{
+									/* position:relative; */
+
+									font-family: $font-title;
+
+									.showSelectedDay
+									{
+										position: absolute;
+										top:-20px;
+										width: 100%;
+										font-family: $font-button;
+										color: #ffbb00;
+										font-size: 38px;
+									}
+
+									.showSelectedMonth
+									{
+										position: absolute;
+										top:-15px;
+										width: 75px;
+										font-size: 16px;
+										color: #ffffff;
+									}
+
+									.ui-datepicker-trigger
+									{
+										width: 75px;
+										background-image: url('../../images/calendar.png');
+										background-size: 100%;
+										padding: 35px;
+										background-repeat: no-repeat;
+										border:none;
+										background-color: #ffffff;
+											
+										font-family: $font-button;
+										color: #ffbb00;
+										font-size: 38px;
+									}
+
+
+									.ui-datepicker-trigger:hover
+									{
+										cursor: pointer;
+									}
+
+								}
+
+								
+								#toCalendar
+								{
+									/* background-color: #0000ff;
+									width: 70px;
+									height: 70px;
+
+									cursor:pointer;
+	 */
+	 								display: none;
+								}
+
+								#selectedToDate
+								{
+									text-align: center;
+								}
+							}
+						}
+					}
+
+					#submitCustomLocation
+					{
+						float: left;
+						background-image: url('../../images/search.png');
+						background-position: top 4px center;
+						background-repeat: no-repeat;
+						background-size: 25px;
+						padding: 10px 20px;
+						background-color: #033b93;
+						border: none;
+						//margin-right: 20px;
+					}
+
+					#submitCurrentLocation
+					{
+						background-image: url('../../images/pin.png');
+						background-position: top 4px center;
+						background-position: top 4px center;
+						background-repeat: no-repeat;
+						background-size: 25px;
+						padding: 10px 20px;
+						background-color: #033b93;;
+						border: none;
+						float: right;
+					}
+
+					#searchTrip
+					{
+						/* width: 100%; */
+						text-align: center;
+						border: none;
+						background-image: url('../../images/travel_button.png');
+						background-position: center center;
+						background-repeat: no-repeat;
+						background-size: 141px;
+						background-color: #ffffff;
+						color: #ffffff;
+						font-size: 28px;
+						font-family: $font-title;
+						padding: 4px 40px;
+						margin: 40px 24% 15px 24%;
+						width: 52%;
+					}
 				}
 			}
-			
+
+			#searchMap
+			{
+				/* margin-top: -20px; */
+
+				border-left:2px solid #033b93;
+				//background-color: green;
+				/* height: 100%; */
+				height: 87%;
+        		/* margin: 0px; */
+        		padding: 0px;
+        		z-index: 1;
+        		margin-top: -67px;
+			}
+
+			.welcomeBox
+			{
+				border-top: 1px solid #033b93;
+				background-color: #ffffff;
+				/* width: 49%;
+				margin: 5% 25.5%; */
+				width: 33%;
+				/* margin: 3% 37%; */
+				margin: 0% 37%;
+			/* 	padding: 30px 5px 5px 5px; */
+				padding: 15px 5px 5px 5px;
+				position: fixed;
+				/* position: absolute; */
+				color: #033b93;
+				font-family: $font-regularText;
+				font-size: 16px;
+				line-height: 24px;
+				z-index: 15;
+
+				h1
+				{
+					font-family: $font-title;
+					font-size: 28px;
+				}
+
+				#closeImage
+				{
+					background-image: url('../../images/close.png');
+					background-position: center center;
+					background-repeat: no-repeat;
+					background-size: 20px;
+					padding: 10px 12px;
+					position: absolute;
+					top: -10px;
+					right: -36px;
+				}
+
+				#closeImage:hover
+				{
+					cursor: pointer;
+				}
+
+				#planTripButton
+				{
+					margin: 9% 12.5%;
+					width: 75%;
+					height: 78px;
+					/* padding: 9px; */
+					text-align: center;
+					display: inline-block;
+					border: none;
+					background-image: url('../../images/travel_button.png');
+					background-position: top center;
+					background-repeat: no-repeat;
+					background-size: 244px;
+					background-color: #ffffff;
+					color: #ffffff;
+					font-size: 40px;
+					font-family: $font-button;
+				}
+
+				.extraInfo
+				{
+					text-align: center;
+					color: #707070;
+					font-size: 18px;
+
+					a
+					{
+						text-decoration: underline;
+						color: #707070;
+						font-weight: bold;
+					}
+				}
+				
+				.downloadApp
+				{
+					/* position: absolute; */
+					// background-color: #ff9fff;
+					/* height: 100px; */
+					//float: right;
+					position: absolute;
+					width: 91%;
+					text-align: center;
+					margin-top: 15px;
+					margin-bottom: 15px;
+
+					#iphoneApp
+					{
+						background-image: url('../../images/android_app.png');
+						background-position: center center;
+						background-repeat: no-repeat;
+						color: transparent;
+						background-size: 100px;
+						padding: 4px 0px;
+						display: inline-block;
+					}
+					
+					#androidApp
+					{
+						background-image: url('../../images/iphone_app.png');
+						background-position: center center;
+						background-repeat: no-repeat;
+						color: transparent;
+						background-size: 100px;
+						padding: 4px 0px;
+						display: inline-block;
+					}
+				}	
+			}
+
+
 		}
 
-		.downloadApp
-		{
-			position: absolute;
-			// background-color: #ff9fff;
-			height: 100px;
-			//float: right;
-			bottom:5px;
-			right: 25px;
+		
+	}
 
-
-			#iphoneApp
-			{
-				display: block;
-				background-image: url('../../images/android_app.png');
-				background-position: top center;
-				background-repeat: no-repeat;
-				color: transparent;
-				background-size: 132px;
-				padding: 15px 0;
-			}
-			
-			#androidApp
-			{
-				background-image: url('../../images/iphone_app.png');
-				background-position: top center;
-				background-repeat: no-repeat;
-				color: transparent;
-				background-size: 132px;
-				padding: 15px 0;
-				display: block;
-			}
-		}
+	#ui-datepicker-div
+	{
+		font-size: 9px;
 	}
 }
+

@@ -1,22 +1,22 @@
 @font-face {
   font-family: 'DINNextLTPro-Condensed';
-  src: url(../../../fonts/DINNextLTPro-Condensed.otf);
-  src: local('DINNextLTPro-Condensed'), url(../../../fonts/DINNextLTPro-Condensed.otf) format('opentype'); }
+  src: url(../../fonts/DINNextLTPro-Condensed.otf);
+  src: local('DINNextLTPro-Condensed'), url(../../fonts/DINNextLTPro-Condensed.otf) format('font/opentype'); }
 
 @font-face {
   font-family: 'DINNextLTPro-LightCondensed';
-  src: url(../../../fonts/DINNextLTPro-LightCondensed.otf);
-  src: local('DINNextLTPro-LightCondensed'), url(../../../fonts/DINNextLTPro-LightCondensed.otf) format('opentype'); }
+  src: url(../../fonts/DINNextLTPro-LightCondensed.otf);
+  src: local('DINNextLTPro-LightCondensed'), url(../../fonts/DINNextLTPro-LightCondensed.otf) format('font/opentype'); }
 
 @font-face {
   font-family: 'DINNextLTPro-MediumCond';
-  src: url(../../../fonts/DINNextLTPro-MediumCond.otf);
-  src: local('DINNextLTPro-MediumCond'), url(../../../fonts/DINNextLTPro-MediumCond.otf) format('opentype'); }
+  src: url(../../fonts/DINNextLTPro-MediumCond.otf);
+  src: local('DINNextLTPro-MediumCond'), url(../../fonts/DINNextLTPro-MediumCond.otf) format('font/opentype'); }
 
 @font-face {
-  font-family: 'HelveticaRoundedLTStd-BdCn';
-  src: url(../../../fonts/HelveticaRoundedLTStd-BdCn.otf);
-  src: local('HelveticaRoundedLTStd-BdCn'), url(../../../fonts/HelveticaRoundedLTStd-BdCn.otf) format('opentype'); }
+  font-family: 'HelveticaRounded-BoldCond';
+  src: url(../../fonts/HelveticaRounded-BoldCond.otf);
+  src: local('HelveticaRoundedLTStd-BdCn'), url(../../fonts/HelveticaRounded-BoldCond.otf) format('font/opentype'); }
 
 /*!
  * Bootstrap v3.2.0 (http://getbootstrap.com)
@@ -291,10 +291,10 @@ hr {
   padding-left: 15px;
   padding-right: 15px; }
 
-.row {
+/* .row {
   margin-left: -15px;
-  margin-right: -15px; }
-
+  margin-right: -15px;
+} */
 .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
   position: relative;
   min-height: 1px;
@@ -973,38 +973,54 @@ html {
   height: 100%;
   margin: 0; }
   html body {
-    background-image: url('../../images/home_background.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+    /* background-image: url('../../images/home_background.jpg');
+		background-position: center center ;
+		background-repeat:   no-repeat ;
+		-webkit-background-size: cover;
+	  	-moz-background-size: cover;
+	  	-o-background-size: cover;
+	  	background-size: cover; */
+    background-color: #d8e1e5;
     display: block;
     position: relative;
     height: 100%;
-    margin: 0; }
-    html body .row {
-      margin-right: 0; }
+    margin: 0;
+    color: #033b93; }
     html body header {
       background-color: #ffffff;
-      height: 100px;
+      height: 80px;
       border-top: 10px solid #ffbb00; }
       html body header #homeButton {
         background-image: url('../../images/logo-iTrip.png');
         background-position: center center;
         background-repeat: no-repeat;
-        background-size: 138px;
-        padding: 22px 60px;
+        background-size: 100px;
+        padding: 13px 33px;
         margin-left: 20px;
         margin-top: 14px;
         color: transparent;
         display: inline-block; }
+      html body header .languages {
+        font-size: 13px;
+        position: absolute;
+        top: -5px;
+        right: 30px; }
+        html body header .languages li {
+          float: left;
+          padding-left: 5px; }
+          html body header .languages li a {
+            color: #b3b3b3;
+            text-decoration: none;
+            font-family: 'HelveticaRounded-BoldCond', sans-serif; }
+          html body header .languages li a:hover {
+            text-decoration: underline; }
+          html body header .languages li a.activeLanguage {
+            text-decoration: underline; }
       html body header nav.navigation {
         float: right;
-        font-family: 'HelveticaRoundedLTStd-BdCn', sans-serif;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
         margin: 2% 0;
-        margin-top: 35px;
+        /* margin-top: 35px; */
         font-size: 18px; }
         html body header nav.navigation ul li {
           float: left;
@@ -1012,23 +1028,239 @@ html {
           html body header nav.navigation ul li a {
             color: #033b93;
             text-decoration: none; }
-    html body .welcomeBox {
+          html body header nav.navigation ul li .active {
+            color: #ffbb00; }
+    html body .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 10;
+      background-color: rgba(0, 0, 0, 0.5); }
+    html body #searchTrip .title {
+      font-family: 'DINNextLTPro-MediumCond', sans-serif;
+      font-size: 30px;
+      margin-left: 15px;
+      margin-top: 5px; }
+    html body #searchTrip #searchPanel {
+      /* margin-top: -10px; */
+      margin-top: -13px; }
+      html body #searchTrip #searchPanel #searchPanelWrapper {
+        margin-top: -5px;
+        background-color: #ffffff; }
+        html body #searchTrip #searchPanel #searchPanelWrapper h2 {
+          font-size: 20px;
+          font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+        html body #searchTrip #searchPanel #searchPanelWrapper p {
+          color: #bfbfbf;
+          font-size: 16px;
+          font-family: 'DINNextLTPro-Condensed', sans-serif; }
+        html body #searchTrip #searchPanel #searchPanelWrapper input#customLocation {
+          border-radius: 5px 0 0 5px;
+          border: 2px solid #033b93; }
+        html body #searchTrip #searchPanel #searchPanelWrapper input#submitCustomLocation {
+          border-radius: 0 5px 5px 0; }
+        html body #searchTrip #searchPanel #searchPanelWrapper input#submitCurrentLocation {
+          border-radius: 5px; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #customLocation {
+          float: left;
+          padding: 8px;
+          width: 165px; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart {
+          margin-top: 20px; }
+          html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider {
+            margin-top: 5px;
+            height: 0; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider .ui-slider-handle {
+              background: #f6f6f6 url("../../images/slider.png") 50% 50% no-repeat;
+              padding: 10px;
+              background-size: 20px;
+              border: none;
+              border-radius: 9px;
+              margin: -5px; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider .ui-widget-header {
+              border: 1px solid #e78f08;
+              background: #f6f6f6 url("../../images/custom_slider_background.png") 50% 50% repeat-x;
+              color: #ffffff;
+              font-weight: bold; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart {
+          margin-top: 20px; }
+          html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate {
+            float: left; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate p {
+              text-align: center; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper {
+              /* position:relative; */
+              font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedDay {
+                position: absolute;
+                top: -20px;
+                width: 100%;
+                font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                color: #ffbb00;
+                font-size: 38px; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedMonth {
+                position: absolute;
+                top: -15px;
+                width: 75px;
+                font-size: 16px;
+                color: #ffffff; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger {
+                width: 75px;
+                background-image: url('../../images/calendar.png');
+                background-size: 100%;
+                padding: 35px;
+                background-repeat: no-repeat;
+                border: none;
+                background-color: #ffffff;
+                font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                color: #ffbb00;
+                font-size: 38px; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger:hover {
+                cursor: pointer; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromCalendar {
+              /* background-color: #0000ff;
+									width: 70px;
+									height: 70px;
+									cursor:pointer;
+	 */
+              display: none; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #selectedToDate {
+              text-align: center; }
+          html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars .betweenCalendars {
+            background-image: url('../../images/arrow.png');
+            background-repeat: no-repeat;
+            background-size: 16px;
+            padding: 8px 10px;
+            background-position: center center;
+            /* position: absolute;
+								top: 30px;
+								left: 105px; */
+            margin-top: 30px;
+            margin-left: 12px;
+            float: left;
+            width: 20px; }
+          html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate {
+            float: right; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate p {
+              text-align: center; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper {
+              /* position:relative; */
+              font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedDay {
+                position: absolute;
+                top: -20px;
+                width: 100%;
+                font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                color: #ffbb00;
+                font-size: 38px; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedMonth {
+                position: absolute;
+                top: -15px;
+                width: 75px;
+                font-size: 16px;
+                color: #ffffff; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger {
+                width: 75px;
+                background-image: url('../../images/calendar.png');
+                background-size: 100%;
+                padding: 35px;
+                background-repeat: no-repeat;
+                border: none;
+                background-color: #ffffff;
+                font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                color: #ffbb00;
+                font-size: 38px; }
+              html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger:hover {
+                cursor: pointer; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toCalendar {
+              /* background-color: #0000ff;
+									width: 70px;
+									height: 70px;
+
+									cursor:pointer;
+	 */
+              display: none; }
+            html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #selectedToDate {
+              text-align: center; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #submitCustomLocation {
+          float: left;
+          background-image: url('../../images/search.png');
+          background-position: top 4px center;
+          background-repeat: no-repeat;
+          background-size: 25px;
+          padding: 10px 20px;
+          background-color: #033b93;
+          border: none; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #submitCurrentLocation {
+          background-image: url('../../images/pin.png');
+          background-position: top 4px center;
+          background-position: top 4px center;
+          background-repeat: no-repeat;
+          background-size: 25px;
+          padding: 10px 20px;
+          background-color: #033b93;
+          border: none;
+          float: right; }
+        html body #searchTrip #searchPanel #searchPanelWrapper #searchTrip {
+          /* width: 100%; */
+          text-align: center;
+          border: none;
+          background-image: url('../../images/travel_button.png');
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 141px;
+          background-color: #ffffff;
+          color: #ffffff;
+          font-size: 28px;
+          font-family: 'DINNextLTPro-MediumCond', sans-serif;
+          padding: 4px 40px;
+          margin: 40px 24% 15px 24%;
+          width: 52%; }
+    html body #searchTrip #searchMap {
+      /* margin-top: -20px; */
+      border-left: 2px solid #033b93;
+      /* height: 100%; */
+      height: 87%;
+      /* margin: 0px; */
+      padding: 0px;
+      z-index: 1;
+      margin-top: -67px; }
+    html body #searchTrip .welcomeBox {
       border-top: 1px solid #033b93;
       background-color: #ffffff;
-      width: 49%;
-      margin: 5% 25.5%;
-      padding: 30px 5px 5px 5px;
-      position: relative;
+      /* width: 49%;
+				margin: 5% 25.5%; */
+      width: 33%;
+      /* margin: 3% 37%; */
+      margin: 0% 37%;
+      /* 	padding: 30px 5px 5px 5px; */
+      padding: 15px 5px 5px 5px;
+      position: fixed;
+      /* position: absolute; */
       color: #033b93;
       font-family: 'DINNextLTPro-LightCondensed', sans-serif;
-      font-size: 22px;
-      line-height: 30px; }
-      html body .welcomeBox h1 {
+      font-size: 16px;
+      line-height: 24px;
+      z-index: 15; }
+      html body #searchTrip .welcomeBox h1 {
         font-family: 'DINNextLTPro-MediumCond', sans-serif;
         font-size: 28px; }
-      html body .welcomeBox #planTripButton {
-        margin: 8% 0%;
-        width: 100%;
+      html body #searchTrip .welcomeBox #closeImage {
+        background-image: url('../../images/close.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        padding: 10px 12px;
+        position: absolute;
+        top: -10px;
+        right: -36px; }
+      html body #searchTrip .welcomeBox #closeImage:hover {
+        cursor: pointer; }
+      html body #searchTrip .welcomeBox #planTripButton {
+        margin: 9% 12.5%;
+        width: 75%;
         height: 78px;
         /* padding: 9px; */
         text-align: center;
@@ -1041,33 +1273,46 @@ html {
         background-color: #ffffff;
         color: #ffffff;
         font-size: 40px;
-        font-family: 'HelveticaRoundedLTStd-BdCn', sans-serif; }
-      html body .welcomeBox .extraInfo {
+        font-family: 'HelveticaRounded-BoldCond', sans-serif; }
+      html body #searchTrip .welcomeBox .extraInfo {
         text-align: center;
         color: #707070;
         font-size: 18px; }
-        html body .welcomeBox .extraInfo a {
+        html body #searchTrip .welcomeBox .extraInfo a {
           text-decoration: underline;
           color: #707070;
           font-weight: bold; }
-    html body .downloadApp {
-      position: absolute;
-      height: 100px;
-      bottom: 5px;
-      right: 25px; }
-      html body .downloadApp #iphoneApp {
-        display: block;
-        background-image: url('../../images/android_app.png');
-        background-position: top center;
-        background-repeat: no-repeat;
-        color: transparent;
-        background-size: 132px;
-        padding: 15px 0; }
-      html body .downloadApp #androidApp {
-        background-image: url('../../images/iphone_app.png');
-        background-position: top center;
-        background-repeat: no-repeat;
-        color: transparent;
-        background-size: 132px;
-        padding: 15px 0;
-        display: block; }
+      html body #searchTrip .welcomeBox .downloadApp {
+        /* position: absolute; */
+        /* height: 100px; */
+        position: absolute;
+        width: 91%;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 15px; }
+        html body #searchTrip .welcomeBox .downloadApp #iphoneApp {
+          background-image: url('../../images/android_app.png');
+          background-position: center center;
+          background-repeat: no-repeat;
+          color: transparent;
+          background-size: 100px;
+          padding: 4px 0px;
+          display: inline-block; }
+        html body #searchTrip .welcomeBox .downloadApp #androidApp {
+          background-image: url('../../images/iphone_app.png');
+          background-position: center center;
+          background-repeat: no-repeat;
+          color: transparent;
+          background-size: 100px;
+          padding: 4px 0px;
+          display: inline-block; }
+  html #ui-datepicker-div {
+    font-size: 9px; }
+
+@media only screen and (max-width: 768px) {
+  html body header {
+    border: none; }
+    html body header #regularNav {
+      display: none; }
+  html body #searchTrip #searchMap {
+    margin-top: 0; } }

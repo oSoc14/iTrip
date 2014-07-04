@@ -1,8 +1,10 @@
 <html>
 <head>
     <title>iTrip</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <link rel=stylesheet href="styles/css/reset.css">
     <link rel=stylesheet href="styles/css/style.css">
+    <link rel=stylesheet href="styles/css/jquery-ui.css">
 </head>
 <body>
     <header>
@@ -11,9 +13,14 @@
                 <a title="Home" id="homeButton" href="#">Home</a>
             </div>
             <div class="col-sm-6 col-sm-offset-4">
+                <ul class="languages">
+                    <li><a class="english" href="#">EN /</a></li>
+                    <li><a class="dutch activeLanguage" href="#">NL /</a></li>
+                    <li><a class="french" href="#"> FR</a></li>
+                </ul>
                  <nav class="navigation">
                     <ul>
-                        <li><a href="#">PLAN JE REIS</a></li>
+                        <li><a class="active" href="#">PLAN JE REIS</a></li>
                         <li><a href="#">AANMELDEN</a></li>
                         <li><a href="#">CONTACT</a></li>
                     </ul>
@@ -26,29 +33,80 @@
     </header>
 
    
-
-    <div class="downloadApp">
-        <a id="iphoneApp" target="_blank" title="download app for iPhone" href="https://itunes.apple.com/nl/app/itrip-coast/id660310219?mt=8">download for iPhone</a>
-        <a id="androidApp" target="_blank" title="download app for Android" href="https://play.google.com/store/apps/details?id=be.westtoer.itrip">download for Android</a>
-    </div>
-
-
-<div class="row">
-  <div class="col-md-8 col-md-offset-2">
-     <div class="welcomeBox row">
-        <div class="col-md-10 col-md-offset-1">
-            <h1>Welkom bij iTrip</h1>
-            <p>Plan je trip op voorhand of maak tijdens je reis gebruik van onze handige tool. Zo tonen we je de leukste activiteiten, interessantste musea en heerlijke restaurantjes en hotels.</p>
-            <strong>Kortom, beleef een zorgeloze reis!</strong>
-            <input title="Plan je reis" id="planTripButton" type="button" value="Plan je reis">
-            <p class="extraInfo">Opslaan kan enkel indien <a href="">aangemeld</a></p>
+    <div class="overlay"></div>
+    <div id="searchTrip" class="row">
+        <h1 class="title">Plan je reis</h1>
+        <div id="searchPanel" class="col-md-3">
+            <form id="searchPanelWrapper">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <h2>Locatie</h2>
+                        <p>Vul het zoekveld in of deel uw huidige locatie</p>
+                        <input id="customLocation" type="text">
+                        <input id="submitCustomLocation" type="button">
+                        <input id="submitCurrentLocation" type="button">
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="sliderPart" class="col-sm-12">
+                        <h2 id="radiusParagraph">Straal: <span id="radiusValue">25</span>km</h2>
+                        <div id="slider"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="calendarPart" class="col-sm-12">
+                        <h2>Datum</h2>
+                        <div id="calendars" class="row col-sm-12">
+                            <div class="col-sm-5" id="fromDate">
+                                <div id="fromWrapper">
+                                    <input type="button" id="fromCalendar">
+                                    <p class="showSelectedMonth" id="selectedFromMonth"></p>
+                                    <!-- <p class="showSelectedDay" id="selectedFromDay"></p> -->
+                                </div>
+                            </div>
+                            <div class="betweenCalendars col-sm-2"></div>
+                            <div class="col-sm-5" id="toDate">
+                                 <div id="toWrapper">
+                                    <input type="button" id="toCalendar">
+                                    <p class="showSelectedMonth"  id="selectedToMonth"></p>
+                                   <!--  <p class="showSelectedDay" id="selectedToDay"></p> -->
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input id="searchTrip" type="button" value="zoeken">
+                    </div>
+                </div>
+            </form>
+        </div>    
+        <div id="searchMap" class="col-md-9">
         </div>
-        <div class="col-md-1"></div>
+        <!-- <div class="welcomeBox ">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <span id="closeImage"></span>
+                    <h1>Welkom bij iTrip</h1>
+                    <p>Plan je trip op voorhand of maak tijdens je reis gebruik van onze handige tool. Zo tonen we je de leukste activiteiten, interessantste musea en heerlijke restaurantjes en hotels.</p>
+                    <strong>Kortom, beleef een zorgeloze reis!</strong>
+                    <input title="Plan je reis" id="planTripButton" type="button" value="Ontdek iTrip">
+                    <p class="extraInfo">Opslaan kan enkel indien <a href="">aangemeld</a></p>
+                    <div class="downloadApp">
+                        <a id="iphoneApp" target="_blank" title="download app for iPhone" href="https://itunes.apple.com/nl/app/itrip-coast/id660310219?mt=8">download for iPhone</a>
+                        <a id="androidApp" target="_blank" title="download app for Android" href="https://play.google.com/store/apps/details?id=be.westtoer.itrip">download for Android</a>
+                    </div>
+                </div>
+            <div class="col-md-1"></div>
+            </div>
+        </div>   -->
     </div>
-  </div>
-  <div class="col-md-2"></div>
-</div>
 
-
+<script src="js/jquery-1.11.1.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
