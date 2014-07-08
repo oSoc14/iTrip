@@ -1,0 +1,291 @@
+$font-regularText: 'DINNextLTPro-LightCondensed', sans-serif;
+$font-title: 'DINNextLTPro-MediumCond', sans-serif;
+$font-button: 'HelveticaRounded-BoldCond', sans-serif;
+$font-subText: 'DINNextLTPro-Condensed', sans-serif;
+$mainBlueColor: #033b93;
+$mainYellowColor: #ffbb00;
+
+html
+{
+	body
+	{
+		#searchTrip
+		{
+			#searchPanel
+			{
+				#searchPanelWrapper.extraStyleResultsSearchPanel
+				{
+					background: none;
+
+					h2
+					{
+						font-size: 20px;
+						font-family: $font-title;
+					}
+
+					input#editLocation
+					{
+						border-radius: 5px;
+						@include inputFieldStyle();
+						width: 100%;
+						/* margin:0 15%; */
+						padding: 5px;
+						@include font-size(2.0);
+						font-family: $font-subText;
+
+					}
+
+					#saveTrip, .editTrip
+					{
+						/* width: 100%; */
+						
+						@include font-size(2.0);
+						@include blueButtonClass();
+						font-family: $font-title;
+						padding: 5px 18px;
+						margin: 10px 0;
+						width: 100%;
+						border-radius: 5px;
+					}
+
+					.rowStyle
+					{
+						background-color: #ffffff;
+						margin: 10px 0;
+						padding: 5px 0;
+
+						.categories
+						{
+							/* .item
+							{
+								width: 50%;
+							}
+
+
+								.masonry .item,
+								.masonry .grid-sizer {
+								  height: 60px;
+								  float: left;
+								  background: #D26;
+								  border: 2px solid #333;
+								  border-color: hsla(0, 0%, 0%, 0.5);
+								  border-radius: 5px;
+								}
+
+								.item.w2 { width:  40%; }
+
+								.item.h2 { height: 100px; }
+								.item.h3 { height: 130px; }
+								.item.h4 { height: 180px; }*/
+
+								.category
+								{
+									background-position: top center;
+									background-repeat: no-repeat;
+									@include backgroundSize(5.5);
+									padding: 45px 8px 0px 8px;
+									float: left;
+									width: 30%;
+									margin: 0 1.5%;
+									text-align: center;
+								}
+
+								.category:hover
+								{
+									cursor: pointer;
+								}
+
+								.everything
+								{
+									background-image: url('../../images/lightblue_icons/everything.png');
+									color: #3562A9;
+								}
+
+								.everythingHover//.everything:hover
+								{
+									background-image: url('../../images/blue_icons/everything.png');
+									color: $mainBlueColor;
+								}
+
+								.everythingActive
+								{
+									background-image: url('../../images/yellow_icons/everything.png');
+									color: $mainYellowColor;
+								}
+
+								.visit
+								{
+									background-image: url('../../images/lightblue_icons/visit.png');
+									color: #3562A9;
+								}
+
+								.visitHover//.visit:hover
+								{
+									background-image: url('../../images/blue_icons/visit.png');
+									color: $mainBlueColor;
+								}
+
+								.visitActive
+								{
+									background-image: url('../../images/yellow_icons/visit.png');
+									color: $mainYellowColor;
+								}
+
+								.adventure
+								{
+									background-image: url('../../images/lightblue_icons/adventure.png');
+									color: #3562A9;
+								}
+
+								.adventureHover//.adventure:hover
+								{
+									background-image: url('../../images/blue_icons/adventure.png');
+									color: $mainBlueColor;
+								}
+
+								.adventureActive
+								{
+									background-image: url('../../images/yellow_icons/adventure.png');
+									color: $mainYellowColor;
+								}
+
+								.recreation
+								{
+									background-image: url('../../images/lightblue_icons/recreation.png');
+									color: #3562A9;
+								}
+
+								.recreationHover//.recreation:hover
+								{
+									background-image: url('../../images/blue_icons/recreation.png');
+									color: $mainBlueColor;
+								}
+
+								.recreationActive
+								{
+									background-image: url('../../images/yellow_icons/recreation.png');
+									color: $mainYellowColor;
+								}
+
+								.lodging
+								{
+									background-image: url('../../images/lightblue_icons/lodging.png');
+									color: #3562A9;
+								}
+
+								.lodgingHover//.lodging:hover
+								{
+									background-image: url('../../images/blue_icons/lodging.png');
+									color: $mainBlueColor;
+								}
+
+								.lodgingActive
+								{
+									background-image: url('../../images/yellow_icons/lodging.png');
+									color: $mainYellowColor;
+								}
+
+								.gastronomy
+								{
+									background-image: url('../../images/lightblue_icons/gastronomy.png');
+									color: #3562A9;
+								}
+
+								.gastronomyHover//.gastronomy:hover
+								{
+									background-image: url('../../images/blue_icons/gastronomy.png');
+									color: $mainBlueColor;
+								}
+
+								.gastronomyActive
+								{
+									background-image: url('../../images/yellow_icons/gastronomy.png');
+									color: $mainYellowColor;
+								}
+
+						} 
+					}
+
+
+				}
+			}
+
+			#resultSection
+			{
+				background-color: #f4f8f9;
+				margin-top: -67px;
+				border-left:2px solid  $mainBlueColor;
+
+				h2
+				{
+					@include font-size(2.0);
+					font-family: $font-title;
+					margin-top: 20px;
+				}
+
+				.searchExtraStyle
+				{	
+					margin-top:10px;
+
+					#inputEvent
+					{
+						border-radius: 5px 0 0 5px;
+						border: 2px solid  $mainBlueColor;
+						float: left;
+						padding: 5px;
+						width: 227px;
+					}
+
+					#searchEvent
+					{
+						border-radius: 0 5px 5px 0;
+						background-image: url('../../images/search.png');
+						background-position: top 4px center;
+						background-repeat: no-repeat;
+						background-size: 23px;
+						padding: 7px 20px;
+						background-color:  $mainBlueColor;
+						border: none;
+					}
+
+
+
+						/* ---- isotope ---- */
+
+						* {
+						  -webkit-box-sizing: border-box;
+						     -moz-box-sizing: border-box;
+						          box-sizing: border-box;
+						}
+
+						.isotope {
+						  background: #DDD;
+						  max-width: 1200px;
+						}
+
+						/* clear fix */
+						.isotope:after {
+						  content: '';
+						  display: block;
+						  clear: both;
+						}
+
+						/* ---- .item ---- */
+
+						.item {
+						  float: left;
+						  width: 100px;
+						  height: 100px;
+						  background: #0D8;
+						  border: 2px solid #333;
+						  border-color: hsla(0, 0%, 0%, 0.7);
+						}
+
+						.item.width2 { width: 200px; }
+						.item.height2 { height: 200px; }
+
+				}
+			}
+		}
+	}
+}

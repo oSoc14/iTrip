@@ -1,0 +1,54 @@
+$font-regularText: 'DINNextLTPro-LightCondensed', sans-serif;
+$font-title: 'DINNextLTPro-MediumCond', sans-serif;
+$font-button: 'HelveticaRounded-BoldCond', sans-serif;
+$font-subText: 'DINNextLTPro-Condensed', sans-serif;
+$mainBlueColor: #033b93;
+$mainYellowColor: #ffbb00;
+
+@mixin font-size($sizeValue: 1.6) 
+{
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+@mixin line-height($sizeValue: 1.6) 
+{
+  line-height: ($sizeValue * 10) + px;
+  line-height: $sizeValue + rem;
+}
+
+@mixin border-radius($radius) 
+{
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin blueButtonClass()
+{
+	text-align: center;
+	display: inline-block;
+	border: none;
+	background-image: url('../../images/travel_button.png');
+	background-position: top center;
+	background-repeat: no-repeat;
+/* 	background-size: 244px; */
+	background-color: #ffffff;
+	color: #ffffff;
+	font-family: 'HelveticaRounded-BoldCond', sans-serif;
+	font-family: $font-button;
+}
+
+@mixin inputFieldStyle()
+{
+	border: 2px solid #033b93;
+	color: $mainYellowColor;
+}
+
+@mixin backgroundSize($sizeValue)
+{
+	background-size: ($sizeValue * 10) + px;
+  	background-size: $sizeValue + rem;
+}
+

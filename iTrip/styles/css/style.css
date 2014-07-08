@@ -1002,6 +1002,7 @@ html {
         display: inline-block; }
       html body header .languages {
         font-size: 13px;
+        font-size: 1.3rem;
         position: absolute;
         top: -5px;
         right: 30px; }
@@ -1049,6 +1050,16 @@ html {
       html body #searchTrip #searchPanel #searchPanelWrapper {
         margin-top: -5px;
         background-color: #ffffff; }
+        html body #searchTrip #searchPanel #searchPanelWrapper hr.upper {
+          border-bottom: 2px dotted #d8e1e5;
+          border-top: none;
+          margin-left: 15px;
+          margin-right: 15px; }
+        html body #searchTrip #searchPanel #searchPanelWrapper hr.lower {
+          border-top: 2px dotted #d8e1e5;
+          border-bottom: none;
+          margin-left: 15px;
+          margin-right: 15px; }
         html body #searchTrip #searchPanel #searchPanelWrapper h2 {
           font-size: 20px;
           font-family: 'DINNextLTPro-MediumCond', sans-serif; }
@@ -1068,7 +1079,9 @@ html {
           padding: 8px;
           width: 165px; }
         html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart {
-          margin-top: 20px; }
+          /* margin-top: 20px; */
+          margin-top: -20px;
+          margin-bottom: 19px; }
           html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider {
             margin-top: 5px;
             height: 0; }
@@ -1085,7 +1098,7 @@ html {
               color: #ffffff;
               font-weight: bold; }
         html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart {
-          margin-top: 20px; }
+          margin-top: -20px; }
           html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate {
             float: left; }
             html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate p {
@@ -1204,17 +1217,21 @@ html {
           border: none;
           float: right; }
         html body #searchTrip #searchPanel #searchPanelWrapper #searchTrip {
-          /* width: 100%; */
+          background-size: 141px;
+          font-size: 28px;
+          font-size: 2.8rem;
           text-align: center;
+          display: inline-block;
           border: none;
           background-image: url('../../images/travel_button.png');
-          background-position: center center;
+          background-position: top center;
           background-repeat: no-repeat;
-          background-size: 141px;
+          /* 	background-size: 244px; */
           background-color: #ffffff;
           color: #ffffff;
-          font-size: 28px;
-          font-family: 'DINNextLTPro-MediumCond', sans-serif;
+          font-family: 'HelveticaRounded-BoldCond', sans-serif;
+          font-family: 'HelveticaRounded-BoldCond', sans-serif;
+          /* font-family: $font-title; */
           padding: 4px 40px;
           margin: 40px 24% 15px 24%;
           width: 52%; }
@@ -1227,6 +1244,93 @@ html {
       padding: 0px;
       z-index: 1;
       margin-top: -67px; }
+    html body #searchTrip .loginBox, html body #searchTrip .registerBox {
+      border-top: 1px solid #033b93;
+      background-color: #ffffff;
+      /* width: 33%;
+				margin: 0% 37%; */
+      width: 33%;
+      margin: 0% 33.5%;
+      padding: 15px 5px 5px 5px;
+      position: fixed;
+      color: #033b93;
+      font-family: 'DINNextLTPro-LightCondensed', sans-serif;
+      font-size: 16px;
+      font-size: 1.6rem;
+      line-height: 24px;
+      z-index: 15;
+      padding-bottom: 10px; }
+      html body #searchTrip .loginBox h1, html body #searchTrip .registerBox h1 {
+        font-family: 'DINNextLTPro-MediumCond', sans-serif;
+        font-size: 28px; }
+      html body #searchTrip .loginBox .formGroup, html body #searchTrip .registerBox .formGroup {
+        margin-left: -15px; }
+      html body #searchTrip .loginBox .greySubText, html body #searchTrip .registerBox .greySubText {
+        font-size: 16px;
+        font-size: 1.6rem;
+        color: #707070;
+        font-family: 'DINNextLTPro-LightCondensed', sans-serif;
+        width: 100%;
+        text-align: right;
+        float: right; }
+      html body #searchTrip .loginBox .errorMessage, html body #searchTrip .registerBox .errorMessage {
+        color: red;
+        display: none;
+        font-family: 'DINNextLTPro-LightCondensed', sans-serif;
+        font-size: 16px;
+        font-size: 1.6rem; }
+      html body #searchTrip .loginBox #closeImage, html body #searchTrip .loginBox #closeLoginImage, html body #searchTrip .loginBox #closeRegisterImage, html body #searchTrip .registerBox #closeImage, html body #searchTrip .registerBox #closeLoginImage, html body #searchTrip .registerBox #closeRegisterImage {
+        background-image: url('../../images/close.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        padding: 10px 12px;
+        position: absolute;
+        top: -10px;
+        right: -36px; }
+      html body #searchTrip .loginBox #closeImage:hover, html body #searchTrip .loginBox #closeLoginImage:hover, html body #searchTrip .loginBox #closeRegisterImage:hover, html body #searchTrip .registerBox #closeImage:hover, html body #searchTrip .registerBox #closeLoginImage:hover, html body #searchTrip .registerBox #closeRegisterImage:hover {
+        cursor: pointer; }
+      html body #searchTrip .loginBox input, html body #searchTrip .registerBox input {
+        border-radius: 5px;
+        border: 2px solid #033b93;
+        display: block;
+        padding: 5px;
+        width: 200px;
+        font-size: 20px;
+        font-size: 2rem;
+        font-family: 'DINNextLTPro-Condensed', sans-serif;
+        margin: 10px 0;
+        float: right; }
+      html body #searchTrip .loginBox input[type=text], html body #searchTrip .loginBox input[type=password], html body #searchTrip .registerBox input[type=text], html body #searchTrip .registerBox input[type=password] {
+        color: #ffbb00; }
+      html body #searchTrip .loginBox #registerButton, html body #searchTrip .loginBox #loginButton, html body #searchTrip .loginBox #registerUserButton, html body #searchTrip .registerBox #registerButton, html body #searchTrip .registerBox #loginButton, html body #searchTrip .registerBox #registerUserButton {
+        background-size: 244px;
+        text-align: center;
+        display: inline-block;
+        border: none;
+        background-image: url('../../images/travel_button.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+        /* 	background-size: 244px; */
+        background-color: #ffffff;
+        color: #ffffff;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        font-size: 20px;
+        font-size: 2rem;
+        margin-right: 13px; }
+      html body #searchTrip .loginBox label, html body #searchTrip .registerBox label {
+        display: block;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        /* margin: 20px 0; */
+        padding: 17px 0;
+        font-size: 16px;
+        font-size: 1.6rem; }
+      html body #searchTrip .loginBox p, html body #searchTrip .registerBox p {
+        clear: both;
+        text-align: center;
+        width: 50%;
+        margin: 0 25%; }
     html body #searchTrip .welcomeBox {
       border-top: 1px solid #033b93;
       background-color: #ffffff;
@@ -1262,16 +1366,20 @@ html {
         margin: 9% 12.5%;
         width: 75%;
         height: 78px;
-        /* padding: 9px; */
+        background-size: 244px;
+        font-size: 40px;
+        font-size: 4rem;
         text-align: center;
         display: inline-block;
         border: none;
         background-image: url('../../images/travel_button.png');
         background-position: top center;
         background-repeat: no-repeat;
-        background-size: 244px;
+        /* 	background-size: 244px; */
         background-color: #ffffff;
         color: #ffffff;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-size: 40px;
         font-family: 'HelveticaRounded-BoldCond', sans-serif; }
       html body #searchTrip .welcomeBox .extraInfo {
@@ -1306,8 +1414,225 @@ html {
           background-size: 100px;
           padding: 4px 0px;
           display: inline-block; }
-  html #ui-datepicker-div {
-    font-size: 9px; }
+    html body #ui-datepicker-div {
+      font-size: 9px;
+      font-size: 0.9rem; }
+      html body #ui-datepicker-div .ui-datepicker-month, html body #ui-datepicker-div .ui-datepicker-year {
+        color: #033b93; }
+      html body #ui-datepicker-div td a {
+        color: #033b93;
+        border: none; }
+      html body #ui-datepicker-div td .ui-state-default, html body #ui-datepicker-div td .ui-widget-content .ui-state-default, html body #ui-datepicker-div td .ui-widget-header .ui-state-default {
+        background: none; }
+      html body #ui-datepicker-div td .ui-state-hover {
+        color: #ffbb00; }
+      html body #ui-datepicker-div .ui-datepicker-current-day a {
+        color: #ffbb00;
+        border: none;
+        background-color: #ffffff; }
+    html body .ui-widget-header {
+      border: 1px solid #033b93;
+      background: #033b93 50% 50% repeat-x; }
+      html body .ui-widget-header .ui-state-hover .ui-icon, html body .ui-widget-header .ui-state-focus .ui-icon {
+        background: none; }
+      html body .ui-widget-header .ui-state-hover, html body .ui-widget-header .ui-widget-content .ui-state-hover, html body .ui-widget-header .ui-widget-header .ui-state-hover, html body .ui-widget-header .ui-state-focus, html body .ui-widget-header .ui-widget-content .ui-state-focus, html body .ui-widget-header .ui-widget-header .ui-state-focus {
+        border: none;
+        background: none;
+        font-weight: bold;
+        color: #c77405; }
+      html body .ui-widget-header .ui-datepicker-next .ui-icon {
+        background-image: url('../../images/next.png');
+        background-position: center center;
+        background-repeat: no-repeat; }
+      html body .ui-widget-header .ui-datepicker-prev .ui-icon {
+        background-image: url('../../images/previous.png');
+        background-position: center center;
+        background-repeat: no-repeat; }
+      html body .ui-widget-header .ui-widget-header .ui-icon {
+        background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png"); }
+    html body .ui-widget-content {
+      border: 1px solid #dddddd;
+      background: #ffffff 50% top repeat-x;
+      color: #333333; }
+
+html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel {
+  background: none; }
+  html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel h2 {
+    font-size: 20px;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+  html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel input#editLocation {
+    border-radius: 5px;
+    border: 2px solid #033b93;
+    color: #ffbb00;
+    width: 100%;
+    /* margin:0 15%; */
+    padding: 5px;
+    font-size: 20px;
+    font-size: 2rem;
+    font-family: 'DINNextLTPro-Condensed', sans-serif; }
+  html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel #saveTrip, html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .editTrip {
+    /* width: 100%; */
+    font-size: 20px;
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    background-image: url('../../images/travel_button.png');
+    background-position: top center;
+    background-repeat: no-repeat;
+    /* 	background-size: 244px; */
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif;
+    padding: 5px 18px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 5px; }
+  html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 5px 0; }
+    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
+      /* .item
+							{
+								width: 50%;
+							}
+
+
+								.masonry .item,
+								.masonry .grid-sizer {
+								  height: 60px;
+								  float: left;
+								  background: #D26;
+								  border: 2px solid #333;
+								  border-color: hsla(0, 0%, 0%, 0.5);
+								  border-radius: 5px;
+								}
+
+								.item.w2 { width:  40%; }
+
+								.item.h2 { height: 100px; }
+								.item.h3 { height: 130px; }
+								.item.h4 { height: 180px; }*/ }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 55px;
+        background-size: 5.5rem;
+        padding: 45px 8px 0px 8px;
+        float: left;
+        width: 30%;
+        margin: 0 1.5%;
+        text-align: center; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category:hover {
+        cursor: pointer; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everything {
+        background-image: url('../../images/lightblue_icons/everything.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingHover {
+        background-image: url('../../images/blue_icons/everything.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingActive {
+        background-image: url('../../images/yellow_icons/everything.png');
+        color: #ffbb00; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visit {
+        background-image: url('../../images/lightblue_icons/visit.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitHover {
+        background-image: url('../../images/blue_icons/visit.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitActive {
+        background-image: url('../../images/yellow_icons/visit.png');
+        color: #ffbb00; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventure {
+        background-image: url('../../images/lightblue_icons/adventure.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureHover {
+        background-image: url('../../images/blue_icons/adventure.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureActive {
+        background-image: url('../../images/yellow_icons/adventure.png');
+        color: #ffbb00; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreation {
+        background-image: url('../../images/lightblue_icons/recreation.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationHover {
+        background-image: url('../../images/blue_icons/recreation.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationActive {
+        background-image: url('../../images/yellow_icons/recreation.png');
+        color: #ffbb00; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodging {
+        background-image: url('../../images/lightblue_icons/lodging.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingHover {
+        background-image: url('../../images/blue_icons/lodging.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingActive {
+        background-image: url('../../images/yellow_icons/lodging.png');
+        color: #ffbb00; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomy {
+        background-image: url('../../images/lightblue_icons/gastronomy.png');
+        color: #3562A9; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyHover {
+        background-image: url('../../images/blue_icons/gastronomy.png');
+        color: #033b93; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyActive {
+        background-image: url('../../images/yellow_icons/gastronomy.png');
+        color: #ffbb00; }
+html body #searchTrip #resultSection {
+  background-color: #f4f8f9;
+  margin-top: -67px;
+  border-left: 2px solid #033b93; }
+  html body #searchTrip #resultSection h2 {
+    font-size: 20px;
+    font-size: 2rem;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif;
+    margin-top: 20px; }
+  html body #searchTrip #resultSection .searchExtraStyle {
+    margin-top: 10px;
+    /* ---- isotope ---- */
+    /* clear fix */
+    /* ---- .item ---- */ }
+    html body #searchTrip #resultSection .searchExtraStyle #inputEvent {
+      border-radius: 5px 0 0 5px;
+      border: 2px solid #033b93;
+      float: left;
+      padding: 5px;
+      width: 227px; }
+    html body #searchTrip #resultSection .searchExtraStyle #searchEvent {
+      border-radius: 0 5px 5px 0;
+      background-image: url('../../images/search.png');
+      background-position: top 4px center;
+      background-repeat: no-repeat;
+      background-size: 23px;
+      padding: 7px 20px;
+      background-color: #033b93;
+      border: none; }
+    html body #searchTrip #resultSection .searchExtraStyle * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box; }
+    html body #searchTrip #resultSection .searchExtraStyle .isotope {
+      background: #DDD;
+      max-width: 1200px; }
+    html body #searchTrip #resultSection .searchExtraStyle .isotope:after {
+      content: '';
+      display: block;
+      clear: both; }
+    html body #searchTrip #resultSection .searchExtraStyle .item {
+      float: left;
+      width: 100px;
+      height: 100px;
+      background: #0D8;
+      border: 2px solid #333;
+      border-color: rgba(0, 0, 0, 0.7); }
+    html body #searchTrip #resultSection .searchExtraStyle .item.width2 {
+      width: 200px; }
+    html body #searchTrip #resultSection .searchExtraStyle .item.height2 {
+      height: 200px; }
 
 @media only screen and (max-width: 768px) {
   html body header {

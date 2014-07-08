@@ -1,15 +1,52 @@
 $(document).ready( function (){
 
   // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
-  $("#searchTrip").on('click', function(){
+  $(".searchTrip").on('click', function(e){
+    appendLoginBox();/*
     window.location.href = "results.html";
+    e.preventDefault();*/
+  });
+
+  // TEMPORARY LINK TO PREVIOUS PAGE (HOME PAGE) WHEN "ZOEKOPDRACHT WIJZIGEN" IS CLICKED
+  $(".editTrip").on('click', function(e){
+    window.location.href = "index.html";
+    e.preventDefault();
   });
 
     // INITIALIZE THE WELCOME BOX, WHICH WILL ONLY APPEAR THE FIRST TIME A USER VISITS THE SITE
   initializeWelcomeBox();
 
-  // INIT THE SCREEN WITH A POPUP-LIKE DIV
-  initPopUp();
+
+  $(".overlay").on('click', function (){
+    checkIfWelcomeBoxMustShow();
+  });
+
+   $("#searchTrip").on('click', 'span#closeImage', function (){
+    checkIfWelcomeBoxMustShow();
+  });
+
+  $("#planTripButton").on('click', function (){
+    checkIfWelcomeBoxMustShow();
+  });
+
+
+  // SHOW THE LOGIN POPUP
+  login();
+
+  // FUNCTION TO LOG OUT
+  logout();
+
+  // SHOW REGISTERBOX
+  showRegisterBox();
+
+  // FUNCTION TO REGISTER A USER
+  register();
+
+  // FUNCTION TO REMOVE THE LOGINBOX 
+  removeLoginBoxBox();
+
+  // FUNCTION TO REMOVE THE REGISTERBOX
+  removeBoxRegisterBox();
   
   //WHEN CLICKED ON A NAVIGATIONAL LINK, THAT LINK CHANGES COLOR (IS ACTIVE)
   changeActiveMenuLink();
@@ -20,8 +57,17 @@ $(document).ready( function (){
   // SEARCH FOR A CUSTOM LOCATION AND UPDATE THE GOOGLE MAP AND INPUT FIELD
   searchForCustomLocation();
 
+  // FUNCTION TO ORGANIZE THE CATEGORY ICONS
+  //initIsotopeCategories();
+
+  // FUNCTION TO SWITCH CATEGORIES ON THE RESULT PAGE
+  switchCategory();
+
+  // FUNCTION TO RENAME YOUR TRIP
+  editTripName();
+
   // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
-  overlayLoseFocus();
+  //overlayLoseFocus();
 
   // PREPARE ARRAY WITH ALL THE MONTHS IN STRINGS TO FORMAT THE SELECTED DATE IN THE DATEPICKER
   var dutchMonths = ["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
@@ -53,7 +99,7 @@ $(document).ready( function (){
   $("#fromCalendar").datepicker({
       changeMonth: true,
       changeYear: true,
-      minDate: new Date(2000, 1 - 1, 1),
+      minDate: new Date(2010, 1 - 1, 1),
       dateFormat: 'dd-mm-yy',
       showOn: 'both', 
       buttonText: "",
@@ -76,7 +122,7 @@ $(document).ready( function (){
   $("#toCalendar").datepicker({
         changeMonth: true,
         changeYear: true,
-        minDate: new Date(2000, 1 - 1, 1),
+        minDate: new Date(2010, 1 - 1, 1),
         dateFormat: 'dd-mm-yy',
         showOn: 'both',  
         buttonText: "",
@@ -114,12 +160,6 @@ $(document).ready( function (){
 
   
 });
-
-
-function initPopUp()
-{
-
-}
 
 // GET THE CURRENT LOCATION OF THE USER
 function requestCurrentPosition() 
@@ -280,7 +320,7 @@ function initialize(longitude, latitude, useLonLat)
             $("#customLocation").val(results[1].address_components[0].long_name);
           else
             $("#customLocation").val(results[1].address_components[1].long_name);
-          console.log(results);
+          //console.log(results);
         }
       } else {
         alert("Geocoder failed due to: " + status);
@@ -302,6 +342,11 @@ function changeActiveMenuLink()
 {
   $("nav.navigation a").on('click', function (){
     $.each( $("nav.navigation a"), function( key, value ) {
+      if($(this)[0].id == "loginInLink")
+      {
+        appendLoginBox();
+         login();
+      } 
       $(this).removeClass("active");
     });
     
@@ -343,25 +388,103 @@ function searchForCustomLocation()
   });
 }
 
-  // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
-function overlayLoseFocus()
+  // REMOVE THE OVERLAY AND LOGIN WHEN THE CLOSEBUTTON IS CLICKED
+function removeLoginBoxBox()
 {
-  $(".overlay").on('click', function (){
-    $(".overlay").fadeOut(300, function(){ $(this).remove();});
-    $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
-  });
-
-  $("#searchTrip").on('click', 'span#closeImage', function (){
-    $(".overlay").fadeOut(300, function(){ $(this).remove();});
-    $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+  $("#searchTrip").on('click', 'span#closeLoginImage', function (){
+    $(".loginBox").fadeOut(300, function(){ $(this).remove();});
   });
 }
 
+  // REMOVE THE OVERLAY AND REGISTERBOX WHEN THE CLOSEBUTTON IS CLICKED
+function removeBoxRegisterBox()
+{
+  $("#searchTrip").on('click', 'span#closeRegisterImage', function (){
+    $(".registerBox").fadeOut(300, function(){ $(this).remove();});
+  });
+}
 
   // INITIALIZE THE WELCOME BOX, WHICH WILL ONLY APPEAR THE FIRST TIME A USER VISITS THE SITE
+  // FUNCTION TO SAVE IF A USER HAS CHOSEN TO CLOSE THE WELCOMEBOX,
+  // SO THAT THIS POPUP DOESN'T SHOW EVERYTIME A USER VISITS THE SITE
 function initializeWelcomeBox()
 {
-  var welcomeBox = "<div class='welcomeBox'>"
+
+   var cookisEnabled = cookiesAreEnabled();
+  if(cookisEnabled)
+    {
+      var CookieSet = $.cookie('iTripAccount');
+      $.cookie.json = true;
+
+      var showWelcomeBox  = true;
+
+       if (CookieSet == null) 
+        {
+            appendWelcomeBox();
+            var settings =  { settings : {"welcomeEnabled" : true}};// true
+            $.cookie("iTripAccount", settings, { expires: 365 });
+        }
+        else
+        {
+          var cookie = $.cookie("iTripAccount");
+        //  var settings =  { settings : {"welcomeEnabled" : showTheWelcomeBox}};// false
+       //   $.cookie("iTripAccount", settings, { expires: 365 });
+          var welComeBoxEnabled = cookie.settings.welcomeEnabled;
+          showWelcomeBox = welComeBoxEnabled;
+          if(showWelcomeBox)
+            appendWelcomeBox();
+          else
+          {
+              $(".overlay").fadeOut(300, function(){ $(this).remove();});
+              $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+          }
+        }
+    }
+    else
+    {
+      appendWelcomeBox();
+    }
+
+}
+
+// FUNTION CHECK COOKIE WHEN USER CLICKS TO CLOSE TO WELCOMEBOX
+function checkIfWelcomeBoxMustShow()
+{
+
+ var cookisEnabled = cookiesAreEnabled();
+  if(cookisEnabled)
+    {
+      var CookieSet = $.cookie('iTripAccount');
+      $.cookie.json = true;
+
+      var showWelcomeBox  = true;
+
+       if (CookieSet == null) 
+        {
+            var settings =  { settings : {"welcomeEnabled" : false}};
+            $.cookie("iTripAccount", settings, { expires: 365 });
+            $(".overlay").fadeOut(300, function(){ $(this).remove();});
+            $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+        }
+        else
+        {
+          var cookie = $.cookie("iTripAccount");
+          var settings =  { settings : {"welcomeEnabled" : false}};
+          $.cookie("iTripAccount", settings, { expires: 365 });
+          $(".overlay").fadeOut(300, function(){ $(this).remove();});
+          $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+        }
+    }
+    else
+    {
+      appendWelcomeBox();
+    }
+}
+
+// FUNCTION CALLED TO APPEND THE WELCOMEBOX ON THE HOMEPAGE
+function appendWelcomeBox()
+{
+    var welcomeBox = "<div class='welcomeBox'>"
                    +"<div class='row'>"
                    +"     <div class='col-md-10 col-md-offset-1'>"
                    +"         <span title='close' id='closeImage'></span>"
@@ -379,40 +502,10 @@ function initializeWelcomeBox()
                    +" </div>"
                 +"</div>";
 
-  var cookisEnabled = cookiesAreEnabled();
-  if(cookisEnabled)
-    {
-      var CookieSet = $.cookie('iTripAccount');
-          $.cookie.json = true;
-
-          var showWelcomeBox  = true;
-
-           if (CookieSet == null) 
-           {
-                var settings =  { settings : {"welcomeEnabled" : "true"}};
-                $.cookie("iTripAccount", settings, { expires: 365 });
-                var cookie = $.cookie("iTripAccount");
-                var welComeBoxEnabled = cookie.settings.welcomeEnabled;
-                showWelcomeBox = welComeBoxEnabled;
-                $("#searchTrip").append(welcomeBox);
-           }
-           else
-           {
-              var cookie = $.cookie("iTripAccount");
-              var settings =  { settings : {"welcomeEnabled" : "false"}};
-              $.cookie("iTripAccount", settings, { expires: 365 });
-              var welComeBoxEnabled = cookie.settings.welcomeEnabled;
-              showWelcomeBox = welComeBoxEnabled;
-              $(".overlay").fadeOut(300, function(){ $(this).remove();});
-           }
-    }
-    else
-    {
-      ("#searchTrip").append(welcomeBox);
-    }
-
-    
+    $("overlay").css("display", "block");
+    $("#searchTrip").append(welcomeBox);
 }
+
 
 // FUNCTION TO CHECK IF COOKIES ARE ENABLED
 function cookiesAreEnabled()
@@ -421,6 +514,228 @@ function cookiesAreEnabled()
     return true;
   else
     return false;
+}
+
+// FUNCTION CALLED TO LOGOUT
+function logout()
+{
+  $("#logoutLink").on('click', function (){
+    window.location.href = "index.html";
+  });
+}
+
+// FUNCTION THAT SHOW A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
+function register()
+{
+    $("#searchTrip").on('click', '#registerUserButton', function(){
+        var email = $("#registerUsername").val();
+        var password = $("#registerUserPassword").val();
+        var repeatPassword = $("#registerUserRepeatPassword").val();
+
+        // HERE THE EMAIL, PASSWORD AND THE REPEATEDPASSWORD ARE CHECKED IF THEY ARE NOT EMPTY
+        // WHEN THEY ARE NOT EMPTY, THEY HAVE TO BE CHECKED SO NO DUPLICATE USERS ARE INSERTED INTO THE DATABASE
+        // WHEN THEY ARE UNIQUE, THEN THE PASSWORD AND THE REPEATED PASSWORD HAVE TO BE CHECKED TO SEE IF THEY MATCH
+        if(email != "" && password != "" && repeatPassword != "")
+        {
+          // CHECK HERE IF THEY ARE NOT DUPLICATES
+          if(password != repeatPassword)
+          {
+            $(".errorMessage").css('display','block');
+            $(".errorMessage").text("Je wachtwoorden komen niet overeen!");
+          }
+          else
+          {
+            $(".errorMessage").css('display','none');
+            $(".errorMessage").text("");
+            $(".registerBox").fadeOut(300, function(){ $(this).remove();});
+          }
+        }
+        else
+        {
+
+            $(".errorMessage").css('display','block');
+            $(".errorMessage").text("Alle velden moeten worden ingevuld!");
+        }
+    });
+}
+
+// FUNCTION TO SHOW THE REGISTERBOX
+function showRegisterBox()
+{
+    $("#searchTrip").on('click', '#registerButton', function(){
+      $(".loginBox").fadeOut(300, function(){ $(this).remove();});
+      appendRegisterBox();
+    });
+}
+
+// FUNCTION CALLED TO LOG IN
+function login()
+{
+  $("#searchTrip").on('click', '#loginButton', function(){
+    var email = $("#userUsername").val();
+    var password = $("#userPassword").val();
+    // THIS IS WERE THE USERNAME AND PASSWORD HAVE TO BE CHECKED WITH
+    // THE CREDENTIALS IN THE DATABASE
+    // FOR TESTING PURPOSES THE ACCAPTED USERNAME AND PASSWORD ARE EMPTY
+   /* if(email != "" && password != "")
+    {*/
+      if(email == "" && password == "")
+      {
+        $(".errorMessage").css('display','none');
+        $(".errorMessage").text(""); 
+        $(".loginBox").fadeOut(300, function(){ $(this).remove();});
+        window.location.href = "results.html";
+      }
+      else
+      {
+        $(".errorMessage").css('display','block');
+        $(".errorMessage").text("Je e-mail en wachtwoord zijn niet corrent!");
+      }
+/*    }
+    else
+    {
+      $(".errorMessage").css('display','block');
+      $(".errorMessage").text("Alle velden moeten worden ingevuld!");
+    }*/
+  });
+}
+
+// FUNCTION CALLED TO APPEND THE LOGINBOX WHEN THE USER IS NOT LOGGED IN
+function appendLoginBox()
+{
+      var loginBox  =  "<div class='loginBox'>"
+                       + "<div class='row'>"
+                       + "     <div class='col-md-10 col-md-offset-1'>"
+                       + "         <span id='closeLoginImage'></span>"
+                       + "         <h1>Aanmelden</h1>"
+                       + "         <div class='row formGroup'>"
+                       + "             <div class='col-md-4'>"
+                       + "                 <label for='username'>E-mail</label>"
+                       + "                 <label for='username'>Wachtwoord</label>"
+                       + "             </div>"
+                       + "             <div class='col-md-8'>"
+                       + "                 <input name='username' type='text' id='userUsername'>"
+                       + "                 <input name='password' type='password' id='userPassword'>"
+                       + "             </div>"
+                       + "                 <input title='login' id='loginButton' type='button' value='Aanmelden'>"
+                       + "                 <p>of</p>"
+                       + "                 <input title='register' id='registerButton' type='button' value='Registreer'>"
+                       + "                 <p class='errorMessage'></p>"
+                       + "         </div>"
+                       + "     </div>"
+                       + "     <div class='col-md-1'></div>"
+                       + " </div>"
+                   + " </div>";
+
+    $("#searchTrip").append(loginBox);
+}
+
+// FUNCTION CALLED TO APPEND THE LOGINBOX WHEN THE USER IS NOT LOGGED IN
+function appendRegisterBox()
+{
+      var registerBox  =  "<div class='registerBox'>"
+                       + "<div class='row'>"
+                       + "     <div class='col-md-10 col-md-offset-1'>"
+                       + "         <span id='closeRegisterImage'></span>"
+                       + "         <h1>Aanmelden</h1>"
+                       + "         <div class='row formGroup'>"
+                       + "             <div class='col-md-4'>"
+                       + "                 <label for='username'>E-mail</label>"
+                       + "                 <label for='username'>Wachtwoord</label>"
+                       + "                 <label for='repeatPass'>Herhalen</label>"
+                       + "             </div>"
+                       + "             <div class='col-md-8'>"
+                       + "                 <input name='username' type='text' id='registerUsername'>"
+                       + "                 <input name='password' type='password' id='registerUserPassword'>"
+                       + "                 <input name='repeatPass' type='password' id='registerUserRepeatPassword'>"
+                       + "             </div>"
+                       + "                 <input title='register' id='registerUserButton' type='button' value='Registreer'>"
+                       + "                 <p class='errorMessage'></p>"
+                       + "                 <a class='greySubText' href='#''>Wachtwoord vergeten?</a>"
+                       + "         </div>"
+                       + "     </div>"
+                       + "     <div class='col-md-1'></div>"
+                       + " </div>"
+                   + " </div>";
+
+    $("#searchTrip").append(registerBox);
+}
+
+// FUNCTION TO ORGANIZE THE CATEGORY ICONS
+function initIsotopeCategories()
+{
+  $('.isotope').isotope({
+    itemSelector: '.item',
+    masonry: {
+      columnWidth: 100
+    }
+  });
+
+}
+
+// FUNCTION CALLED TO SWITCH CATEGORIES (RESULT PAGE)
+function switchCategory()
+{
+  // WHEN A CATEGORY IS CLICKED IS HAS BEEN GIVEN A YELLOW ICON = ACTIVE ICON
+  // WHEN IT IS ALREADY ACTIVE AND STILL CLICKED THEN IT HAS BEEN GIVEN THE REGULAR BLUE ICON
+  // TO INDICATE THAT THE CLICKED CATEGORY ISN'T ACTIVE ANYMORE
+   $("li.category").on('click', function (){
+    var elementClassList = $(this)[0].classList;
+    var category = $(this)[0].classList[1];
+
+    var imageUrlActive = "url('images/yellow_icons/" + category + ".png')";
+    var imageUrlNormal = "url('images/lightblue_icons/" + category + ".png')";
+    if(jQuery.inArray("active",$(this)[0].classList) > -1)
+    {
+      //$(this).css("background-image",imageUrlNormal);
+      $(this).removeClass(category + "Active");
+      $(this).removeClass("active");
+    }
+    else
+    {
+      //$(this).css("background-image",imageUrlActive);
+      $(this).addClass(category + "Active");
+      $(this).addClass("active");
+    }
+  });
+
+   // WHEN THE CURSOR ENTERS A CATEGORY, THE ICON DARKENS (ONLY IF THE CATEGORY ISN'T ACTIVE)
+   $("li.category").on('mouseenter', function (){
+    var elementClassList = $(this)[0].classList;
+    var category = $(this)[0].classList[1];
+    if(jQuery.inArray("active",$(this)[0].classList) <= -1)
+    {
+      //var category = $(this)[0].classList[1];
+      //var imageUrlHover = "url('images/blue_icons/" + category + ".png')";
+      //$(this).css("background-image",imageUrlHover);
+      $(this).addClass(category + "Hover");
+    }
+
+  });
+
+   // WHEN THE CURSOR LEAVES A CATEGORY? THE ICON BRIGHTENS (ONLY IS THE CATEGORY ISN'T ACTIVE)
+  $("li.category").on('mouseleave', function (){
+    var elementClassList = $(this)[0].classList;
+    var category = $(this)[0].classList[1];
+    if(jQuery.inArray("active",$(this)[0].classList) <= -1)
+    {
+      /*var elementClassList = $(this)[0].classList;
+      var category = $(this)[0].classList[1];
+      var imageUrlHover = "url('images/lightblue_icons/" + category + ".png')";
+      $(this).css("background-image",imageUrlHover);*/
+      $(this).removeClass(category + "Hover");
+    }
+  });
+}
+
+// FUNCTION TO EDIT THE TRIPNAME
+// NEEDS TO BE ALTERED FOR INSERT/UPDATE IN DATABASE
+function editTripName()
+{
+  $("#saveTrip").on('click', function(){
+    var newTripName = $("#editLocation").val();
+    //alert(newTripName);
+  });
 }
 
 

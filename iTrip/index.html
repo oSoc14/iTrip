@@ -10,7 +10,7 @@
     <header>
         <div id="regularNav" class="row">
             <div class="col-sm-2">
-                <a title="Home" id="homeButton" href="#">Home</a>
+                <a title="Home" id="homeButton" href="index.html">Home</a>
             </div>
             <div class="col-sm-6 col-sm-offset-4">
                 <ul class="languages">
@@ -21,7 +21,7 @@
                  <nav class="navigation">
                     <ul>
                         <li><a class="active" href="#">PLAN JE REIS</a></li>
-                        <li><a href="#">AANMELDEN</a></li>
+                        <li><a id="loginInLink" href="#">AANMELDEN</a></li>
                         <li><a href="#">CONTACT</a></li>
                     </ul>
                 </nav>
@@ -47,12 +47,14 @@
                         <input id="submitCurrentLocation" type="button">
                     </div>
                 </div>
+                <hr class="upper"/>
                 <div class="row">
                     <div id="sliderPart" class="col-sm-12">
                         <h2 id="radiusParagraph">Straal: <span id="radiusValue">25</span>km</h2>
                         <div id="slider"></div>
                     </div>
                 </div>
+                <hr class="lower"/>
                 <div class="row">
                     <div id="calendarPart" class="col-sm-12">
                         <h2>Datum</h2>
@@ -77,30 +79,64 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input id="searchTrip" type="button" value="zoeken">
+                        <input class="searchTrip" id="searchTrip" type="button" value="zoeken">
                     </div>
                 </div>
             </form>
         </div>    
         <div id="searchMap" class="col-md-9">
         </div>
-        <!-- <div class="welcomeBox ">
+
+<!--         <div class="loginBox ">
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <span id="closeImage"></span>
-                    <h1>Welkom bij iTrip</h1>
-                    <p>Plan je trip op voorhand of maak tijdens je reis gebruik van onze handige tool. Zo tonen we je de leukste activiteiten, interessantste musea en heerlijke restaurantjes en hotels.</p>
-                    <strong>Kortom, beleef een zorgeloze reis!</strong>
-                    <input title="Plan je reis" id="planTripButton" type="button" value="Ontdek iTrip">
-                    <p class="extraInfo">Opslaan kan enkel indien <a href="">aangemeld</a></p>
-                    <div class="downloadApp">
-                        <a id="iphoneApp" target="_blank" title="download app for iPhone" href="https://itunes.apple.com/nl/app/itrip-coast/id660310219?mt=8">download for iPhone</a>
-                        <a id="androidApp" target="_blank" title="download app for Android" href="https://play.google.com/store/apps/details?id=be.westtoer.itrip">download for Android</a>
+                    <h1>Aanmelden</h1>
+                    <div class="row formGroup">
+                        <div class="col-md-4">
+                            <label for="username">E-mail</label>
+                            <label for="username">Wachtwoord</label>
+                        </div>
+                        <div class="col-md-8">
+
+                            <input name="username" type="text" id="userUsername">
+                            <input name="password" type="password" id="userPassword">
+                        </div>
+
+                            <input title="login" id="loginButton" type="button" value="Aanmelden">
+                            <p>of</p>
+                            <input title="register" id="registerButton" type="button" value="Registreer">
+                            <p class="errorMessage"></p>
                     </div>
                 </div>
-            <div class="col-md-1"></div>
+                <div class="col-md-1"></div>
             </div>
         </div>   -->
+
+<!--         <div class="registerBox">
+            <div class="row">     
+                <div class="col-md-10 col-md-offset-1">         
+                    <span id="closeRegisterImage"></span>         
+                    <h1>Aanmelden</h1>         
+                    <div class="row formGroup">             
+                        <div class="col-md-4">                 
+                            <label for="username">E-mail</label>                 
+                            <label for="username">Wachtwoord</label>                 
+                            <label for="repeatPass">Herhalen</label>             
+                        </div>             
+                        <div class="col-md-8">                 
+                            <input name="username" type="text" id="registerUsername">                 
+                            <input name="password" type="password" id="registerUserPassword">                 <input name="repeatPass" type="password" id="registerUserRepeatPassword">         
+                        </div>                 
+                        <input title="register" id="registerUserButton" type="button" value="Registreer"> 
+                         <p class="errorMessage"></p>
+                        <a class="greySubText" href="#">Wachtwoord vergeten?</a>
+                    </div>     
+                </div>     
+                <div class="col-md-1"></div> 
+            </div> 
+        </div> -->
+
     </div>
 
 <script src="js/jquery-1.11.1.js"></script>
