@@ -13,6 +13,7 @@ html
 		{
 			#searchPanel
 			{
+				margin-top: 0; 
 				#searchPanelWrapper.extraStyleResultsSearchPanel
 				{
 					background: none;
@@ -213,7 +214,7 @@ html
 			#resultSection
 			{
 				background-color: #f4f8f9;
-				margin-top: -67px;
+				/* margin-top: -67px; */
 				border-left:2px solid  $mainBlueColor;
 
 				h2
@@ -248,43 +249,71 @@ html
 						border: none;
 					}
 
-
-
-						/* ---- isotope ---- */
-
-						* {
-						  -webkit-box-sizing: border-box;
-						     -moz-box-sizing: border-box;
-						          box-sizing: border-box;
-						}
-
-						.isotope {
-						  background: #DDD;
-						  max-width: 1200px;
-						}
-
-						/* clear fix */
-						.isotope:after {
-						  content: '';
-						  display: block;
-						  clear: both;
-						}
-
-						/* ---- .item ---- */
-
-						.item {
-						  float: left;
-						  width: 100px;
-						  height: 100px;
-						  background: #0D8;
-						  border: 2px solid #333;
-						  border-color: hsla(0, 0%, 0%, 0.7);
-						}
-
-						.item.width2 { width: 200px; }
-						.item.height2 { height: 200px; }
-
 				}
+
+					/* ---- .item ---- */
+
+						.item 
+						{
+						  width: 33.333%;
+						  padding: 10px;
+						  min-height: 100px;
+						  border-color: hsla(0, 0%, 0%, 0.7);
+
+						  .resultItem
+						  {
+						  	border: 1px solid #d4e1e5;
+						  	background: #ffffff;
+
+						  	.resultImage
+						  	{
+						  		width: 100%;
+						  	}
+
+						  	.resultSubText
+						  	{
+						  		padding: 6px;
+								margin: 0;
+								min-height: 65px;
+						  		.resultCategory
+						  		{
+						  			background-image: url('../../images/blue_icons/recreation.png');
+							  		background-repeat: no-repeat;
+							  		@include backgroundSize(5.0);
+							  		background-position: left center;
+							  		border: 1px solid #d4e1e5;
+							  		padding: 25px;
+									float: left;
+						  		}
+
+						  		.resultInfo
+						  		{
+						  			float: left;
+									margin: 0 16px;
+									font-family: $font-subText;
+									@include font-size(1.6);
+
+									h2
+									{
+										margin: 0;
+									}
+
+									.resultLocation
+									{
+										float: left;
+										color: $mainYellowColor;
+									}
+
+									.resultKm
+									{
+										float: left;
+										margin-left: 5px;
+									}
+						  		}
+						  	}
+						  }
+						}
+
 			}
 		}
 	}

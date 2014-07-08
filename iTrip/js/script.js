@@ -1,10 +1,19 @@
 $(document).ready( function (){
 
+  // LOAD STATIC EVENT RESULTS THROUGH A JSON FILE
+  loadEventResults();
+
   // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
-  $(".searchTrip").on('click', function(e){
+  $(".saveTrip").on('click', function(e){
     appendLoginBox();/*
     window.location.href = "results.html";
     e.preventDefault();*/
+  });
+
+  // TEMPORARY LINK TO NEXT RESULTS PAGE WHEN CLICKED ON SEARCH
+  $(".searchTrip").on('click', function(e){
+    window.location.href = "results.html";
+    e.preventDefault();
   });
 
   // TEMPORARY LINK TO PREVIOUS PAGE (HOME PAGE) WHEN "ZOEKOPDRACHT WIJZIGEN" IS CLICKED
@@ -57,8 +66,7 @@ $(document).ready( function (){
   // SEARCH FOR A CUSTOM LOCATION AND UPDATE THE GOOGLE MAP AND INPUT FIELD
   searchForCustomLocation();
 
-  // FUNCTION TO ORGANIZE THE CATEGORY ICONS
-  //initIsotopeCategories();
+
 
   // FUNCTION TO SWITCH CATEGORIES ON THE RESULT PAGE
   switchCategory();
@@ -344,8 +352,10 @@ function changeActiveMenuLink()
     $.each( $("nav.navigation a"), function( key, value ) {
       if($(this)[0].id == "loginInLink")
       {
+
+        $(".overlay").fadeIn(300);
         appendLoginBox();
-         login();
+        login();
       } 
       $(this).removeClass("active");
     });
@@ -392,7 +402,7 @@ function searchForCustomLocation()
 function removeLoginBoxBox()
 {
   $("#searchTrip").on('click', 'span#closeLoginImage', function (){
-    $(".loginBox").fadeOut(300, function(){ $(this).remove();});
+    $(".loginBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
   });
 }
 
@@ -400,7 +410,7 @@ function removeLoginBoxBox()
 function removeBoxRegisterBox()
 {
   $("#searchTrip").on('click', 'span#closeRegisterImage', function (){
-    $(".registerBox").fadeOut(300, function(){ $(this).remove();});
+    $(".registerBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove();});
   });
 }
 
@@ -435,7 +445,7 @@ function initializeWelcomeBox()
             appendWelcomeBox();
           else
           {
-              $(".overlay").fadeOut(300, function(){ $(this).remove();});
+              $(".overlay").fadeOut(300);
               $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
           }
         }
@@ -463,16 +473,16 @@ function checkIfWelcomeBoxMustShow()
         {
             var settings =  { settings : {"welcomeEnabled" : false}};
             $.cookie("iTripAccount", settings, { expires: 365 });
-            $(".overlay").fadeOut(300, function(){ $(this).remove();});
-            $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+            /*$(".overlay").fadeOut();*/
+            $(".welcomeBox").fadeOut(300, function(){ $(this).remove();$(".overlay").fadeOut();});
         }
         else
         {
           var cookie = $.cookie("iTripAccount");
           var settings =  { settings : {"welcomeEnabled" : false}};
           $.cookie("iTripAccount", settings, { expires: 365 });
-          $(".overlay").fadeOut(300, function(){ $(this).remove();});
-          $(".welcomeBox").fadeOut(300, function(){ $(this).remove();});
+          /*$(".overlay").fadeOut();*/
+          $(".welcomeBox").fadeOut(300, function(){ $(this).remove();$(".overlay").fadeOut();});
         }
     }
     else
@@ -564,6 +574,7 @@ function showRegisterBox()
 {
     $("#searchTrip").on('click', '#registerButton', function(){
       $(".loginBox").fadeOut(300, function(){ $(this).remove();});
+      $(".overlay").fadeIn(300);
       appendRegisterBox();
     });
 }
@@ -584,7 +595,7 @@ function login()
         $(".errorMessage").css('display','none');
         $(".errorMessage").text(""); 
         $(".loginBox").fadeOut(300, function(){ $(this).remove();});
-        window.location.href = "results.html";
+        window.location.href = "my_trips.html";
       }
       else
       {
@@ -661,17 +672,6 @@ function appendRegisterBox()
     $("#searchTrip").append(registerBox);
 }
 
-// FUNCTION TO ORGANIZE THE CATEGORY ICONS
-function initIsotopeCategories()
-{
-  $('.isotope').isotope({
-    itemSelector: '.item',
-    masonry: {
-      columnWidth: 100
-    }
-  });
-
-}
 
 // FUNCTION CALLED TO SWITCH CATEGORIES (RESULT PAGE)
 function switchCategory()
@@ -738,6 +738,58 @@ function editTripName()
   });
 }
 
+
+// LOAD STATIC EVENT RESULTS THROUGH A JSON FILE
+function loadEventResults()
+{
+  /*$("#").on('load', function(){
+
+  });*/
+
+var imageWidth = 0;
+
+ $.getJSON('data/Interest_points.json', function(data) {
+       //var resultArray = [];
+       $.each( data, function( key, val ) {
+        //var currentResult = [];
+        //console.log("key: " + key + ", value " + val);
+/*        currentResult.push(val.id);
+        currentResult.push(val.title);
+        currentResult.push(val.category);
+        currentResult.push(val.contact);
+        currentResult.push(val.descriptiontitle);
+        currentResult.push(val.description);
+        currentResult.push(val.image);*/
+
+        var resultItem =    "<div class='item'>"
+                        +        "<div class='resultItem'>"
+                        +            "<img src='images/static_data/"+ val.image + "' alt='" + val.title + "' class='resultImage image" + val.id + "'>"
+                        +            "<ul class='resultSubText'>"
+                        +                "<li class='resultCategory'></li>"
+                        +                "<li class='resultInfo'>"
+                        +                    "<h2 class='resultName'>" + val.title + "</h2>"
+                        +                    "<div class='resultLocation'>" + val.contact[0].city + "</div>"
+                        +                   "<div class='resultKm'>(16 km)</div>"
+                        +                "</li>"
+                        +            "</ul>"
+                        +        "</div>"
+                        +  "</div>"
+        $(".isotope").append(resultItem);
+        /*console.log($(".isotope").find(".image" + val.id).width());
+        imageWidth = $(".isotope").find(".image" + val.id).width();*/
+        //resultArray.push(currentResult);
+       });
+      // console.log(resultArray);
+  });
+
+  // FUNCTION TO ORGANIZE THE CATEGORY ICONS
+    $('.isotope').isotope({
+      itemSelector: '.item',
+      masonry: {
+      columnWidth: '.item'
+    },
+  });
+}
 
 
 

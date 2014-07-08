@@ -1,0 +1,33 @@
+#searchTrip
+{
+	.actionBar
+	{
+		float: right;
+		margin-top: -55px;
+
+		li
+		{
+			background-position: center center;
+			@include backgroundSize(3.0);
+			padding: 5px;
+			background-repeat: no-repeat;
+			float: left;
+			color: transparent;
+		}
+
+		li:hover
+		{
+			cursor: pointer;
+		}
+	}
+
+	.delete
+	{
+		background-image: url('../../images/placeholders/placeholders-38.png');
+	}
+
+	.add
+	{
+		background-image: url('../../images/placeholders/placeholders-36.png');
+	}
+}
