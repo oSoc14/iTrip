@@ -1,0 +1,78 @@
+[
+	{
+		"id": "1",
+		"title": "Broeltorens",
+		"category": "Bezoeken",
+		"contact": [
+			{
+			"street": "Broelkaai ",
+			"number": "62",
+			"city": "Kortrijk",
+			"postalcode": "8500",
+			"phone": "0900 72 63 86",
+			"mail": "info@broel.eu",
+			"site": "www.broel.eu"
+			}
+		],
+		"descriptiontitle": "De twee torens",
+		"description": "De broeltorens zijn twee torens in de stad Kortrijk en bevinden zich langs de Broelkaai en Verzetskaai. De beide torens met en brug over de rivier de Leie dateren uit de middeleeuwen en zijn een beschermd monument. De torens vormen een van de belangrijkste bezienswaardigheden en iconen van de stad en zijn samen met de Artillerietoren de enige overblijfselen van de middeleeuwse stadswallen omheen de oude stad.",
+		"image": "placeholder-17.jpg"
+	},
+	{
+		"id": "2",
+		"title": "Brooks Theater",
+		"category": "Recreatie",
+		"contact": [
+			{
+			"street": "Broelkaai ",
+			"number": "62",
+			"city": "Kortrijk",
+			"postalcode": "8500",
+			"phone": "0900 72 63 86",
+			"mail": "info@broel.eu",
+			"site": "www.broel.eu"
+			}
+		],
+		"descriptiontitle": "De twee torens",
+		"description": "De broeltorens zijn twee torens in de stad Kortrijk en bevinden zich langs de Broelkaai en Verzetskaai. De beide torens met en brug over de rivier de Leie dateren uit de middeleeuwen en zijn een beschermd monument. De torens vormen een van de belangrijkste bezienswaardigheden en iconen van de stad en zijn samen met de Artillerietoren de enige overblijfselen van de middeleeuwse stadswallen omheen de oude stad.",
+		"image": "placeholder-18.jpg"
+	},
+	{
+		"id": "3",
+		"title": "Broelmuseum",
+		"category": "Recreatie",
+		"contact": [
+			{
+			"street": "Broelkaai ",
+			"number": "62",
+			"city": "Kortrijk",
+			"postalcode": "8500",
+			"phone": "0900 72 63 86",
+			"mail": "info@broel.eu",
+			"site": "www.broel.eu"
+			}
+		],
+		"descriptiontitle": "De twee torens",
+		"description": "De broeltorens zijn twee torens in de stad Kortrijk en bevinden zich langs de Broelkaai en Verzetskaai. De beide torens met en brug over de rivier de Leie dateren uit de middeleeuwen en zijn een beschermd monument. De torens vormen een van de belangrijkste bezienswaardigheden en iconen van de stad en zijn samen met de Artillerietoren de enige overblijfselen van de middeleeuwse stadswallen omheen de oude stad.",
+		"image": "placeholder-19.jpg"
+	},
+	{
+		"id": "4",
+		"title": "Holiday Inn",
+		"category": "Logies",
+		"contact": [
+			{
+			"street": "Broelkaai ",
+			"number": "62",
+			"city": "Kortrijk",
+			"postalcode": "8500",
+			"phone": "0900 72 63 86",
+			"mail": "info@broel.eu",
+			"site": "www.broel.eu"
+			}
+		],
+		"descriptiontitle": "De twee torens",
+		"description": "De broeltorens zijn twee torens in de stad Kortrijk en bevinden zich langs de Broelkaai en Verzetskaai. De beide torens met en brug over de rivier de Leie dateren uit de middeleeuwen en zijn een beschermd monument. De torens vormen een van de belangrijkste bezienswaardigheden en iconen van de stad en zijn samen met de Artillerietoren de enige overblijfselen van de middeleeuwse stadswallen omheen de oude stad.",
+		"image": "placeholder-20.jpg"
+	}
+]
