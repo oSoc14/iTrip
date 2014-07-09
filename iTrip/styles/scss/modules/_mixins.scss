@@ -28,6 +28,7 @@ $mainYellowColor: #ffbb00;
 @mixin blueButtonClass()
 {
 	text-align: center;
+	box-shadow: 3px 3px 0 #000000;
 	display: inline-block;
 	border: none;
 	background-image: url('../../images/travel_button.png');
@@ -50,5 +51,46 @@ $mainYellowColor: #ffbb00;
 {
 	background-size: ($sizeValue * 10) + px;
   	background-size: $sizeValue + rem;
+}
+
+@mixin resultItemCategory()
+{
+	.everything
+	{
+		background-image: url('../../images/lightblue_icons/everything.png');
+		color: #3562A9;
+	}
+
+	.visit
+	{
+		background-image: url('../../images/lightblue_icons/visit.png');
+		color: #3562A9;
+	}
+
+	.adventure
+	{
+		background-image: url('../../images/lightblue_icons/adventure.png');
+		color: #3562A9;
+	}
+
+	.recreation
+	{
+		background-image: url('../../images/lightblue_icons/recreation.png');
+		color: #3562A9;
+	}
+
+	.lodging
+	{
+		background-image: url('../../images/lightblue_icons/lodging.png');
+		color: #3562A9;
+	}
+
+	.gastronomy
+	{
+		background-image: url('../../images/lightblue_icons/gastronomy.png');
+		color: #3562A9;
+	}
+
+
 }
 

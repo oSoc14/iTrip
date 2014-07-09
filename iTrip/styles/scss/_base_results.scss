@@ -9,6 +9,7 @@ html
 {
 	body
 	{
+		overflow: hidden;
 		#searchTrip
 		{
 			#searchPanel
@@ -96,11 +97,13 @@ html
 									cursor: pointer;
 								}
 
-								.everything
+								@include resultItemCategory();
+
+/* 								.everything
 								{
 									background-image: url('../../images/lightblue_icons/everything.png');
 									color: #3562A9;
-								}
+								} */
 
 								.everythingHover//.everything:hover
 								{
@@ -114,11 +117,11 @@ html
 									color: $mainYellowColor;
 								}
 
-								.visit
+/* 								.visit
 								{
 									background-image: url('../../images/lightblue_icons/visit.png');
 									color: #3562A9;
-								}
+								} */
 
 								.visitHover//.visit:hover
 								{
@@ -132,11 +135,11 @@ html
 									color: $mainYellowColor;
 								}
 
-								.adventure
+/* 								.adventure
 								{
 									background-image: url('../../images/lightblue_icons/adventure.png');
 									color: #3562A9;
-								}
+								} */
 
 								.adventureHover//.adventure:hover
 								{
@@ -150,11 +153,11 @@ html
 									color: $mainYellowColor;
 								}
 
-								.recreation
+/* 								.recreation
 								{
 									background-image: url('../../images/lightblue_icons/recreation.png');
 									color: #3562A9;
-								}
+								} */
 
 								.recreationHover//.recreation:hover
 								{
@@ -168,11 +171,11 @@ html
 									color: $mainYellowColor;
 								}
 
-								.lodging
+/* 								.lodging
 								{
 									background-image: url('../../images/lightblue_icons/lodging.png');
 									color: #3562A9;
-								}
+								} */
 
 								.lodgingHover//.lodging:hover
 								{
@@ -186,11 +189,11 @@ html
 									color: $mainYellowColor;
 								}
 
-								.gastronomy
+/* 								.gastronomy
 								{
 									background-image: url('../../images/lightblue_icons/gastronomy.png');
 									color: #3562A9;
-								}
+								} */
 
 								.gastronomyHover//.gastronomy:hover
 								{
@@ -216,6 +219,8 @@ html
 				background-color: #f4f8f9;
 				/* margin-top: -67px; */
 				border-left:2px solid  $mainBlueColor;
+				overflow: scroll;
+						height: 100%;
 
 				h2
 				{
@@ -252,7 +257,10 @@ html
 				}
 
 					/* ---- .item ---- */
-
+					.isotope
+					{
+						
+						margin-bottom: 20px;
 						.item 
 						{
 						  width: 33.333%;
@@ -270,6 +278,11 @@ html
 						  		width: 100%;
 						  	}
 
+						  	.resultSubText:hover
+						  	{
+						  		cursor:pointer;
+						  	}
+
 						  	.resultSubText
 						  	{
 						  		padding: 6px;
@@ -277,14 +290,18 @@ html
 								min-height: 65px;
 						  		.resultCategory
 						  		{
-						  			background-image: url('../../images/blue_icons/recreation.png');
+						  			//background-image: url('../../images/blue_icons/recreation.png');
 							  		background-repeat: no-repeat;
 							  		@include backgroundSize(5.0);
 							  		background-position: left center;
 							  		border: 1px solid #d4e1e5;
 							  		padding: 25px;
 									float: left;
+
 						  		}
+
+
+									@include resultItemCategory();
 
 						  		.resultInfo
 						  		{
@@ -313,6 +330,7 @@ html
 						  	}
 						  }
 						}
+					}
 
 			}
 		}

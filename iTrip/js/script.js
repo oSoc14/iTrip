@@ -1,7 +1,25 @@
 $(document).ready( function (){
 
-  // LOAD STATIC EVENT RESULTS THROUGH A JSON FILE
-  loadEventResults();
+  // FUCNTION TO ENABLE ISOTOPE
+    var qsRegex;
+    $('.isotope').isotope({
+        itemSelector: '.item',
+        // layout mode options
+        masonry: {
+          columnWidth: '.item'
+        },
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      });
+
+
+  // FUCTION CALLED WHILE TYPING IN THE INPUTFIELD TO SEARCH FOR EVENT
+  var quicksearch = $('#inputEvent').keyup( debounce( function() {
+    qsRegex = new RegExp( quicksearch.val(), 'gi' );
+    $(".isotope").isotope();
+  }, 100 ) );
+
 
   // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
   $(".saveTrip").on('click', function(e){
@@ -66,13 +84,15 @@ $(document).ready( function (){
   // SEARCH FOR A CUSTOM LOCATION AND UPDATE THE GOOGLE MAP AND INPUT FIELD
   searchForCustomLocation();
 
-
-
   // FUNCTION TO SWITCH CATEGORIES ON THE RESULT PAGE
   switchCategory();
 
   // FUNCTION TO RENAME YOUR TRIP
   editTripName();
+
+  // FUNCTION CALLED WHEN CLICKED AN A RESULT
+  // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
+  showResultDetail()
 
   // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
   //overlayLoseFocus();
@@ -679,25 +699,58 @@ function switchCategory()
   // WHEN A CATEGORY IS CLICKED IS HAS BEEN GIVEN A YELLOW ICON = ACTIVE ICON
   // WHEN IT IS ALREADY ACTIVE AND STILL CLICKED THEN IT HAS BEEN GIVEN THE REGULAR BLUE ICON
   // TO INDICATE THAT THE CLICKED CATEGORY ISN'T ACTIVE ANYMORE
+  var selectedCategory;
+
+
    $("li.category").on('click', function (){
+
+
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
-
+    selectedCategory = category;
     var imageUrlActive = "url('images/yellow_icons/" + category + ".png')";
     var imageUrlNormal = "url('images/lightblue_icons/" + category + ".png')";
+    //console.log($("#" + category));
     if(jQuery.inArray("active",$(this)[0].classList) > -1)
     {
       //$(this).css("background-image",imageUrlNormal);
+
       $(this).removeClass(category + "Active");
       $(this).removeClass("active");
     }
     else
     {
-      //$(this).css("background-image",imageUrlActive);
-      $(this).addClass(category + "Active");
-      $(this).addClass("active");
+      $(".categories li").each(function(key, value){
+        console.log(value.id);
+        $("#" + value.id).removeClass("active");
+        $("#" + value.id).removeClass(value.id + "Active");
+    });
+
+    $(this).addClass("active");
+    $(this).addClass($(this)[0].id + "Active");
+    
+
     }
+
+
+    
+      // SETTING THE FILTERING ON THE RESULTS WHEN CLICKED ON A CATEGORY
+       if($(this).hasClass("active"))
+        {
+          var filterValue = $(this).attr('data-filter');
+          $(".isotope").isotope({ filter: filterValue });
+        }
+        else
+        {
+
+          $(".isotope").isotope({ filter: "*" });
+        }     
   });
+
+/*  $(".categories li").on('click', function(){
+
+    
+  });*/
 
    // WHEN THE CURSOR ENTERS A CATEGORY, THE ICON DARKENS (ONLY IF THE CATEGORY ISN'T ACTIVE)
    $("li.category").on('mouseenter', function (){
@@ -726,6 +779,7 @@ function switchCategory()
       $(this).removeClass(category + "Hover");
     }
   });
+
 }
 
 // FUNCTION TO EDIT THE TRIPNAME
@@ -739,58 +793,27 @@ function editTripName()
 }
 
 
-// LOAD STATIC EVENT RESULTS THROUGH A JSON FILE
-function loadEventResults()
-{
-  /*$("#").on('load', function(){
-
-  });*/
-
-var imageWidth = 0;
-
- $.getJSON('data/Interest_points.json', function(data) {
-       //var resultArray = [];
-       $.each( data, function( key, val ) {
-        //var currentResult = [];
-        //console.log("key: " + key + ", value " + val);
-/*        currentResult.push(val.id);
-        currentResult.push(val.title);
-        currentResult.push(val.category);
-        currentResult.push(val.contact);
-        currentResult.push(val.descriptiontitle);
-        currentResult.push(val.description);
-        currentResult.push(val.image);*/
-
-        var resultItem =    "<div class='item'>"
-                        +        "<div class='resultItem'>"
-                        +            "<img src='images/static_data/"+ val.image + "' alt='" + val.title + "' class='resultImage image" + val.id + "'>"
-                        +            "<ul class='resultSubText'>"
-                        +                "<li class='resultCategory'></li>"
-                        +                "<li class='resultInfo'>"
-                        +                    "<h2 class='resultName'>" + val.title + "</h2>"
-                        +                    "<div class='resultLocation'>" + val.contact[0].city + "</div>"
-                        +                   "<div class='resultKm'>(16 km)</div>"
-                        +                "</li>"
-                        +            "</ul>"
-                        +        "</div>"
-                        +  "</div>"
-        $(".isotope").append(resultItem);
-        /*console.log($(".isotope").find(".image" + val.id).width());
-        imageWidth = $(".isotope").find(".image" + val.id).width();*/
-        //resultArray.push(currentResult);
-       });
-      // console.log(resultArray);
-  });
-
-  // FUNCTION TO ORGANIZE THE CATEGORY ICONS
-    $('.isotope').isotope({
-      itemSelector: '.item',
-      masonry: {
-      columnWidth: '.item'
-    },
-  });
+// debounce so filtering doesn't happen every millisecond
+function debounce( fn, threshold ) {
+  var timeout;
+  return function debounced() {
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
+    function delayed() {
+      fn();
+      timeout = null;
+    }
+    timeout = setTimeout( delayed, threshold || 100 );
+  }
 }
 
-
-
-
+// FUNCTION CALLED WHEN CLICKED AN A RESULT
+// THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
+function showResultDetail()
+{
+  $(".item .resultSubText").on('click', function(){
+      console.log($(this));
+     // console.log($(".isotope").index($(this)));
+  });
+}

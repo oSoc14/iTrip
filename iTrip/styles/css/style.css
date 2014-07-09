@@ -1047,6 +1047,8 @@ html {
     html body #searchTrip #searchPanel {
       /* margin-top: -10px; */
       margin-top: -13px;
+      overflow: scroll;
+      height: 100%;
       /* overflow: scroll; */ }
       html body #searchTrip #searchPanel #searchPanelWrapper {
         margin-top: -5px;
@@ -1082,22 +1084,30 @@ html {
         html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart {
           /* margin-top: 20px; */
           margin-top: -20px;
-          margin-bottom: 19px; }
-          html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider {
-            margin-top: 5px;
-            height: 0; }
-            html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider .ui-slider-handle {
-              background: #f6f6f6 url("../../images/slider.png") 50% 50% no-repeat;
-              padding: 10px;
-              background-size: 20px;
-              border: none;
-              border-radius: 9px;
-              margin: -5px; }
-            html body #searchTrip #searchPanel #searchPanelWrapper #sliderPart #slider .ui-widget-header {
-              border: 1px solid #e78f08;
-              background: #f6f6f6 url("../../images/custom_slider_background.png") 50% 50% repeat-x;
-              color: #ffffff;
-              font-weight: bold; }
+          margin-bottom: 19px;
+          /* #slider
+						{
+							margin-top: 5px;
+							height: 0;
+
+							.ui-slider-handle
+							{
+								background: #f6f6f6 url("../../images/slider.png") 50% 50% no-repeat;
+								padding: 10px;
+								background-size: 20px;
+								border:none;
+								border-radius: 9px;
+								margin: -5px;
+							}
+
+							.ui-widget-header
+							{
+								border: 1px solid #e78f08;
+								background: #f6f6f6 url("../../images/custom_slider_background.png") 50% 50% repeat-x;
+								color: #ffffff;
+								font-weight: bold;
+							}
+						} */ }
         html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart {
           margin-top: -20px; }
           html body #searchTrip #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate {
@@ -1221,6 +1231,7 @@ html {
           font-size: 28px;
           font-size: 2.8rem;
           text-align: center;
+          box-shadow: 3px 3px 0 #000000;
           display: inline-block;
           border: none;
           background-image: url('../../images/travel_button.png');
@@ -1237,6 +1248,8 @@ html {
           width: 95%;
           border-radius: 5px; }
     html body #searchTrip .googleMap {
+      overflow: scroll;
+      height: 100%;
       margin: 0;
       margin-top: -67px;
       padding: 0px; }
@@ -1309,6 +1322,7 @@ html {
       html body #searchTrip .loginBox #registerButton, html body #searchTrip .loginBox #loginButton, html body #searchTrip .loginBox #registerUserButton, html body #searchTrip .registerBox #registerButton, html body #searchTrip .registerBox #loginButton, html body #searchTrip .registerBox #registerUserButton {
         background-size: 244px;
         text-align: center;
+        box-shadow: 3px 3px 0 #000000;
         display: inline-block;
         border: none;
         background-image: url('../../images/travel_button.png');
@@ -1373,6 +1387,7 @@ html {
         font-size: 40px;
         font-size: 4rem;
         text-align: center;
+        box-shadow: 3px 3px 0 #000000;
         display: inline-block;
         border: none;
         background-image: url('../../images/travel_button.png');
@@ -1458,49 +1473,52 @@ html {
       background: #ffffff 50% top repeat-x;
       color: #333333; }
 
-html body #searchTrip #searchPanel {
-  margin-top: 0; }
-  html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel {
-    background: none; }
-    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel h2 {
-      font-size: 20px;
-      font-family: 'DINNextLTPro-MediumCond', sans-serif; }
-    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel input#editLocation {
-      border-radius: 5px;
-      border: 2px solid #033b93;
-      color: #ffbb00;
-      width: 100%;
-      /* margin:0 15%; */
-      padding: 5px;
-      font-size: 20px;
-      font-size: 2rem;
-      font-family: 'DINNextLTPro-Condensed', sans-serif; }
-    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel #saveTrip, html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .editTrip {
-      /* width: 100%; */
-      font-size: 20px;
-      font-size: 2rem;
-      text-align: center;
-      display: inline-block;
-      border: none;
-      background-image: url('../../images/travel_button.png');
-      background-position: top center;
-      background-repeat: no-repeat;
-      /* 	background-size: 244px; */
-      background-color: #ffffff;
-      color: #ffffff;
-      font-family: 'HelveticaRounded-BoldCond', sans-serif;
-      font-family: 'HelveticaRounded-BoldCond', sans-serif;
-      font-family: 'DINNextLTPro-MediumCond', sans-serif;
-      padding: 5px 18px;
-      margin: 10px 0;
-      width: 100%;
-      border-radius: 5px; }
-    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle {
-      background-color: #ffffff;
-      margin: 10px 0;
-      padding: 5px 0; }
-      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
-        /* .item
+html body {
+  overflow: hidden; }
+  html body #searchTrip #searchPanel {
+    margin-top: 0; }
+    html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel {
+      background: none; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel h2 {
+        font-size: 20px;
+        font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel input#editLocation {
+        border-radius: 5px;
+        border: 2px solid #033b93;
+        color: #ffbb00;
+        width: 100%;
+        /* margin:0 15%; */
+        padding: 5px;
+        font-size: 20px;
+        font-size: 2rem;
+        font-family: 'DINNextLTPro-Condensed', sans-serif; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel #saveTrip, html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .editTrip {
+        /* width: 100%; */
+        font-size: 20px;
+        font-size: 2rem;
+        text-align: center;
+        box-shadow: 3px 3px 0 #000000;
+        display: inline-block;
+        border: none;
+        background-image: url('../../images/travel_button.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+        /* 	background-size: 244px; */
+        background-color: #ffffff;
+        color: #ffffff;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        font-family: 'DINNextLTPro-MediumCond', sans-serif;
+        padding: 5px 18px;
+        margin: 10px 0;
+        width: 100%;
+        border-radius: 5px; }
+      html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle {
+        background-color: #ffffff;
+        margin: 10px 0;
+        padding: 5px 0; }
+        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
+          /* .item
 							{
 								width: 50%;
 							}
@@ -1520,137 +1538,190 @@ html body #searchTrip #searchPanel {
 
 								.item.h2 { height: 100px; }
 								.item.h3 { height: 130px; }
-								.item.h4 { height: 180px; }*/ }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
-          background-position: top center;
-          background-repeat: no-repeat;
-          background-size: 55px;
-          background-size: 5.5rem;
-          padding: 45px 8px 0px 8px;
-          float: left;
-          width: 30%;
-          margin: 0 1.5%;
-          text-align: center; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category:hover {
-          cursor: pointer; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everything {
-          background-image: url('../../images/lightblue_icons/everything.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingHover {
-          background-image: url('../../images/blue_icons/everything.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingActive {
-          background-image: url('../../images/yellow_icons/everything.png');
-          color: #ffbb00; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visit {
-          background-image: url('../../images/lightblue_icons/visit.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitHover {
-          background-image: url('../../images/blue_icons/visit.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitActive {
-          background-image: url('../../images/yellow_icons/visit.png');
-          color: #ffbb00; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventure {
-          background-image: url('../../images/lightblue_icons/adventure.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureHover {
-          background-image: url('../../images/blue_icons/adventure.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureActive {
-          background-image: url('../../images/yellow_icons/adventure.png');
-          color: #ffbb00; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreation {
-          background-image: url('../../images/lightblue_icons/recreation.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationHover {
-          background-image: url('../../images/blue_icons/recreation.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationActive {
-          background-image: url('../../images/yellow_icons/recreation.png');
-          color: #ffbb00; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodging {
-          background-image: url('../../images/lightblue_icons/lodging.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingHover {
-          background-image: url('../../images/blue_icons/lodging.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingActive {
-          background-image: url('../../images/yellow_icons/lodging.png');
-          color: #ffbb00; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomy {
-          background-image: url('../../images/lightblue_icons/gastronomy.png');
-          color: #3562A9; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyHover {
-          background-image: url('../../images/blue_icons/gastronomy.png');
-          color: #033b93; }
-        html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyActive {
-          background-image: url('../../images/yellow_icons/gastronomy.png');
-          color: #ffbb00; }
-html body #searchTrip #resultSection {
-  background-color: #f4f8f9;
-  /* margin-top: -67px; */
-  border-left: 2px solid #033b93;
-  /* ---- .item ---- */ }
-  html body #searchTrip #resultSection h2 {
-    font-size: 20px;
-    font-size: 2rem;
-    font-family: 'DINNextLTPro-MediumCond', sans-serif;
-    margin-top: 20px; }
-  html body #searchTrip #resultSection .searchExtraStyle {
-    margin-top: 10px; }
-    html body #searchTrip #resultSection .searchExtraStyle #inputEvent {
-      border-radius: 5px 0 0 5px;
-      border: 2px solid #033b93;
-      float: left;
-      padding: 5px;
-      width: 227px; }
-    html body #searchTrip #resultSection .searchExtraStyle #searchEvent {
-      border-radius: 0 5px 5px 0;
-      background-image: url('../../images/search.png');
-      background-position: top 4px center;
-      background-repeat: no-repeat;
-      background-size: 23px;
-      padding: 7px 20px;
-      background-color: #033b93;
-      border: none; }
-  html body #searchTrip #resultSection .item {
-    width: 33.333%;
-    padding: 10px;
-    min-height: 100px;
-    border-color: rgba(0, 0, 0, 0.7); }
-    html body #searchTrip #resultSection .item .resultItem {
-      border: 1px solid #d4e1e5;
-      background: #ffffff; }
-      html body #searchTrip #resultSection .item .resultItem .resultImage {
-        width: 100%; }
-      html body #searchTrip #resultSection .item .resultItem .resultSubText {
-        padding: 6px;
-        margin: 0;
-        min-height: 65px; }
-        html body #searchTrip #resultSection .item .resultItem .resultSubText .resultCategory {
-          background-image: url('../../images/blue_icons/recreation.png');
-          background-repeat: no-repeat;
-          background-size: 50px;
-          background-size: 5rem;
-          background-position: left center;
-          border: 1px solid #d4e1e5;
-          padding: 25px;
-          float: left; }
-        html body #searchTrip #resultSection .item .resultItem .resultSubText .resultInfo {
-          float: left;
-          margin: 0 16px;
-          font-family: 'DINNextLTPro-Condensed', sans-serif;
-          font-size: 16px;
-          font-size: 1.6rem; }
-          html body #searchTrip #resultSection .item .resultItem .resultSubText .resultInfo h2 {
-            margin: 0; }
-          html body #searchTrip #resultSection .item .resultItem .resultSubText .resultInfo .resultLocation {
+								.item.h4 { height: 180px; }*/
+          /* 								.everything
+								{
+									background-image: url('../../images/lightblue_icons/everything.png');
+									color: #3562A9;
+								} */
+          /* 								.visit
+								{
+									background-image: url('../../images/lightblue_icons/visit.png');
+									color: #3562A9;
+								} */
+          /* 								.adventure
+								{
+									background-image: url('../../images/lightblue_icons/adventure.png');
+									color: #3562A9;
+								} */
+          /* 								.recreation
+								{
+									background-image: url('../../images/lightblue_icons/recreation.png');
+									color: #3562A9;
+								} */
+          /* 								.lodging
+								{
+									background-image: url('../../images/lightblue_icons/lodging.png');
+									color: #3562A9;
+								} */
+          /* 								.gastronomy
+								{
+									background-image: url('../../images/lightblue_icons/gastronomy.png');
+									color: #3562A9;
+								} */ }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: 55px;
+            background-size: 5.5rem;
+            padding: 45px 8px 0px 8px;
             float: left;
+            width: 30%;
+            margin: 0 1.5%;
+            text-align: center; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category:hover {
+            cursor: pointer; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everything {
+            background-image: url('../../images/lightblue_icons/everything.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visit {
+            background-image: url('../../images/lightblue_icons/visit.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventure {
+            background-image: url('../../images/lightblue_icons/adventure.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreation {
+            background-image: url('../../images/lightblue_icons/recreation.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodging {
+            background-image: url('../../images/lightblue_icons/lodging.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomy {
+            background-image: url('../../images/lightblue_icons/gastronomy.png');
+            color: #3562A9; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingHover {
+            background-image: url('../../images/blue_icons/everything.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingActive {
+            background-image: url('../../images/yellow_icons/everything.png');
             color: #ffbb00; }
-          html body #searchTrip #resultSection .item .resultItem .resultSubText .resultInfo .resultKm {
-            float: left;
-            margin-left: 5px; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitHover {
+            background-image: url('../../images/blue_icons/visit.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visitActive {
+            background-image: url('../../images/yellow_icons/visit.png');
+            color: #ffbb00; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureHover {
+            background-image: url('../../images/blue_icons/adventure.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventureActive {
+            background-image: url('../../images/yellow_icons/adventure.png');
+            color: #ffbb00; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationHover {
+            background-image: url('../../images/blue_icons/recreation.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreationActive {
+            background-image: url('../../images/yellow_icons/recreation.png');
+            color: #ffbb00; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingHover {
+            background-image: url('../../images/blue_icons/lodging.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodgingActive {
+            background-image: url('../../images/yellow_icons/lodging.png');
+            color: #ffbb00; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyHover {
+            background-image: url('../../images/blue_icons/gastronomy.png');
+            color: #033b93; }
+          html body #searchTrip #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomyActive {
+            background-image: url('../../images/yellow_icons/gastronomy.png');
+            color: #ffbb00; }
+  html body #searchTrip #resultSection {
+    background-color: #f4f8f9;
+    /* margin-top: -67px; */
+    border-left: 2px solid #033b93;
+    overflow: scroll;
+    height: 100%;
+    /* ---- .item ---- */ }
+    html body #searchTrip #resultSection h2 {
+      font-size: 20px;
+      font-size: 2rem;
+      font-family: 'DINNextLTPro-MediumCond', sans-serif;
+      margin-top: 20px; }
+    html body #searchTrip #resultSection .searchExtraStyle {
+      margin-top: 10px; }
+      html body #searchTrip #resultSection .searchExtraStyle #inputEvent {
+        border-radius: 5px 0 0 5px;
+        border: 2px solid #033b93;
+        float: left;
+        padding: 5px;
+        width: 227px; }
+      html body #searchTrip #resultSection .searchExtraStyle #searchEvent {
+        border-radius: 0 5px 5px 0;
+        background-image: url('../../images/search.png');
+        background-position: top 4px center;
+        background-repeat: no-repeat;
+        background-size: 23px;
+        padding: 7px 20px;
+        background-color: #033b93;
+        border: none; }
+    html body #searchTrip #resultSection .isotope {
+      margin-bottom: 20px; }
+      html body #searchTrip #resultSection .isotope .item {
+        width: 33.333%;
+        padding: 10px;
+        min-height: 100px;
+        border-color: rgba(0, 0, 0, 0.7); }
+        html body #searchTrip #resultSection .isotope .item .resultItem {
+          border: 1px solid #d4e1e5;
+          background: #ffffff; }
+          html body #searchTrip #resultSection .isotope .item .resultItem .resultImage {
+            width: 100%; }
+          html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText:hover {
+            cursor: pointer; }
+          html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText {
+            padding: 6px;
+            margin: 0;
+            min-height: 65px; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .resultCategory {
+              background-repeat: no-repeat;
+              background-size: 50px;
+              background-size: 5rem;
+              background-position: left center;
+              border: 1px solid #d4e1e5;
+              padding: 25px;
+              float: left; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .everything {
+              background-image: url('../../images/lightblue_icons/everything.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .visit {
+              background-image: url('../../images/lightblue_icons/visit.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .adventure {
+              background-image: url('../../images/lightblue_icons/adventure.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .recreation {
+              background-image: url('../../images/lightblue_icons/recreation.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .lodging {
+              background-image: url('../../images/lightblue_icons/lodging.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .gastronomy {
+              background-image: url('../../images/lightblue_icons/gastronomy.png');
+              color: #3562A9; }
+            html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
+              float: left;
+              margin: 0 16px;
+              font-family: 'DINNextLTPro-Condensed', sans-serif;
+              font-size: 16px;
+              font-size: 1.6rem; }
+              html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .resultInfo h2 {
+                margin: 0; }
+              html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultLocation {
+                float: left;
+                color: #ffbb00; }
+              html body #searchTrip #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultKm {
+                float: left;
+                margin-left: 5px; }
 
 #searchTrip .actionBar {
   float: right;
