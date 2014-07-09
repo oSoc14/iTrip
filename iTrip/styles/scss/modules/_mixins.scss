@@ -90,7 +90,15 @@ $mainYellowColor: #ffbb00;
 		background-image: url('../../images/lightblue_icons/gastronomy.png');
 		color: #3562A9;
 	}
+}
 
-
+@mixin smallblueButton()
+{
+	background-position: top 4px center;
+	background-repeat: no-repeat;
+	background-size: 23px;
+	padding: 7px 20px;
+	background-color: #033b93;
+	border: none;
 }
 

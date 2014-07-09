@@ -1648,7 +1648,8 @@ html body {
       font-family: 'DINNextLTPro-MediumCond', sans-serif;
       margin-top: 20px; }
     html body #searchTrip #resultSection .searchExtraStyle {
-      margin-top: 10px; }
+      margin-top: 10px;
+      right: -70px; }
       html body #searchTrip #resultSection .searchExtraStyle #inputEvent {
         border-radius: 5px 0 0 5px;
         border: 2px solid #033b93;
@@ -1656,15 +1657,95 @@ html body {
         padding: 5px;
         width: 227px; }
       html body #searchTrip #resultSection .searchExtraStyle #searchEvent {
-        border-radius: 0 5px 5px 0;
-        background-image: url('../../images/search.png');
+        /* border-radius: 0 5px 5px 0;
+						background-image: url('../../images/search.png');
+						background-position: top 4px center;
+						background-repeat: no-repeat;
+						background-size: 23px;
+						padding: 7px 20px;
+						background-color:  $mainBlueColor;
+						border: none; */
         background-position: top 4px center;
         background-repeat: no-repeat;
         background-size: 23px;
         padding: 7px 20px;
         background-color: #033b93;
-        border: none; }
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background-image: url('../../images/search.png'); }
+      html body #searchTrip #resultSection .searchExtraStyle .addToMyTrips {
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-size: 34px;
+        border-radius: 5px;
+        float: left;
+        padding: 7px 17px;
+        margin-right: 10px;
+        border: none;
+        visibility: hidden;
+        background-color: #033b93;
+        background-image: url('../../images/placeholders/placeholders-36.png'); }
+    html body #searchTrip #resultSection #resultDetail {
+      margin-bottom: 20px;
+      color: #ffffff; }
+      html body #searchTrip #resultSection #resultDetail .result {
+        width: 50%;
+        padding: 10px;
+        min-height: 100px;
+        border-color: rgba(0, 0, 0, 0.7); }
+      html body #searchTrip #resultSection #resultDetail .generalDetails {
+        background-color: #033b93;
+        background-image: url('../../images/white_icons/recreation.png');
+        background-position: right 15px top 15px;
+        background-size: 45px;
+        background-size: 4.5rem;
+        background-repeat: no-repeat;
+        padding: 0 20px 20px 20px; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails h1 {
+          color: #ffbb00;
+          font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultTelephone, html body #searchTrip #resultSection #resultDetail .generalDetails .resultAddress, html body #searchTrip #resultSection #resultDetail .generalDetails .resultWebsite, html body #searchTrip #resultSection #resultDetail .generalDetails .resultGeneralHours, html body #searchTrip #resultSection #resultDetail .generalDetails .resultEmail {
+          background-repeat: no-repeat;
+          padding-left: 28px; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultAddress {
+          background-image: url('../../images/placeholders/placeholders-35.png');
+          background-position: left center;
+          background-size: 16px;
+          background-size: 1.6rem; }
+          html body #searchTrip #resultSection #resultDetail .generalDetails .resultAddress p {
+            margin: -10px 0 10px 0; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultTelephone {
+          background-image: url('../../images/placeholders/placeholders-34.png');
+          background-size: 13px;
+          background-size: 1.3rem; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultWebsite {
+          background-image: url('../../images/placeholders/placeholders-33.png');
+          background-size: 19px;
+          background-size: 1.9rem;
+          background-position: center left; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultGeneralHours {
+          background-image: url('../../images/placeholders/opening.png');
+          background-size: 19px;
+          background-size: 1.9rem;
+          background-position: center left; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails .resultEmail {
+          background-image: url('../../images/placeholders/placeholders-32.png');
+          background-size: 19px;
+          background-size: 1.9rem;
+          background-position: center left; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails ul.firstUl {
+          margin-right: 80px; }
+        html body #searchTrip #resultSection #resultDetail .generalDetails ul {
+          float: left;
+          font-family: 'DINNextLTPro-Condensed', sans-serif;
+          font-size: 20px;
+          font-size: 2rem; }
+      html body #searchTrip #resultSection #resultDetail .resultExtraInfo {
+        color: #033b93; }
+      html body #searchTrip #resultSection #resultDetail .resultDescription {
+        color: #033b93; }
     html body #searchTrip #resultSection .isotope {
+      display: none;
       margin-bottom: 20px; }
       html body #searchTrip #resultSection .isotope .item {
         width: 33.333%;

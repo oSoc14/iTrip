@@ -1,25 +1,11 @@
 $(document).ready( function (){
 
   // FUCNTION TO ENABLE ISOTOPE
-    var qsRegex;
-    $('.isotope').isotope({
-        itemSelector: '.item',
-        // layout mode options
-        masonry: {
-          columnWidth: '.item'
-        },
-        filter: function() {
-          return qsRegex ? $(this).text().match( qsRegex ) : true;
-        }
-      });
-
-
   // FUCTION CALLED WHILE TYPING IN THE INPUTFIELD TO SEARCH FOR EVENT
-  var quicksearch = $('#inputEvent').keyup( debounce( function() {
-    qsRegex = new RegExp( quicksearch.val(), 'gi' );
-    $(".isotope").isotope();
-  }, 100 ) );
+  loadIsotopeForResults();
 
+  // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
+  loadIsotopeForResultDetail();
 
   // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
   $(".saveTrip").on('click', function(e){
@@ -792,6 +778,43 @@ function editTripName()
   });
 }
 
+// FUNCTION TO LOAD ISOTOPE FOR RESULTS
+function loadIsotopeForResults()
+{
+      var qsRegex;
+    $('.isotope').isotope({
+        itemSelector: '.item',
+        // layout mode options
+        masonry: {
+          columnWidth: '.item'
+        },
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      });
+
+
+
+  var quicksearch = $('#inputEvent').keyup( debounce( function() {
+    qsRegex = new RegExp( quicksearch.val(), 'gi' );
+    $(".isotope").isotope();
+  }, 100 ) );
+
+}
+
+// FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
+function loadIsotopeForResultDetail()
+{
+      var qsRegex;
+    $('#resultDetail').isotope({
+        itemSelector: '.result',
+        // layout mode options
+        masonry: {
+          columnWidth: '.result'
+        }
+    });
+}
+
 
 // debounce so filtering doesn't happen every millisecond
 function debounce( fn, threshold ) {
@@ -812,8 +835,8 @@ function debounce( fn, threshold ) {
 // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
 function showResultDetail()
 {
-  $(".item .resultSubText").on('click', function(){
+  $(".resultSubText").on('click', function(){
       console.log($(this));
-     // console.log($(".isotope").index($(this)));
+      
   });
 }
