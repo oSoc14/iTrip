@@ -78,7 +78,43 @@ $(document).ready( function (){
 
   // FUNCTION CALLED WHEN CLICKED AN A RESULT
   // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
-  showResultDetail()
+  //showResultDetail();
+
+  // WHEN CLICKED ON A RESULT, THAT DIV DISAPPEARS AND THE DETAILS SHOW
+  $("#resultDetail").hide();
+  $(".resultSubText").on("click", function(){
+      $("#inputEvent").hide();
+      $("#searchEvent").hide();
+      $(".isotope").hide();
+      $("#resultDetail").show();
+      $(".addToMyTrips").show();
+      $(".shareTrip").show();
+      $("#resultcount").hide();
+      $("#backToResults").show();
+      $(".searchExtraStyle").css("right","-220px");
+        var currentPage = window.location.pathname.split("/")[2];
+        if(currentPage == "results.html")
+        {
+          var street = $("p.street").text();
+          var city = $("p.city").text();
+          var address = city + ", " + street;
+          setLocationOnMap(address);
+          //if($(".isotope").css("display") == "none")
+          //$(".searchExtraStyle ").css("right","-23px");
+        }
+  });
+
+  $("#backToResults").on('click', function(){
+      $("#inputEvent").show();
+      $("#searchEvent").show();
+      $(".isotope").show();
+      $("#resultDetail").hide();
+      $(".addToMyTrips").hide();
+      $(".shareTrip").hide();
+      $("#resultcount").show();
+      $("#backToResults").hide();
+      $(".searchExtraStyle").css("right","-32px");
+  });
 
   // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
   //overlayLoseFocus();
@@ -240,7 +276,7 @@ function initialize(longitude, latitude, useLonLat)
       null,
       /* Offset x axis 33% of overall size, Offset y axis 100% of overall size */
       new google.maps.Point(10, 60), 
-      new google.maps.Size(35, 49)
+      new google.maps.Size(29, 39)
     ); 
 
   // THE GOOGLE MAP ALSO HAS A CUSTOM STYLE
@@ -327,7 +363,7 @@ function initialize(longitude, latitude, useLonLat)
         if (results[1]) {
           map.setZoom(11);
           marker = customMarker;
-          console.log(results[1].address_components[1].long_name);
+          //console.log(results[1].address_components[1].long_name);
           // IF THE CHOSENCOORDINATES ARE THE DEFAULT ONES THAN THE CITY
           // IS ON ANOTHER INDEX OF THE RESULTS ARRAY
           if(chosenLocLatitude == 51.200000 && chosenLocLongitude == 2.900000)
@@ -386,22 +422,20 @@ function searchForCurrentLocation()
 function searchForCustomLocation()
 {
   $("#submitCustomLocation").on('click', function(){
-    var geocoder = new google.maps.Geocoder();
     var address = $("#customLocation").val();
-    geocoder.geocode( { 'address': address}, function(results, status) {
-      if (status == google.maps.GeocoderStatus.OK)
-      {
-          // do something with the geocoded result
-          //
-          var addressLat = results[0].geometry.location.k;
-          var adressLon = results[0].geometry.location.B;
-          //console.log("addressLat: " + addressLat + " adressLon " + adressLon);
-          // PASS ALONG THE PARAMETERS TO UPDATE THE MAP
-          initialize(adressLon, addressLat, true);
-      }
-    });
-
+      setLocationOnMap(address);
   });
+
+/*  var currentPage = window.location.pathname.split("/")[2];
+  if(currentPage == "results.html")
+  {
+    var street = $("p.street").text();
+    var city = $("p.city").text();
+    var address = city + ", " + street;
+    setLocationOnMap(address);
+    //if($(".isotope").css("display") == "none")
+    //$(".searchExtraStyle ").css("right","-23px");
+  }*/
 }
 
   // REMOVE THE OVERLAY AND LOGIN WHEN THE CLOSEBUTTON IS CLICKED
@@ -686,10 +720,11 @@ function switchCategory()
   // WHEN IT IS ALREADY ACTIVE AND STILL CLICKED THEN IT HAS BEEN GIVEN THE REGULAR BLUE ICON
   // TO INDICATE THAT THE CLICKED CATEGORY ISN'T ACTIVE ANYMORE
   var selectedCategory;
-
+  var joinedFilters;
+    var filters = [];
+   
 
    $("li.category").on('click', function (){
-
 
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
@@ -703,34 +738,63 @@ function switchCategory()
 
       $(this).removeClass(category + "Active");
       $(this).removeClass("active");
+
     }
     else
     {
-      $(".categories li").each(function(key, value){
-        console.log(value.id);
-        $("#" + value.id).removeClass("active");
-        $("#" + value.id).removeClass(value.id + "Active");
-    });
+      if($(this)[0].id == "everything")
+      { 
+        $(".categories li").each(function(key, value){
+          //console.log(value.id);
+          $("#" + value.id).removeClass("active");
+          $("#" + value.id).removeClass(value.id + "Active");
+        });
+      }
+      else
+      {
+        $("#everything").removeClass("active");
+        $("#everything").removeClass("everythingActive");
+      }
 
-    $(this).addClass("active");
-    $(this).addClass($(this)[0].id + "Active");
-    
-
+      $(this).addClass("active");
+      $(this).addClass($(this)[0].id + "Active");
     }
 
 
-    
+    var currentDataFilter = $(this).attr('data-filter');
+    console.log("currentDataFilter: " + currentDataFilter);
+    if(jQuery.inArray(currentDataFilter,filters) > -1)
+      filters.pop(currentDataFilter);
+    else
+      filters.push(currentDataFilter);
+
+    console.log(filters);
+    console.log("filtersize " + filters.length);
+    joinedFilters = filters.join(', ');
+    console.log("joinedfilters " + joinedFilters);
       // SETTING THE FILTERING ON THE RESULTS WHEN CLICKED ON A CATEGORY
-       if($(this).hasClass("active"))
+    if($(this).hasClass("everything"))
+    {
+
+      $(".isotope").isotope({ filter: "*" });
+        filters = [];
+        joinedFilters = "";
+    }
+    else
+     {
+        $(".isotope").isotope({ filter: joinedFilters });
+     } 
+
+   /*    if($(this).hasClass("active"))
         {
           var filterValue = $(this).attr('data-filter');
-          $(".isotope").isotope({ filter: filterValue });
+          $(".isotope").isotope({ filter: joinedFilters });
         }
         else
         {
 
           $(".isotope").isotope({ filter: "*" });
-        }     
+        }    */ 
   });
 
 /*  $(".categories li").on('click', function(){
@@ -782,6 +846,8 @@ function editTripName()
 function loadIsotopeForResults()
 {
       var qsRegex;
+
+
     $('.isotope').isotope({
         itemSelector: '.item',
         // layout mode options
@@ -799,6 +865,14 @@ function loadIsotopeForResults()
     qsRegex = new RegExp( quicksearch.val(), 'gi' );
     $(".isotope").isotope();
   }, 100 ) );
+
+    $("#searchEvent").on('click', function(){
+          var fullsearch = $("#inputEvent").val();
+            qsRegex = new RegExp( fullsearch, 'gi' );
+              $(".isotope").isotope();
+
+
+    });
 
 }
 
@@ -833,10 +907,31 @@ function debounce( fn, threshold ) {
 
 // FUNCTION CALLED WHEN CLICKED AN A RESULT
 // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
-function showResultDetail()
+/*function showResultDetail()
 {
   $(".resultSubText").on('click', function(){
       console.log($(this));
       
   });
+}*/
+
+// FUCTION TO BE CALLED TO SEARCH FOR A CUSTOM LOCATION
+// AND SHOW IT ON A GOOGLE MAP
+function setLocationOnMap(address)
+{
+    var geocoder = new google.maps.Geocoder();
+    var address = address;//$("#customLocation").val();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK)
+      {
+          // do something with the geocoded result
+          //
+          var addressLat = results[0].geometry.location.k;
+          var adressLon = results[0].geometry.location.B;
+          //console.log("addressLat: " + addressLat + " adressLon " + adressLon);
+          // PASS ALONG THE PARAMETERS TO UPDATE THE MAP
+          initialize(adressLon, addressLat, true);
+      }
+    });
+
 }

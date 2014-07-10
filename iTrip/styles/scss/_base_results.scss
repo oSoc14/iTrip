@@ -220,19 +220,34 @@ html
 				/* margin-top: -67px; */
 				border-left:2px solid  $mainBlueColor;
 				overflow: scroll;
-						height: 100%;
+				height: 100%;
 
 				h2
 				{
-					@include font-size(2.0);
+					@include font-size(2.2);
 					font-family: $font-title;
 					margin-top: 20px;
+				}
+
+				#backToResults 
+				{
+					background-image: url('../../images/back.png');
+					background-repeat: no-repeat;
+					background-position: left center;
+					text-indent: 15px;
+					display: none;
+				}
+
+				#backToResults:hover
+				{
+					cursor: pointer;
+					text-decoration: underline;
 				}
 
 				.searchExtraStyle
 				{	
 					margin-top:10px;
-					right: -70px;
+					right: -32px;
 
 					#inputEvent
 					{
@@ -258,20 +273,36 @@ html
 						background-image: url('../../images/search.png');
 					}
 
-					.addToMyTrips
+					.resultButtonClass
 					{
-						//@include smallblueButton();
 						background-position: top center;
 						background-repeat: no-repeat;
 						background-size: 34px;
 						border-radius: 5px;
+						background-color: #033b93;
+					}
+
+					.addToMyTrips
+					{
+						//@include smallblueButton();
+						display: none;
 						float: left;
 						padding: 7px 17px;
 						margin-right: 10px;
 						border:none;
-						visibility: hidden; //displayed on the results details pages
-						background-color: #033b93;
+						//visibility: hidden; //displayed on the results details pages
 						background-image: url('../../images/placeholders/placeholders-36.png');
+					}
+
+					.shareTrip
+					{
+						display: none;
+						float: left;
+						padding: 7px 17px;
+						margin-right: 10px;
+						border:none;
+						//visibility: hidden; //displayed on the results details pages
+						background-image: url('../../images/placeholders/placeholders-37.png');
 					}
 
 				}
@@ -279,8 +310,9 @@ html
 				#resultDetail
 				{
 
-					margin-bottom: 20px;
+					margin-bottom: 70px;
 					color: #ffffff;
+					/* display: none; */
 
 					.result 
 					{
@@ -292,6 +324,8 @@ html
 
 					.generalDetails
 					{
+
+						border: 1px solid #d4e1e5;
 						h1
 						{
 							color: $mainYellowColor;
@@ -362,23 +396,111 @@ html
 						background-position: right 15px top 15px;
 						@include backgroundSize(4.5);
 						background-repeat: no-repeat;
-						padding: 0 20px 20px 20px;
+						padding: 0 20px 0 20px;
+
+					}
+
+
+					#searchMap
+					{
+						height: 15%;
+						width: 50%;
 					}
 
 					.resultExtraInfo
 					{
 						color: $mainBlueColor;
+						padding: 0 10px 10px 10px;
+
+						.resultPicture
+						{
+							width: 100%;
+						}
+
+						.resultSubInfo
+						{
+							background-image: url('../../images/placeholders/placeholders-27.png');
+							background-position: left 20px center;
+							background-repeat: no-repeat;
+							padding: 50px 10%;
+							background-color: #ffffff;
+							border: 1px solid #d4e1e5;
+							position: relative;
+
+							img
+							{
+								float: left;
+								padding: 10px 20px 10px 20px;
+							}
+
+							.resultOpeningHours:first-child
+							{
+								margin-left: 40px;
+							}
+
+							.resultOpeningHours
+							{
+								float: left;
+								margin: -24px 0 -24px 0;
+
+								.openingDay
+								{
+									font-family: $font-button;
+									@include font-size(1.2);
+									margin-right: 5px;
+									margin-left: 15px;
+								}
+
+								.openingHour
+								{
+									font-family: $font-subText;
+									@include font-size(1.6);
+								}
+							}
+
+							p
+							{
+								font-family: $font-subText;
+								color: #d8e1e5;position: absolute;
+								bottom: 2px;
+								display: block;
+								right: 25px;
+							}
+						}
+
+						.resultExtraPictures
+						{
+							background-color: #ffffff;
+							border: 1px solid #d4e1e5;
+							width: 100%;
+							display: inline-block;
+
+							li
+							{
+								float: left;
+								margin: 2.4%;
+								img
+								{
+
+								}
+							}
+						}
 					}
 
 					.resultDescription
 					{
 						color: $mainBlueColor;
+						font-family: $font-regularText;
+						@include font-size(2.2);
+						border: 1px solid #d4e1e5;
+						background-color: #ffffff;
+						margin-top: 15px;
 					}
 				}
 					/* ---- .item ---- */
 					.isotope
 					{
-						display: none; // TEMPORARY FOR PREVIEWING THE DETAILS DIV
+						/* display: none; */ // TEMPORARY FOR PREVIEWING THE DETAILS DIV
 						margin-bottom: 20px;
 						.item 
 						{
@@ -425,7 +547,8 @@ html
 						  		.resultInfo
 						  		{
 						  			float: left;
-									margin: 0 16px;
+									margin: 9px 10px;
+									line-height: 20px;
 									font-family: $font-subText;
 									@include font-size(1.6);
 

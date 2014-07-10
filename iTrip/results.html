@@ -67,9 +67,11 @@
         </div> 
         <div id="resultSection" class="col-md-9 resultPage">
             <div class="row rowStyle">
-                    <h2 class="col-md-2">Resultaten (6)</h2>
-                    <div class="searchExtraStyle col-md-5 col-md-offset-5">
-                        <input class="addToMyTrips" type="button">
+                    <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
+                    <h2 id="backToResults" class="col-md-2">Reis: Kortrijk</h2>
+                    <div class="searchExtraStyle col-md-4 col-md-offset-6">
+                        <input class="resultButtonClass addToMyTrips" type="button">
+                        <input class="resultButtonClass shareTrip" type="button">
                         <input id="inputEvent" type="text">
                         <input id="searchEvent" type="button">
                     </div>
@@ -80,10 +82,8 @@
                     <h1>Broeltorens</h1>
                     <ul class="firstUl">
                         <li class="resultAddress">
-                            <!-- <p class="resultStreet">Broelkaai 62</p>
-                            <p class="resultCity">8500 Kortrijk</p> -->
-                            <p>Broelkaai 62</p>
-                            <p>8500 Kortrijk</p>
+                            <p class="street">Broelkaai 62</p>
+                            <p class="city">8500 Kortrijk</p>
                         </li>
                         <li class="resultTelephone">0900 72 63 86</li>
                     </ul>
@@ -92,23 +92,46 @@
                         <li class="resultWebsite">www.broel.eu</li>
                         <li class="resultGeneralHours">10:00 - 18:00</li>
                     </ul>
-                    <div class="resultMap"></div>
                 </div>
-                    <div class="result resultExtraInfo">
-                        <img src="images/static_data/placeholders-18.png" alt="picture" title="picture" class="resultPicture" />
-                        <div class="resultSubInfo">
-                            <img src="images/placeholders/placeholders-27.png" alt="openhours" title="openHours">
-                            <ul class="resultOpeningHours">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                        </div>
+                <div class="result resultExtraInfo">
+                    <img src="images/static_data/placeholders-18.png" alt="picture" title="picture" class="resultPicture" />
+                    <div class="resultSubInfo">
+                        <!-- <img src="images/placeholders/placeholders-27.png" alt="openhours" title="openHours"> -->
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">MA</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">DI</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">WO</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">DO</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">VR</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">ZA</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">ZO</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <p>Gesloten op feestdagen</p>
                     </div>
-                    <div class="result resultDescription">
-                        <h2>De twee torens</h2>
-                        <p>De Broeltorens zijn twee torens in de stad Kortrijk en
+                    <ul class="resultExtraPictures">
+                        <li>
+                            <img src="images/static_data/placeholders-23.png" alt="pic23">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-24.png" alt="pic24">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-25.png" alt="pic25">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-29.png" alt="pic29">
+                        </li>
+                    </ul>
+                </div>
+                <div class="result" id="searchMap">
+                </div>
+                <div class="result resultDescription">
+                    <h2>De twee torens</h2>
+                    <p>De Broeltorens zijn twee torens in de stad Kortrijk en
                             bevinden zich langs de Broelkaai en Verzetskaai. De beide
                             torens met een brug over de rivier de Leie dateren uit de
                             middeleeuwen en zijn een beschermd monument.
@@ -116,9 +139,9 @@
                             bezienswaardigheden en iconen van de stad en zijn
                             samen met de Artillerietoren de enige overblijfselen van
                             de middeleeuwse stadswallen omheen de oude stad.
-                        </p>        
-                    </div>
-             </div>
+                    </p>        
+                </div>
+            </div>
 
                 <div class="isotope">
                      <div class="item visitCat" data-category="visit">
@@ -147,7 +170,7 @@
                                 </ul>
                             </div>
                       </div>
-                    <div class="item recreationCat" data-category="recreation">
+                    <div  class="item recreationCat" data-category="recreation">
                             <div class="resultItem">
                                 <img src="images/static_data/placeholders-19.png" alt="" class="resultImage">
                                 <ul class="resultSubText">

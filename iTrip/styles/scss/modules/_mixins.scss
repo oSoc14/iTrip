@@ -102,3 +102,9 @@ $mainYellowColor: #ffbb00;
 	border: none;
 }
 
+@mixin textIndentation($sizeValue)
+{
+	text-indent: ($sizeValue * 10) + px;
+  	text-indent:  $sizeValue + rem;
+}
+
