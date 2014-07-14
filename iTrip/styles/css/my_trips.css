@@ -1,0 +1,39 @@
+article{
+	background-color:#fff;
+	margin:10px auto;
+	padding:10px;
+}
+article img{
+	float:left;
+	margin: 0 10px;
+}
+article h2{
+	margin: -2px 0 -19px 0;
+	color: #033b93;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif;
+    font-size:1.5em;
+}
+article p{
+	color:#bfbfbf;
+	margin-right:0;
+}
+article .arrow{
+	margin:-40px 10px 0 0;
+	height:20px;
+}
+
+/*Selected article*/
+article.active{
+	background-color:#033b93;
+}
+article.active h2{
+	margin: -2px 0 -19px 0;
+	color: #ffbb00;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif;
+    font-size:1.5em;
+}
+@media (max-width: 960px){
+	#searchPanel{
+		height: 50% !important;
+	}
+}

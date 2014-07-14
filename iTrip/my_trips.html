@@ -1,0 +1,388 @@
+<html>
+
+<head>
+  <title>iTrip</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="styles/css/reset.css">
+  <link rel="stylesheet" href="styles/css/style.css">
+  <link rel="stylesheet" href="styles/css/jquery-ui.css">
+  <link rel="stylesheet" href="styles/css/my_trips.css">
+</head>
+
+<body>
+
+  <header>
+    <div id="regularNav" class="row">
+      <div class="col-sm-2">
+        <a title="Home" id="homeButton" href="index.html">Home</a>
+      </div>
+      <div class="col-sm-6 col-sm-offset-4">
+        <ul class="languages">
+          <li><a class="english" href="#">EN /</a>
+          </li>
+          <li><a class="dutch activeLanguage" href="#">NL /</a>
+          </li>
+          <li><a class="french" href="#"> FR</a>
+          </li>
+        </ul>
+        <nav class="navigation">
+          <ul>
+            <li><a href="index.html">PLAN JE REIS</a>
+            </li>
+            <li><a class="active" href="my_trips.html">MIJN REIZEN</a>
+            </li>
+            <li><a id="logoutLink" href="#">AFMELDEN</a>
+            </li>
+            <li><a href="#">CONTACT</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  <div id="searchTrip" class="row">
+    <div id="searchPanel" class="col-md-3">
+      <h1 class="title">Mijn reizen
+        <div class="pull-right">
+          <input type="image" src="images/placeholders/placeholders-36.png" onclick="gotoAdd()">
+          <input type="image" src="images/placeholders/placeholders-37.png">
+          <input type="image" src="images/placeholders/placeholders-38.png" onclick="startDelete(this)">
+        </div>
+      </h1>
+      <article id="trip1" onclick="changeTrip(this)">
+        <p>
+          <img src="images/placeholders/placeholders-29.png" alt="icon">
+        </p>
+        <div>
+          <h2>Oostende</h2>
+          <p>16/08/2014 - 16/08/2014</p>
+          <p>
+            <img class="pull-right arrow" src="images/placeholders/placeholders-39.png" alt="an arrow">
+          </p>
+        </div>
+      </article>
+      <article id="trip2" class="active" onclick="changeTrip(this)">
+        <p>
+          <img src="images/placeholders/placeholders-30.png" alt="icon">
+        </p>
+        <div>
+          <h2>Koksijde</h2>
+          <p>16/08/2014 - 16/08/2014</p>
+          <p>
+            <img class="pull-right arrow" src="images/placeholders/placeholders-39.png" alt="an arrow">
+          </p>
+        </div>
+      </article>
+      <article id="trip3" onclick="changeTrip(this)">
+        <p>
+          <img src="images/placeholders/placeholders-29.png" alt="icon">
+        </p>
+        <div>
+          <h2>Knokke</h2>
+          <p>16/08/2014 - 16/08/2014</p>
+          <p>
+            <img class="pull-right arrow" src="images/placeholders/placeholders-39.png" alt="an arrow">
+          </p>
+        </div>
+      </article>
+      <article id="trip4" onclick="changeTrip(this)">
+        <p>
+          <img src="images/placeholders/placeholders-29.png" alt="icon">
+        </p>
+        <div>
+          <h2>Duinkerke</h2>
+          <p>16/08/2014 - 16/08/2014</p>
+          <p>
+            <img class="pull-right arrow" src="images/placeholders/placeholders-39.png" alt="an arrow">
+          </p>
+        </div>
+      </article>
+      <article id="trip5" onclick="changeTrip(this)">
+        <p>
+          <img src="images/placeholders/placeholders-29.png" alt="icon">
+        </p>
+        <div>
+          <h2>De Haan</h2>
+          <p>16/08/2014 - 16/08/2014</p>
+          <p>
+            <img class="pull-right arrow" src="images/placeholders/placeholders-39.png" alt="an arrow">
+          </p>
+        </div>
+      </article>
+    </div>
+    <div id="resultSection" class="col-md-9 resultPage">
+            <div class="row rowStyle">
+                    <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
+                    <h2 id="backToResults" class="col-md-2">Reis: Kortrijk</h2>
+                    <div class="searchExtraStyle col-md-4 col-md-offset-6">
+                        <input class="resultButtonClass addToMyTrips" type="button">
+                        <input class="resultButtonClass shareTrip" type="button">
+                        <input id="inputEvent" type="text">
+                        <input id="searchEvent" type="button">
+                    </div>
+             </div>
+
+             <div id="resultDetail">
+                <div class="result generalDetails">
+                    <h1>Broeltorens</h1>
+                    <ul class="firstUl">
+                        <li class="resultAddress">
+                            <p class="street">Broelkaai 62</p>
+                            <p class="city">8500 Kortrijk</p>
+                        </li>
+                        <li class="resultTelephone">0900 72 63 86</li>
+                    </ul>
+                    <ul>
+                        <li class="resultEmail">info@broel.eu</li>
+                        <li class="resultWebsite">www.broel.eu</li>
+                        <li class="resultGeneralHours">10:00 - 18:00</li>
+                    </ul>
+                </div>
+                <div class="result resultExtraInfo">
+                    <img src="images/static_data/placeholders-18.png" alt="picture" title="picture" class="resultPicture" />
+                    <div class="resultSubInfo">
+                        <!-- <img src="images/placeholders/placeholders-27.png" alt="openhours" title="openHours"> -->
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">MA</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">DI</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">WO</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">DO</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">VR</span><span class="openingHour">10:30-18:00</span></li>
+                            <li><span class="openingDay">ZA</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <ul class="resultOpeningHours">
+                            <li><span class="openingDay">ZO</span><span class="openingHour">10:30-18:00</span></li>
+                        </ul>
+                        <p>Gesloten op feestdagen</p>
+                    </div>
+                    <ul class="resultExtraPictures">
+                        <li>
+                            <img src="images/static_data/placeholders-23.png" alt="pic23">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-24.png" alt="pic24">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-25.png" alt="pic25">
+                        </li>
+                        <li>
+                            <img src="images/static_data/placeholders-29.png" alt="pic29">
+                        </li>
+                    </ul>
+                </div>
+                <div class="result" id="searchMap">
+                </div>
+                <div class="result resultDescription">
+                    <h2>De twee torens</h2>
+                    <p>De Broeltorens zijn twee torens in de stad Kortrijk en
+                            bevinden zich langs de Broelkaai en Verzetskaai. De beide
+                            torens met een brug over de rivier de Leie dateren uit de
+                            middeleeuwen en zijn een beschermd monument.
+                            De torens vormen een van de belangrijkste
+                            bezienswaardigheden en iconen van de stad en zijn
+                            samen met de Artillerietoren de enige overblijfselen van
+                            de middeleeuwse stadswallen omheen de oude stad.
+                    </p>        
+                </div>
+            </div>
+
+      <div class="isotope">
+        <div class="item visitCat" data-category="visit">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-17.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory visit"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item adventureCat" data-category="adventure">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-18.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory adventure"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Tree Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item recreationCat" data-category="recreation">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-19.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory recreation"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">ABC</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item lodgingCat" data-category="lodging">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-20.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory lodging"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item gastronomyCat" data-category="gastronomy">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-21.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory gastronomy"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item gastronomyCat" data-category="gastronomy">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-22.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory gastronomy"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item adventureCat" data-category="adventure">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-23.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory adventure"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item visitCat" data-category="visit">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-17.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory visit"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item lodgingCat" data-category="lodging">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-18.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory lodging"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item lodgingCat" data-category="lodging">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-19.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory lodging"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item recreationCat" data-category="recreation">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-20.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory recreation"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item visitCat" data-category="visit">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-21.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory visit"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item adventureCat" data-category="adventure">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-22.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory adventure"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="item adventureCat" data-category="adventure">
+          <div class="resultItem">
+            <img src="images/static_data/placeholders-23.png" alt="" class="resultImage">
+            <ul class="resultSubText">
+              <li class="resultCategory adventure"></li>
+              <li class="resultInfo">
+                <h2 class="resultName">Brooks Theater</h2>
+                <div class="resultLocation">Oostende</div>
+                <div class="resultKm">(16 km)</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/jquery-1.11.1.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+  <script src="js/jquery.cookie.js"></script>
+  <script src="js/isotope.pkgd.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/my_trips.js"></script>
+</body>
+
+</html>
