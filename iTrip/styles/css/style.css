@@ -1310,8 +1310,8 @@ html {
       background-color: #ffffff;
       /* width: 33%;
 				margin: 0% 37%; */
-      width: 33%;
-      margin: 0% 33.5%;
+      width: 36%;
+      margin: 0% 32%;
       padding: 15px 5px 5px 5px;
       position: fixed;
       color: #033b93;
@@ -1345,10 +1345,10 @@ html {
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 20px;
-        padding: 10px 12px;
+        padding: 15px;
         position: absolute;
-        top: -10px;
-        right: -36px; }
+        top: -5px;
+        right: -25px; }
       html body #searchTripPart .loginBox #closeImage:hover, html body #searchTripPart .loginBox #closeLoginImage:hover, html body #searchTripPart .loginBox #closeRegisterImage:hover, html body #searchTripPart .registerBox #closeImage:hover, html body #searchTripPart .registerBox #closeLoginImage:hover, html body #searchTripPart .registerBox #closeRegisterImage:hover {
         cursor: pointer; }
       html body #searchTripPart .loginBox input, html body #searchTripPart .registerBox input {
@@ -1356,7 +1356,7 @@ html {
         border: 2px solid #033b93;
         display: block;
         padding: 5px;
-        width: 200px;
+        width: 95%;
         font-size: 20px;
         font-size: 2rem;
         font-family: 'DINNextLTPro-Condensed', sans-serif;
@@ -1365,7 +1365,7 @@ html {
       html body #searchTripPart .loginBox input[type=text], html body #searchTripPart .loginBox input[type=password], html body #searchTripPart .registerBox input[type=text], html body #searchTripPart .registerBox input[type=password] {
         color: #ffbb00; }
       html body #searchTripPart .loginBox #registerButton, html body #searchTripPart .loginBox #loginButton, html body #searchTripPart .loginBox #registerUserButton, html body #searchTripPart .registerBox #registerButton, html body #searchTripPart .registerBox #loginButton, html body #searchTripPart .registerBox #registerUserButton {
-        background-size: 244px;
+        background-size: 100%;
         text-align: center;
         box-shadow: 3px 3px 0 #000000;
         display: inline-block;
@@ -1380,9 +1380,12 @@ html {
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-size: 20px;
         font-size: 2rem;
-        margin-right: 13px; }
+        background-position: center center;
+        /* margin-right: 13px; */ }
       html body #searchTripPart .loginBox label, html body #searchTripPart .registerBox label {
-        display: block;
+        display: inline-block;
+        width: 78px;
+        text-align: right;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         /* margin: 20px 0; */
         padding: 17px 0;
@@ -1946,6 +1949,34 @@ html body {
 #searchTrip .add {
   background-image: url('../../images/placeholders/placeholders-36.png'); }
 
+@media only screen and (max-width: 430px) {
+  html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
+    /* label
+				 	{
+				 		@include font-size(1.2);
+				 		width: auto;
+				 	} */
+    /* firefox 19+ */
+    /* ie */ }
+    html body #searchTripPart .loginBox ::-webkit-input-placeholder, html body #searchTripPart .registerBox ::-webkit-input-placeholder {
+      font-size: 13px;
+      font-size: 1.3rem; }
+    html body #searchTripPart .loginBox ::-moz-placeholder, html body #searchTripPart .registerBox ::-moz-placeholder {
+      font-size: 13px;
+      font-size: 1.3rem; }
+    html body #searchTripPart .loginBox :-ms-input-placeholder, html body #searchTripPart .registerBox :-ms-input-placeholder {
+      font-size: 13px;
+      font-size: 1.3rem; }
+    html body #searchTripPart .loginBox input:-moz-placeholder, html body #searchTripPart .registerBox input:-moz-placeholder {
+      font-size: 13px;
+      font-size: 1.3rem; }
+    html body #searchTripPart .loginBox h1, html body #searchTripPart .registerBox h1 {
+      font-size: 18px;
+      font-size: 1.8rem; }
+    html body #searchTripPart .loginBox #loginButton, html body #searchTripPart .loginBox #registerButton, html body #searchTripPart .registerBox #loginButton, html body #searchTripPart .registerBox #registerButton {
+      font-size: 15px;
+      font-size: 1.5rem; } }
+
 @media only screen and (max-width: 768px) {
   html body {
     overflow: visible;
@@ -2002,4 +2033,15 @@ html body {
         top: 0;
         width: 100%;
         text-align: center;
-        margin: 0; } }
+        margin: 0; }
+      html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
+        width: 60%;
+        margin: 0% 20%; }
+    html body #ui-datepicker-div {
+      font-size: 12px;
+      font-size: 1.2rem; } }
+
+@media only screen and (max-width: 993px) {
+  html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage {
+    top: -20px;
+    right: 8px; } }

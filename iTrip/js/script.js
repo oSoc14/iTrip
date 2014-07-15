@@ -394,14 +394,14 @@ function checkDate(p_dateElement)
 function changeActiveMenuLink()
 {
   $("nav.navigation a").on('click', function (){
-    $.each( $("nav.navigation a"), function( key, value ) {
-      if($(this)[0].id == "loginInLink")
+    if($(this)[0].id == "loginInLink")
       {
 
         $(".overlay").fadeIn(300);
         appendLoginBox();
         login();
       } 
+    $.each( $("nav.navigation a"), function( key, value ) {
       $(this).removeClass("active");
     });
     
@@ -663,16 +663,12 @@ function appendLoginBox()
                        + "         <span id='closeLoginImage'></span>"
                        + "         <h1>Aanmelden</h1>"
                        + "         <div class='row formGroup'>"
-                       + "             <div class='col-md-4'>"
-                       + "                 <label for='username'>E-mail</label>"
-                       + "                 <label for='username'>Wachtwoord</label>"
-                       + "             </div>"
-                       + "             <div class='col-md-8'>"
-                       + "                 <input name='username' type='text' id='userUsername'>"
-                       + "                 <input name='password' type='password' id='userPassword'>"
-                       + "             </div>"
+                      // + "                 <label for='username'>E-mail</label>"
+                       + "                 <input placeholder='E-mail' name='username' type='text' id='userUsername'>"
+                     //  + "                 <label for='password'>Wachtwoord</label>"
+                       + "                 <input placeholder='Wachtwoord' name='password' type='password' id='userPassword'>"
                        + "                 <input title='login' id='loginButton' type='button' value='Aanmelden'>"
-                       + "                 <p>of</p>"
+                      // + "                 <p>of</p>"
                        + "                 <input title='register' id='registerButton' type='button' value='Registreer'>"
                        + "                 <p class='errorMessage'></p>"
                        + "         </div>"
@@ -693,16 +689,12 @@ function appendRegisterBox()
                        + "         <span id='closeRegisterImage'></span>"
                        + "         <h1>Aanmelden</h1>"
                        + "         <div class='row formGroup'>"
-                       + "             <div class='col-md-4'>"
-                       + "                 <label for='username'>E-mail</label>"
-                       + "                 <label for='username'>Wachtwoord</label>"
-                       + "                 <label for='repeatPass'>Herhalen</label>"
-                       + "             </div>"
-                       + "             <div class='col-md-8'>"
-                       + "                 <input name='username' type='text' id='registerUsername'>"
-                       + "                 <input name='password' type='password' id='registerUserPassword'>"
-                       + "                 <input name='repeatPass' type='password' id='registerUserRepeatPassword'>"
-                       + "             </div>"
+                     //  + "                 <label for='username'>E-mail</label>"
+                     //  + "                 <label for='username'>Wachtwoord</label>"
+                     //  + "                 <label for='repeatPass'>Herhalen</label>"
+                       + "                 <input placeholder='E-mail' name='username' type='text' id='registerUsername'>"
+                       + "                 <input placeholder='Wachtwoord' name='password' type='password' id='registerUserPassword'>"
+                       + "                 <input placeholder='Herhaal wachtwoord' name='repeatPass' type='password' id='registerUserRepeatPassword'>"
                        + "                 <input title='register' id='registerUserButton' type='button' value='Registreer'>"
                        + "                 <p class='errorMessage'></p>"
                        + "                 <a class='greySubText' href='#''>Wachtwoord vergeten?</a>"
