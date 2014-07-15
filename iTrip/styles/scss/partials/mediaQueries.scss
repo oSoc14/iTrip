@@ -29,6 +29,14 @@
 				 		@include font-size(1.5);
 				 	}
 				 }
+
+				 .welcomeBox
+				 {
+				 	#planTripButton
+				 	{
+				 		@include font-size(1.8);
+				 	}
+				 }
 			} 
 		}
 	}
@@ -134,12 +142,16 @@
 						margin: 0;
 					}
 
-					.loginBox,  .registerBox 
+					.loginBox,  .registerBox
 					 {
 					 	width: 60%;
 						margin: 0% 20%;
+					 }
 
-						
+					 .welcomeBox
+					 {
+					 	width: 80%;
+						margin: 0% 10%;
 					 }
 				}
 
@@ -158,7 +170,7 @@
 		{
 			#searchTripPart
 			{
-				.loginBox,  .registerBox 
+				.loginBox,  .registerBox , .welcomebox
 				 {
 
 					#closeImage, #closeLoginImage, #closeRegisterImage

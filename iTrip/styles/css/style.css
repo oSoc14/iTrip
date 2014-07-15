@@ -1284,7 +1284,6 @@ html {
           background-color: #ffffff;
           color: #ffffff;
           font-family: 'HelveticaRounded-BoldCond', sans-serif;
-          font-family: 'HelveticaRounded-BoldCond', sans-serif;
           background-size: 100%;
           background-position: center center;
           font-family: 'DINNextLTPro-MediumCond', sans-serif;
@@ -1377,7 +1376,6 @@ html {
         background-color: #ffffff;
         color: #ffffff;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
-        font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-size: 20px;
         font-size: 2rem;
         background-position: center center;
@@ -1431,23 +1429,17 @@ html {
         margin: 9% 12.5%;
         width: 75%;
         height: 78px;
-        background-size: 244px;
-        font-size: 40px;
-        font-size: 4rem;
-        text-align: center;
+        background-size: 100%;
+        font-size: 31px;
+        font-size: 3.1rem;
+        background-color: #033b93;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
         box-shadow: 3px 3px 0 #000000;
-        display: inline-block;
-        border: none;
-        background-image: url('../../images/travel_button.png');
-        background-position: top center;
-        background-repeat: no-repeat;
-        /* 	background-size: 244px; */
-        background-color: #ffffff;
-        color: #ffffff;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
-        font-family: 'HelveticaRounded-BoldCond', sans-serif;
-        font-size: 40px;
-        font-family: 'HelveticaRounded-BoldCond', sans-serif; }
+        color: #ffffff; }
       html body #searchTripPart .welcomeBox .extraInfo {
         text-align: center;
         color: #707070;
@@ -1560,7 +1552,6 @@ html body {
         /* 	background-size: 244px; */
         background-color: #ffffff;
         color: #ffffff;
-        font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-family: 'DINNextLTPro-MediumCond', sans-serif;
         padding: 5px 18px;
@@ -1728,7 +1719,7 @@ html body {
 						padding: 7px 20px;
 						background-color:  $mainBlueColor;
 						border: none; */
-        background-position: top 4px center;
+        background-position: center center;
         background-repeat: no-repeat;
         background-size: 23px;
         padding: 7px 20px;
@@ -1975,7 +1966,10 @@ html body {
       font-size: 1.8rem; }
     html body #searchTripPart .loginBox #loginButton, html body #searchTripPart .loginBox #registerButton, html body #searchTripPart .registerBox #loginButton, html body #searchTripPart .registerBox #registerButton {
       font-size: 15px;
-      font-size: 1.5rem; } }
+      font-size: 1.5rem; }
+  html body #searchTripPart .welcomeBox #planTripButton {
+    font-size: 18px;
+    font-size: 1.8rem; } }
 
 @media only screen and (max-width: 768px) {
   html body {
@@ -2037,11 +2031,14 @@ html body {
       html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
         width: 60%;
         margin: 0% 20%; }
+      html body #searchTripPart .welcomeBox {
+        width: 80%;
+        margin: 0% 10%; }
     html body #ui-datepicker-div {
       font-size: 12px;
       font-size: 1.2rem; } }
 
 @media only screen and (max-width: 993px) {
-  html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage {
+  html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage, html body #searchTripPart .welcomebox #closeImage, html body #searchTripPart .welcomebox #closeLoginImage, html body #searchTripPart .welcomebox #closeRegisterImage {
     top: -20px;
     right: 8px; } }

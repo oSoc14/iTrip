@@ -694,11 +694,13 @@ html
 					margin: 9% 12.5%;
 					width: 75%;
 					height: 78px;
-					background-size: 244px;
-					@include font-size(4.0);
-					@include blueButtonClass();
-					font-size: 40px;
+					background-size: 100%;
+					@include font-size(3.1);
+					background-color: $mainBlueColor;
+					@include border-radius(10px);
+					box-shadow: 3px 3px 0 #000000;
 					font-family: $font-button;
+					color: #ffffff;
 				}
 
 				.extraInfo

@@ -37,7 +37,6 @@ $mainYellowColor: #ffbb00;
 /* 	background-size: 244px; */
 	background-color: #ffffff;
 	color: #ffffff;
-	font-family: 'HelveticaRounded-BoldCond', sans-serif;
 	font-family: $font-button;
 }
 
@@ -100,11 +99,12 @@ $mainYellowColor: #ffbb00;
 
 @mixin smallblueButton()
 {
-	background-position: top 4px center;
+	
+	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 23px;
 	padding: 7px 20px;
-	background-color: #033b93;
+	background-color: $mainBlueColor;
 	border: none;
 }
 
