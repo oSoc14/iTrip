@@ -26,6 +26,10 @@ article .arrow{
 article.active{
 	background-color:#033b93;
 }
+
+article:hover{
+	cursor:pointer;
+}
 article.active h2{
 	margin: -2px 0 -19px 0;
 	color: #ffbb00;

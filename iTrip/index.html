@@ -28,15 +28,26 @@
             </div>
         </div>
 
+        <div id="mobileNav">
+            <nav class="navigation mobileNavItems">
+                <ul>
+                    <li><a class="active" href="#">PLAN JE REIS</a></li>
+                    <li><a id="loginInLink" href="#">AANMELDEN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+            <img class="hamburger" title="navigation" alt="navigation" src="images/menu.png" />
+        </div>
+
         
        
     </header>
 
    
     <div class="overlay"></div>
-    <div id="searchTrip" class="row">
+    <div id="searchTripPart" class="row">
         <h1 class="title">Plan je reis</h1>
-        <div id="searchPanel" class="col-sm-3">
+        <div id="searchPanel" class="col-sm-4">
             <form id="searchPanelWrapper">
                 <div class="row">
                     <div class="col-sm-12">
@@ -53,15 +64,14 @@
                     <div id="calendarPart" class="col-sm-12">
                         <h2>Datum</h2>
                         <div id="calendars" class="row col-sm-12">
-                            <div class="col-sm-5" id="fromDate">
+                            <div  id="fromDate">
                                 <div id="fromWrapper">
                                     <input type="button" id="fromCalendar">
                                     <p class="showSelectedMonth" id="selectedFromMonth"></p>
                                     <!-- <p class="showSelectedDay" id="selectedFromDay"></p> -->
                                 </div>
                             </div>
-                            <div class="betweenCalendars col-sm-2"></div>
-                            <div class="col-sm-5" id="toDate">
+                            <div  id="toDate">
                                  <div id="toWrapper">
                                     <input type="button" id="toCalendar">
                                     <p class="showSelectedMonth"  id="selectedToMonth"></p>
@@ -74,7 +84,7 @@
                     <input class="searchTrip" id="searchTrip" type="button" value="zoeken">
             </form>
         </div>    
-        <div class="googleMap col-sm-9">
+        <div class="googleMap col-sm-8">
             <div id="searchMap">
             </div>
         </div>

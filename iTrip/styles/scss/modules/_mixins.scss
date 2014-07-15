@@ -53,6 +53,12 @@ $mainYellowColor: #ffbb00;
   	background-size: $sizeValue + rem;
 }
 
+@mixin staticWidthSize($sizeValue)
+{
+	width: ($sizeValue * 10) + px;
+  	width: $sizeValue + rem;
+}
+
 @mixin resultItemCategory()
 {
 	.everything

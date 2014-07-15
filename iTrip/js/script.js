@@ -34,7 +34,7 @@ $(document).ready( function (){
     checkIfWelcomeBoxMustShow();
   });
 
-   $("#searchTrip").on('click', 'span#closeImage', function (){
+   $("#searchTripPart").on('click', 'span#closeImage', function (){
     checkIfWelcomeBoxMustShow();
   });
 
@@ -75,6 +75,9 @@ $(document).ready( function (){
 
   // FUNCTION TO RENAME YOUR TRIP
   editTripName();
+
+  //FUNCTION CALLED WHEN CLICKED ON THE 'HAMBURGER' ICON
+  showMobileNavigation();
 
   // FUNCTION CALLED WHEN CLICKED AN A RESULT
   // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
@@ -441,7 +444,7 @@ function searchForCustomLocation()
   // REMOVE THE OVERLAY AND LOGIN WHEN THE CLOSEBUTTON IS CLICKED
 function removeLoginBoxBox()
 {
-  $("#searchTrip").on('click', 'span#closeLoginImage', function (){
+  $("#searchTripPart").on('click', 'span#closeLoginImage', function (){
     $(".loginBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
   });
 }
@@ -449,7 +452,7 @@ function removeLoginBoxBox()
   // REMOVE THE OVERLAY AND REGISTERBOX WHEN THE CLOSEBUTTON IS CLICKED
 function removeBoxRegisterBox()
 {
-  $("#searchTrip").on('click', 'span#closeRegisterImage', function (){
+  $("#searchTripPart").on('click', 'span#closeRegisterImage', function (){
     $(".registerBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove();});
   });
 }
@@ -553,7 +556,7 @@ function appendWelcomeBox()
                 +"</div>";
 
     $("overlay").css("display", "block");
-    $("#searchTrip").append(welcomeBox);
+    $("#searchTripPart").append(welcomeBox);
 }
 
 
@@ -577,7 +580,7 @@ function logout()
 // FUNCTION THAT SHOW A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
 function register()
 {
-    $("#searchTrip").on('click', '#registerUserButton', function(){
+    $("#searchTripPart").on('click', '#registerUserButton', function(){
         var email = $("#registerUsername").val();
         var password = $("#registerUserPassword").val();
         var repeatPassword = $("#registerUserRepeatPassword").val();
@@ -612,7 +615,7 @@ function register()
 // FUNCTION TO SHOW THE REGISTERBOX
 function showRegisterBox()
 {
-    $("#searchTrip").on('click', '#registerButton', function(){
+    $("#searchTripPart").on('click', '#registerButton', function(){
       $(".loginBox").fadeOut(300, function(){ $(this).remove();});
       $(".overlay").fadeIn(300);
       appendRegisterBox();
@@ -622,7 +625,7 @@ function showRegisterBox()
 // FUNCTION CALLED TO LOG IN
 function login()
 {
-  $("#searchTrip").on('click', '#loginButton', function(){
+  $("#searchTripPart").on('click', '#loginButton', function(){
     var email = $("#userUsername").val();
     var password = $("#userPassword").val();
     // THIS IS WERE THE USERNAME AND PASSWORD HAVE TO BE CHECKED WITH
@@ -678,7 +681,7 @@ function appendLoginBox()
                        + " </div>"
                    + " </div>";
 
-    $("#searchTrip").append(loginBox);
+    $("#searchTripPart").append(loginBox);
 }
 
 // FUNCTION CALLED TO APPEND THE LOGINBOX WHEN THE USER IS NOT LOGGED IN
@@ -709,7 +712,7 @@ function appendRegisterBox()
                        + " </div>"
                    + " </div>";
 
-    $("#searchTrip").append(registerBox);
+    $("#searchTripPart").append(registerBox);
 }
 
 
@@ -934,4 +937,20 @@ function setLocationOnMap(address)
       }
     });
 
+}
+
+function showMobileNavigation()
+{
+  $(".hamburger").on('click', function(){
+    //$(".mobileNavItems").toggle();
+    if($(".mobileNavItems ul").hasClass("moveDown"))
+    {
+      $(".mobileNavItems ul").removeClass("moveDown");
+    }  
+    else
+    {
+      $(".mobileNavItems ul").addClass("moveDown");
+    } 
+
+  })
 }

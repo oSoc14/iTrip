@@ -82,6 +82,78 @@ html
 				}
 			}
 
+			#mobileNav
+			{
+				display: none;
+				.hamburger
+				{
+					@include staticWidthSize(4.0);
+					position: absolute;
+					z-index: 5;
+					top: 9px;
+					right: 5px;
+				}
+
+				.hamburger:hover
+				{
+					cursor: pointer;
+				}					
+/* 
+				h2
+				{
+					float: left;
+					text-align: center;
+					width: 100%;
+					font-family: $font-title;
+					@include font-size(3.0);
+				} */
+
+				nav.mobileNavItems
+				{
+					width: 100%;
+					margin: 0;
+					padding: 0;
+					/* margin-top: 32px; */
+
+					overflow: hidden;
+					/* position: relative; */
+				
+
+						
+					ul
+					{
+						position: absolute;
+						top: -159px;
+						width: 100%;
+						transition: -webkit-transform 1s;
+						transition: transform 1s;
+						li
+						{
+							float: none;
+							background-color: $mainYellowColor;
+							border-top: 1px solid #ffffff;
+							border-bottom: 1px solid #ffffff;
+							text-align: center;
+							width: 100%;
+							color: $mainBlueColor;
+							padding: 0;
+							a
+							{
+								width: 100%;
+								display: block;
+								padding: 10px 0;
+							}
+
+							a.active
+							{
+								background-color: #ffffff;
+								color: $mainYellowColor;
+							}
+						}
+					}
+				}
+			}
+
 			nav.navigation
 			{
 				float:right;
@@ -123,7 +195,7 @@ html
 			background-color: rgba(0,0,0,0.5);
 		}
 
-		#searchTrip
+		#searchTripPart
 		{
 			.title
 			{
@@ -131,6 +203,7 @@ html
 				font-size: 30px;
 				margin-left: 15px;
 				margin-top: 5px;
+				z-index: 2;
 			}
 
 			#searchPanel
@@ -203,7 +276,8 @@ html
 					{
 						float: left;
 						padding: 8px;
-						width: 165px;
+						/* width: 165px; */
+						width: 67%;
 					}
 
 					#sliderPart
@@ -242,6 +316,11 @@ html
 						margin-top: -20px;
 						#calendars
 						{
+							background-image: url('../../images/arrow.png');
+								background-repeat: no-repeat;
+								background-size: 16px;
+								padding: 8px 10px;
+								background-position: center center;
 							
 							#fromDate
 							{
@@ -270,7 +349,7 @@ html
 									.showSelectedMonth
 									{
 										position: absolute;
-										top:-15px;
+										top:-7px;
 										width: 75px;
 										font-size: 16px;
 										color: #ffffff;
@@ -317,22 +396,6 @@ html
 								}
 							}
 
-							.betweenCalendars
-							{
-								background-image: url('../../images/arrow.png');
-								background-repeat: no-repeat;
-								background-size: 16px;
-								padding: 8px 10px;
-								background-position: center center;
-								/* position: absolute;
-								top: 30px;
-								left: 105px; */
-								margin-top: 30px;
-								margin-left: 12px;
-								float: left;
-								width: 20px;
-							}
-
 							#toDate
 							{
 								float: right;
@@ -361,7 +424,7 @@ html
 									.showSelectedMonth
 									{
 										position: absolute;
-										top:-15px;
+										top:-7px;
 										width: 75px;
 										font-size: 16px;
 										color: #ffffff;
@@ -427,7 +490,6 @@ html
 					{
 						background-image: url('../../images/pin.png');
 						background-position: top 4px center;
-						background-position: top 4px center;
 						background-repeat: no-repeat;
 						background-size: 25px;
 						padding: 10px 20px;
@@ -441,6 +503,8 @@ html
 						
 						@include font-size(2.8);
 						@include blueButtonClass();
+						background-size: 100%;
+						background-position: center center;
 						font-family: $font-title;
 						padding: 5px 18px;
 						margin: 10px 2.5%;
@@ -785,3 +849,12 @@ background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png
 
 }
 
+
+// CSS ANIMATIONS
+.moveDown
+{	
+	-webkit-transform: translateY(189px);
+   transform: translateY(189px);
+   ms-transform: translateY(189px);
+   z-index: 6;
+}
