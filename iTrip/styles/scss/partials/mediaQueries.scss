@@ -1,3 +1,22 @@
+@media only screen and (min-width : 0px)  and (max-width : 400px){
+	html 
+	{
+		body
+		{
+
+			#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category
+				{
+					@include backgroundSize(3.5);
+					@include font-size(1);
+					background-position: center center;
+
+					width: 13%;
+					padding: 45px 0px 0px 0px;
+				}
+		}
+	}
+}
+
 @media only screen and (max-width : 430px) {
 	html 
 	{
@@ -37,14 +56,101 @@
 				 		@include font-size(1.8);
 				 	}
 				 }
+
+					 #resultSection
+					{
+						
+						.isotope
+						{
+							.item
+							{
+								
+								.resultItem
+								{
+									.resultSubText
+									{
+										
+										.resultInfo
+										{
+											.resultName
+											{
+												@include font-size(1.7);
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+					#resultSection 
+					{
+						.searchExtraStyle
+						{
+							#mobSaveTrip,#mobEditTrip
+							{
+								@include backgroundSize(3);
+								padding: 8px 17px;
+								margin-left: 5px;
+							}
+						}
+					}
+
+					
 			} 
 		}
 	}
 }
 
-@media only screen and (max-width : 768px) {
+
+/* @media only screen and (max-width : 440px) {
+
 	html
 	{
+			body
+			{
+
+				#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category
+				{
+					@include backgroundSize(3.5);
+					@include font-size(1);
+					background-position: center center;
+				}
+			}
+	}
+} */
+
+@media only screen and (min-width:819px) and  (max-width : 990px) {
+	html
+	{
+		body
+		{
+			#searchTripPart
+			{
+				#searchPanel
+				{
+					width: 30%;
+					float: left;
+				}
+			}
+
+			#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories
+			{
+				@include font-size(1.2s);
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width : 818px)  {
+/* @media only screen and (max-width : 768px) { */
+	html
+	{
+			.resultPage
+			{
+				overflow: hidden;
+			}
+
 			body
 			{
 				overflow: visible;
@@ -96,6 +202,7 @@
 					 	-ms-flex-order: 2;     
 					 	-webkit-order: 2;  
 					 	order: 2;
+					 	width: 100%;
 
 						overflow: visible;
 						height: auto;
@@ -103,13 +210,30 @@
 
 						margin:0;
 						padding: 0;
+
+
 						 #searchPanelWrapper
 						 {
+
+
 						 	 #searchTrip
 						 	 {
 						 	 	background-size: 100%;
 						 	 	background-position: center center;
 						 	 }
+
+						 	 .changeTripInfoPart, .saveTripInfoPart
+						 	 {
+						 	 	display: none;
+						 	 }
+
+						 	 .categoryPart
+							{
+								h2
+								{
+								 	display: none;
+								 }
+							}
 						 }
 					}
 
@@ -122,30 +246,44 @@
 						  -ms-flex-order: 1;     
 						  -webkit-order: 1;  
 						  order: 1;
+					 	width: 100%;
 
-							margin-top: 0;
-							height: 50%;
+							/* margin-top: 0; */
+							margin-top: -13px;
+							/* height: 50%; */
 							height: 140px;
 							overflow: visible;
-						#searchMap
-						{
-				        	
-						}
 					}
 
 					.title
 					{
-						position: absolute;
+						/* position: absolute;
 						top: 0;
 						width: 100%;
 						text-align: center;
-						margin: 0;
+						margin: 0; */
+						display: none;
+					}
+
+					#resultCount
+					{
+						position: absolute;
+						width: 100%;
+
+						text-align: center;
 					}
 
 					.loginBox,  .registerBox
 					 {
 					 	width: 60%;
-						margin: 0% 20%;
+						/* margin: 0% 20%; */
+						margin: -350px 20%;
+
+						#closeImage, #closeLoginImage, #closeRegisterImage
+						{
+					 		top: -20px;
+							right: 8px;
+						}
 					 }
 
 					 .welcomeBox
@@ -153,17 +291,106 @@
 					 	width: 80%;
 						margin: 0% 10%;
 					 }
+
+					 #resultSection
+					{
+						height: 75%;
+						margin-top: -13px;
+						padding: 0;
+						border-left: none;
+						h2
+						{
+							display:none;
+
+						}
+						.searchExtraStyle 
+						{
+							margin-top: 0;
+							background-color: #d8e1e5;
+							right: 0px;
+							padding: 10px;
+							width: 100%;
+
+							#inputEvent
+							{
+								padding: 10px;
+								/* @include staticWidthSize(14.0); */
+								width: 40%;
+							}
+
+							#searchEvent
+							{
+								padding: 12px 21px;
+							}
+
+							#mobEditTrip, #mobSaveTrip
+							{
+								display: block;
+							}
+						}
+
+						.isotope
+						{
+							.item
+							{
+								/* width: 100%; */
+								width: 50%;
+
+								.resultItem
+								{
+									.resultSubText
+									{
+										min-height: 0;
+										.resultCategory 
+										{
+											border: none;
+											@include backgroundSize(3.5);
+											padding: 22px 20px;
+										}
+
+										.resultInfo
+										{
+											float: none;
+											background-image: url('../../images/placeholders/placeholders-31.png');
+											background-position: right top 5px;
+											background-repeat: no-repeat;
+											line-height: inherit;
+											.resultName
+											{
+												display: block;
+												/* @include font-size(2); */
+											}
+
+											.resultLocation, .resultKm
+											{
+												display: none;
+											}
+										}
+									}
+								}
+							}
+						}
+					}
 				}
 
 				#ui-datepicker-div
 				{
 					@include font-size(1.2);
 				}
+
+				#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category
+				{
+					width: 13%;
+					/* @include backgroundSize(4.5); */
+					padding: 45px 0px 0px 0px;/* 
+					@include font-size(1.5);
+					background-position: center top; */
+				}
 			}
 	}
 }
 
-@media only screen and (max-width : 993px) {
+/* @media only screen and (max-width : 993px) {
 	html 
 	{
 		body
@@ -182,4 +409,4 @@
 			} 
 		}
 	}
-}
+} */

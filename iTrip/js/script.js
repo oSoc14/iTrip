@@ -7,12 +7,6 @@ $(document).ready( function (){
   // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
   loadIsotopeForResultDetail();
 
-  // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
-  $(".saveTrip").on('click', function(e){
-    appendLoginBox();/*
-    window.location.href = "results.html";
-    e.preventDefault();*/
-  });
 
   // TEMPORARY LINK TO NEXT RESULTS PAGE WHEN CLICKED ON SEARCH
   $(".searchTrip").on('click', function(e){
@@ -394,6 +388,8 @@ function checkDate(p_dateElement)
 function changeActiveMenuLink()
 {
   $("nav.navigation a").on('click', function (){
+    //console.log($(this).text());
+   // $(".activePage").text($(this).text());
     if($(this)[0].id == "loginInLink")
       {
 
@@ -555,7 +551,7 @@ function appendWelcomeBox()
                    +" </div>"
                 +"</div>";
 
-    $("overlay").css("display", "block");
+    $(".overlay").css("display", "block");
     $("#searchTripPart").append(welcomeBox);
 }
 
@@ -676,7 +672,7 @@ function appendLoginBox()
                        + "     <div class='col-md-1'></div>"
                        + " </div>"
                    + " </div>";
-
+    $(".overlay").css("display", "block");
     $("#searchTripPart").append(loginBox);
 }
 
@@ -703,7 +699,7 @@ function appendRegisterBox()
                        + "     <div class='col-md-1'></div>"
                        + " </div>"
                    + " </div>";
-
+    $(".overlay").css("display", "block");
     $("#searchTripPart").append(registerBox);
 }
 
@@ -833,7 +829,32 @@ function editTripName()
 {
   $("#saveTrip").on('click', function(){
     var newTripName = $("#editLocation").val();
+     // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
+    appendLoginBox();
     //alert(newTripName);
+  });
+
+  $("#mobSaveTrip").on('click', function(){
+    var newTripName = $("#editLocation").val();
+     // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
+    appendLoginBox();
+    //alert(newTripName);
+  });
+
+  $("#mobEditTrip").on('click', function(){
+    if($(this).hasClass("mobToggleView"))
+    {
+      $(this).removeClass("mobToggleView");
+      $(this).addClass(".mobEditTrip");
+      $(".item").css("width","50%");
+    }  
+    else
+    {
+      $(this).addClass("mobToggleView");
+      $(this).removeClass(".mobEditTrip");
+      $(".item").css("width","100%");
+    }  
+
   });
 }
 

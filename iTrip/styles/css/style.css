@@ -1028,12 +1028,30 @@ html {
 					font-family: $font-title;
 					@include font-size(3.0);
 				} */ }
+        html body header #mobileNav .activePage {
+          text-align: center;
+          font-family: 'DINNextLTPro-MediumCond', sans-serif;
+          font-size: 30px;
+          font-size: 3rem; }
+        html body header #mobileNav .backToSearch {
+          background-image: url('../../images/back.png');
+          background-repeat: no-repeat;
+          background-position: left top 7px;
+          position: absolute;
+          padding: 5px 30px;
+          left: 5px;
+          font-size: 22px;
+          font-size: 2.2rem;
+          font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+        html body header #mobileNav .backToSearch:hover {
+          cursor: pointer;
+          text-decoration: underline; }
         html body header #mobileNav .hamburger {
           width: 40px;
           width: 4rem;
           position: absolute;
           z-index: 5;
-          top: 9px;
+          top: 0;
           right: 5px; }
         html body header #mobileNav .hamburger:hover {
           cursor: pointer; }
@@ -1046,7 +1064,7 @@ html {
           /* position: relative; */ }
           html body header #mobileNav nav.mobileNavItems ul {
             position: absolute;
-            top: -159px;
+            top: -178px;
             width: 100%;
             transition: -webkit-transform 1s;
             transition: transform 1s; }
@@ -1091,6 +1109,7 @@ html {
     html body #searchTripPart .title {
       font-family: 'DINNextLTPro-MediumCond', sans-serif;
       font-size: 30px;
+      font-size: 3rem;
       margin-left: 15px;
       margin-top: 5px;
       z-index: 2; }
@@ -1277,12 +1296,16 @@ html {
           box-shadow: 3px 3px 0 #000000;
           display: inline-block;
           border: none;
-          background-image: url('../../images/travel_button.png');
-          background-position: top center;
+          /* background-image: url('../../images/travel_button.png');
+	background-position: center center; */
           background-repeat: no-repeat;
           /* 	background-size: 244px; */
-          background-color: #ffffff;
+          background-color: #033b93;
           color: #ffffff;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          border-radius: 5px;
           font-family: 'HelveticaRounded-BoldCond', sans-serif;
           background-size: 100%;
           background-position: center center;
@@ -1369,12 +1392,16 @@ html {
         box-shadow: 3px 3px 0 #000000;
         display: inline-block;
         border: none;
-        background-image: url('../../images/travel_button.png');
-        background-position: top center;
+        /* background-image: url('../../images/travel_button.png');
+	background-position: center center; */
         background-repeat: no-repeat;
         /* 	background-size: 244px; */
-        background-color: #ffffff;
+        background-color: #033b93;
         color: #ffffff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-size: 20px;
         font-size: 2rem;
@@ -1514,9 +1541,9 @@ html {
       color: #333333; }
 
 .moveDown {
-  -webkit-transform: translateY(189px);
-  transform: translateY(189px);
-  ms-transform: translateY(189px);
+  -webkit-transform: translateY(208px);
+  transform: translateY(208px);
+  ms-transform: translateY(208px);
   z-index: 6; }
 
 html body {
@@ -1546,12 +1573,16 @@ html body {
         box-shadow: 3px 3px 0 #000000;
         display: inline-block;
         border: none;
-        background-image: url('../../images/travel_button.png');
-        background-position: top center;
+        /* background-image: url('../../images/travel_button.png');
+	background-position: center center; */
         background-repeat: no-repeat;
         /* 	background-size: 244px; */
-        background-color: #ffffff;
+        background-color: #033b93;
         color: #ffffff;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        border-radius: 5px;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         font-family: 'DINNextLTPro-MediumCond', sans-serif;
         padding: 5px 18px;
@@ -1627,22 +1658,22 @@ html body {
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category:hover {
             cursor: pointer; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everything {
-            background-image: url('../../images/lightblue_icons/everything.png');
+            background-image: url('../../images/blue_icons/everything.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .visit {
-            background-image: url('../../images/lightblue_icons/visit.png');
+            background-image: url('../../images/blue_icons/visit.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .adventure {
-            background-image: url('../../images/lightblue_icons/adventure.png');
+            background-image: url('../../images/blue_icons/adventure.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .recreation {
-            background-image: url('../../images/lightblue_icons/recreation.png');
+            background-image: url('../../images/blue_icons/recreation.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .lodging {
-            background-image: url('../../images/lightblue_icons/lodging.png');
+            background-image: url('../../images/blue_icons/lodging.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .gastronomy {
-            background-image: url('../../images/lightblue_icons/gastronomy.png');
+            background-image: url('../../images/blue_icons/gastronomy.png');
             color: #3562A9; }
           html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .everythingHover {
             background-image: url('../../images/blue_icons/everything.png');
@@ -1686,12 +1717,16 @@ html body {
     border-left: 2px solid #033b93;
     overflow: scroll;
     height: 100%;
+    padding-bottom: 50px;
     /* ---- .item ---- */ }
     html body #searchTripPart #resultSection h2 {
       font-size: 22px;
       font-size: 2.2rem;
       font-family: 'DINNextLTPro-MediumCond', sans-serif;
       margin-top: 20px; }
+    html body #searchTripPart #resultSection #resultCount {
+      float: left;
+      width: 50%; }
     html body #searchTripPart #resultSection #backToResults {
       background-image: url('../../images/back.png');
       background-repeat: no-repeat;
@@ -1702,8 +1737,9 @@ html body {
       cursor: pointer;
       text-decoration: underline; }
     html body #searchTripPart #resultSection .searchExtraStyle {
-      margin-top: 10px;
-      right: -32px; }
+      margin-top: 20px;
+      /* right: -32px; */
+      float: right; }
       html body #searchTripPart #resultSection .searchExtraStyle #inputEvent {
         border-radius: 5px 0 0 5px;
         border: 2px solid #033b93;
@@ -1747,6 +1783,24 @@ html body {
         margin-right: 10px;
         border: none;
         background-image: url('../../images/placeholders/placeholders-37.png'); }
+      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip {
+        display: none;
+        background-color: #033b93;
+        padding: 12px 22px;
+        border-radius: 5px;
+        border: none;
+        margin-left: 10px;
+        float: right;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50px;
+        background-size: 5rem; }
+      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip {
+        background-image: url('../../images/mobile_icons/Mobile-18.png'); }
+      html body #searchTripPart #resultSection .searchExtraStyle .mobEditTrip {
+        background-image: url('../../images/mobile_icons/Mobile-14.png'); }
+      html body #searchTripPart #resultSection .searchExtraStyle .mobToggleView {
+        background-image: url('../../images/mobile_icons/Mobile-17.png'); }
     html body #searchTripPart #resultSection #resultDetail {
       margin-bottom: 70px;
       color: #ffffff;
@@ -1889,26 +1943,26 @@ html body {
               padding: 25px;
               float: left; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .everything {
-              background-image: url('../../images/lightblue_icons/everything.png');
+              background-image: url('../../images/blue_icons/everything.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .visit {
-              background-image: url('../../images/lightblue_icons/visit.png');
+              background-image: url('../../images/blue_icons/visit.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .adventure {
-              background-image: url('../../images/lightblue_icons/adventure.png');
+              background-image: url('../../images/blue_icons/adventure.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .recreation {
-              background-image: url('../../images/lightblue_icons/recreation.png');
+              background-image: url('../../images/blue_icons/recreation.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .lodging {
-              background-image: url('../../images/lightblue_icons/lodging.png');
+              background-image: url('../../images/blue_icons/lodging.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .gastronomy {
-              background-image: url('../../images/lightblue_icons/gastronomy.png');
+              background-image: url('../../images/blue_icons/gastronomy.png');
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
               float: left;
-              margin: 9px 10px;
+              margin: 9px 0px;
               line-height: 20px;
               font-family: 'DINNextLTPro-Condensed', sans-serif;
               font-size: 16px;
@@ -1940,6 +1994,16 @@ html body {
 #searchTrip .add {
   background-image: url('../../images/placeholders/placeholders-36.png'); }
 
+@media only screen and (min-width: 0px) and (max-width: 400px) {
+  html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
+    background-size: 35px;
+    background-size: 3.5rem;
+    font-size: 10px;
+    font-size: 1rem;
+    background-position: center center;
+    width: 13%;
+    padding: 45px 0px 0px 0px; } }
+
 @media only screen and (max-width: 430px) {
   html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
     /* label
@@ -1969,9 +2033,44 @@ html body {
       font-size: 1.5rem; }
   html body #searchTripPart .welcomeBox #planTripButton {
     font-size: 18px;
-    font-size: 1.8rem; } }
+    font-size: 1.8rem; }
+  html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultName {
+    font-size: 17px;
+    font-size: 1.7rem; }
+  html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip {
+    background-size: 30px;
+    background-size: 3rem;
+    padding: 8px 17px;
+    margin-left: 5px; } }
 
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width : 440px) {
+
+	html
+	{
+			body
+			{
+
+				#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category
+				{
+					@include backgroundSize(3.5);
+					@include font-size(1);
+					background-position: center center;
+				}
+			}
+	}
+} */
+@media only screen and (min-width: 819px) and (max-width: 990px) {
+  html body #searchTripPart #searchPanel {
+    width: 30%;
+    float: left; }
+  html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
+    font-size: 12spx;
+    font-size: 1.2srem; } }
+
+@media only screen and (max-width: 818px) {
+  /* @media only screen and (max-width : 768px) { */
+  html .resultPage {
+    overflow: hidden; }
   html body {
     overflow: visible;
     background-color: #ffffff; }
@@ -2004,6 +2103,7 @@ html body {
         -ms-flex-order: 2;
         -webkit-order: 2;
         order: 2;
+        width: 100%;
         overflow: visible;
         height: auto;
         margin-top: 15px;
@@ -2012,33 +2112,113 @@ html body {
         html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
           background-size: 100%;
           background-position: center center; }
+        html body #searchTripPart #searchPanel #searchPanelWrapper .changeTripInfoPart, html body #searchTripPart #searchPanel #searchPanelWrapper .saveTripInfoPart {
+          display: none; }
+        html body #searchTripPart #searchPanel #searchPanelWrapper .categoryPart h2 {
+          display: none; }
       html body #searchTripPart .googleMap {
         -webkit-box-ordinal-group: 1;
         -moz-box-ordinal-group: 1;
         -ms-flex-order: 1;
         -webkit-order: 1;
         order: 1;
-        margin-top: 0;
-        height: 50%;
+        width: 100%;
+        /* margin-top: 0; */
+        margin-top: -13px;
+        /* height: 50%; */
         height: 140px;
         overflow: visible; }
       html body #searchTripPart .title {
+        /* position: absolute;
+						top: 0;
+						width: 100%;
+						text-align: center;
+						margin: 0; */
+        display: none; }
+      html body #searchTripPart #resultCount {
         position: absolute;
-        top: 0;
         width: 100%;
-        text-align: center;
-        margin: 0; }
+        text-align: center; }
       html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
         width: 60%;
-        margin: 0% 20%; }
+        /* margin: 0% 20%; */
+        margin: -350px 20%; }
+        html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage {
+          top: -20px;
+          right: 8px; }
       html body #searchTripPart .welcomeBox {
         width: 80%;
         margin: 0% 10%; }
+      html body #searchTripPart #resultSection {
+        height: 75%;
+        margin-top: -13px;
+        padding: 0;
+        border-left: none; }
+        html body #searchTripPart #resultSection h2 {
+          display: none; }
+        html body #searchTripPart #resultSection .searchExtraStyle {
+          margin-top: 0;
+          background-color: #d8e1e5;
+          right: 0px;
+          padding: 10px;
+          width: 100%; }
+          html body #searchTripPart #resultSection .searchExtraStyle #inputEvent {
+            padding: 10px;
+            /* @include staticWidthSize(14.0); */
+            width: 40%; }
+          html body #searchTripPart #resultSection .searchExtraStyle #searchEvent {
+            padding: 12px 21px; }
+          html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip {
+            display: block; }
+        html body #searchTripPart #resultSection .isotope .item {
+          /* width: 100%; */
+          width: 50%; }
+          html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText {
+            min-height: 0; }
+            html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultCategory {
+              border: none;
+              background-size: 35px;
+              background-size: 3.5rem;
+              padding: 22px 20px; }
+            html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
+              float: none;
+              background-image: url('../../images/placeholders/placeholders-31.png');
+              background-position: right top 5px;
+              background-repeat: no-repeat;
+              line-height: inherit; }
+              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultName {
+                display: block;
+                /* @include font-size(2); */ }
+              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultLocation, html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultKm {
+                display: none; }
     html body #ui-datepicker-div {
       font-size: 12px;
-      font-size: 1.2rem; } }
+      font-size: 1.2rem; }
+    html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
+      width: 13%;
+      /* @include backgroundSize(4.5); */
+      padding: 45px 0px 0px 0px;
+      /* 
+					@include font-size(1.5);
+					background-position: center top; */ } }
 
-@media only screen and (max-width: 993px) {
-  html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage, html body #searchTripPart .welcomebox #closeImage, html body #searchTripPart .welcomebox #closeLoginImage, html body #searchTripPart .welcomebox #closeRegisterImage {
-    top: -20px;
-    right: 8px; } }
+/* @media only screen and (max-width : 993px) {
+	html 
+	{
+		body
+		{
+			#searchTripPart
+			{
+				.loginBox,  .registerBox , .welcomebox
+				 {
+
+					#closeImage, #closeLoginImage, #closeRegisterImage
+					{
+				 		top: -20px;
+						right: 8px;
+					}
+				 }
+			} 
+		}
+	}
+} */

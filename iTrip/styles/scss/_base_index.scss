@@ -85,12 +85,38 @@ html
 			#mobileNav
 			{
 				display: none;
+
+				.activePage
+				{
+					text-align: center;
+					font-family: $font-title;
+					@include font-size(3.0);
+				}
+
+				.backToSearch 
+				{
+					background-image: url('../../images/back.png');
+					background-repeat: no-repeat;
+					background-position: left top 7px;
+					position: absolute;
+					padding: 5px 30px;
+					left:5px;
+					@include font-size(2.2);
+					font-family: $font-title;
+				}
+
+				.backToSearch:hover
+				{
+					cursor: pointer;
+					text-decoration: underline;
+				}
+
 				.hamburger
 				{
 					@include staticWidthSize(4.0);
 					position: absolute;
 					z-index: 5;
-					top: 9px;
+					top: 0;
 					right: 5px;
 				}
 
@@ -123,7 +149,7 @@ html
 					ul
 					{
 						position: absolute;
-						top: -159px;
+						top: -178px;
 						width: 100%;
 						transition: -webkit-transform 1s;
 						transition: transform 1s;
@@ -200,7 +226,7 @@ html
 			.title
 			{
 				font-family: $font-title;
-				font-size: 30px;
+				@include font-size(3.0);
 				margin-left: 15px;
 				margin-top: 5px;
 				z-index: 2;
@@ -858,8 +884,8 @@ background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png
 // CSS ANIMATIONS
 .moveDown
 {	
-	-webkit-transform: translateY(189px);
-   transform: translateY(189px);
-   ms-transform: translateY(189px);
+	-webkit-transform: translateY(208px);
+   transform: translateY(208px);
+   ms-transform: translateY(208px);
    z-index: 6;
 }

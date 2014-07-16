@@ -221,12 +221,19 @@ html
 				border-left:2px solid  $mainBlueColor;
 				overflow: scroll;
 				height: 100%;
+				padding-bottom: 50px;
 
 				h2
 				{
 					@include font-size(2.2);
 					font-family: $font-title;
 					margin-top: 20px;
+				}
+
+				#resultCount
+				{
+					float: left;
+					width: 50%;
 				}
 
 				#backToResults 
@@ -246,8 +253,9 @@ html
 
 				.searchExtraStyle
 				{	
-					margin-top:10px;
-					right: -32px;
+					margin-top:20px;
+					/* right: -32px; */
+					float: right;
 
 					#inputEvent
 					{
@@ -303,6 +311,35 @@ html
 						border:none;
 						//visibility: hidden; //displayed on the results details pages
 						background-image: url('../../images/placeholders/placeholders-37.png');
+					}
+
+					#mobSaveTrip, #mobEditTrip
+					{
+						display: none;
+						background-color: $mainBlueColor;
+						padding: 12px 22px;
+						border-radius: 5px;
+						border: none;
+						margin-left: 10px;
+						float: right;
+						background-repeat: no-repeat;
+						background-position: center center;
+						@include backgroundSize(5.0);
+					}
+
+					#mobSaveTrip
+					{
+						background-image: url('../../images/mobile_icons/Mobile-18.png');
+					}
+
+					.mobEditTrip
+					{
+						background-image: url('../../images/mobile_icons/Mobile-14.png');
+					}
+
+					.mobToggleView
+					{
+						background-image: url('../../images/mobile_icons/Mobile-17.png');
 					}
 
 				}
@@ -547,7 +584,7 @@ html
 						  		.resultInfo
 						  		{
 						  			float: left;
-									margin: 9px 10px;
+									margin: 9px 0px;
 									line-height: 20px;
 									font-family: $font-subText;
 									@include font-size(1.6);

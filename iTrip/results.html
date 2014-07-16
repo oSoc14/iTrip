@@ -6,14 +6,14 @@
     <link rel=stylesheet href="styles/css/style.css">
     <link rel=stylesheet href="styles/css/jquery-ui.css">
 </head>
-<body>
+<body class="resultPage">
 
     <header>
         <div id="regularNav" class="row">
             <div class="col-sm-2">
                 <a title="Home" id="homeButton" href="index.html">Home</a>
             </div>
-            <div class="col-sm-6 col-sm-offset-4">
+            <div class="col-sm-7 col-sm-offset-3">
                 <ul class="languages">
                     <li><a class="english" href="#">EN /</a></li>
                     <li><a class="dutch activeLanguage" href="#">NL /</a></li>
@@ -29,6 +29,19 @@
                 </nav>
             </div>
         </div>
+
+        <div id="mobileNav">
+            <a class="backToSearch" href="index.html">Zoeken</a>
+            <h1 class="activePage">iTrip</h1>
+            <nav class="navigation mobileNavItems">
+                <ul>
+                    <li><a class="active" href="#">PLAN JE REIS</a></li>
+                    <li><a id="loginInLink" href="#">AANMELDEN</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+            <img class="hamburger" title="navigation" alt="navigation" src="images/menu.png" />
+        </div>
     </header>
 
      <div class="overlay"></div>
@@ -36,7 +49,7 @@
         <div id="searchPanel" class="col-md-3">
         <h1 class="title">Plan je reis</h1>
             <form class="extraStyleResultsSearchPanel" id="searchPanelWrapper">
-                <div class="row rowStyle">
+                <div class="row rowStyle saveTripInfoPart">
                     <div class="col-sm-12">
                         <h2>Reis opslaan</h2>
                         <input id="editLocation" type="text">
@@ -44,7 +57,7 @@
                     </div>
                 </div>
 
-                <div class="row rowStyle">
+                <div class="row rowStyle categoryPart">
                     <div class="col-sm-12">
                        <h2>Categorie&euml;n</h2>
                        <ul class="categories">
@@ -58,7 +71,7 @@
                     </div>
                 </div>
 
-                 <div class="row rowStyle">
+                 <div class="row rowStyle changeTripInfoPart">
                     <div class="col-sm-12">
                         <input class="editTrip" id="editTrip" type="button" value="Zoekopdracht wijzigen">
                     </div>
@@ -69,11 +82,13 @@
             <div class="row rowStyle">
                     <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
                     <h2 id="backToResults" class="col-md-2">Reis: Kortrijk</h2>
-                    <div class="searchExtraStyle col-md-4 col-md-offset-6">
+                    <div class="searchExtraStyle ">
                         <input class="resultButtonClass addToMyTrips" type="button">
                         <input class="resultButtonClass shareTrip" type="button">
                         <input id="inputEvent" type="text">
                         <input id="searchEvent" type="button">
+                        <input id="mobEditTrip" class="mobEditTrip" type="button">
+                        <input id="mobSaveTrip" type="button">
                     </div>
              </div>
 
