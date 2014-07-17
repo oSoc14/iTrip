@@ -77,9 +77,25 @@ $(document).ready( function (){
   // THE DETAILS APPEAR AND ALL THE RESULTS DISSAPPEAR
   //showResultDetail();
 
+  // FUNCTION CALLED WHEN THE WINDOW IS RESIZED
+  checkWidthWindowOnResize();
+
   // WHEN CLICKED ON A RESULT, THAT DIV DISAPPEARS AND THE DETAILS SHOW
   $("#resultDetail").hide();
   $(".resultSubText").on("click", function(){
+      if($( window ).width() <= 818)
+      {      
+        $('#backToResults').hide();
+        $('.backToResults').show();
+        $('.backToSearch').hide();
+      }
+      else
+      {
+        $('#backToResults').show();
+        $('.backToResults').hide();
+        $('.backToSearch').show();
+      }
+      
       $("#inputEvent").hide();
       $("#searchEvent").hide();
       $(".isotope").hide();
@@ -87,7 +103,7 @@ $(document).ready( function (){
       $(".addToMyTrips").show();
       $(".shareTrip").show();
       $("#resultcount").hide();
-      $("#backToResults").show();
+      //$("#backToResults").show();
       $(".searchExtraStyle").css("right","-220px");
         var currentPage = window.location.pathname.split("/")[2];
         if(currentPage == "results.html")
@@ -102,13 +118,18 @@ $(document).ready( function (){
   });
 
   $("#backToResults").on('click', function(){
+      if($( window ).width() > 818)
+      {   
+         $("#resultcount").show();
+      }
+      $('.backToSearch').show();
+      $('.backToResults').hide();
       $("#inputEvent").show();
       $("#searchEvent").show();
       $(".isotope").show();
       $("#resultDetail").hide();
       $(".addToMyTrips").hide();
       $(".shareTrip").hide();
-      $("#resultcount").show();
       $("#backToResults").hide();
       $(".searchExtraStyle").css("right","-32px");
   });
@@ -956,14 +977,47 @@ function showMobileNavigation()
 {
   $(".hamburger").on('click', function(){
     //$(".mobileNavItems").toggle();
-    if($(".mobileNavItems ul").hasClass("moveDown"))
+   /* if($(".mobileNavItems ul").hasClass("moveDown"))
     {
       $(".mobileNavItems ul").removeClass("moveDown");
     }  
     else
     {
       $(".mobileNavItems ul").addClass("moveDown");
-    } 
-
+    } */
+   /* $(".mobileNavItems ul").slideToggle();*/
+    $(".mobileNavItems ul").toggle();
   })
+}
+
+// FUNCTION CALLED WHEN THE WINDOW IS RESIZED
+function checkWidthWindowOnResize()
+{
+  $(window).resize(function(){
+     if($( window ).width() <= 818)
+     {
+        if($(".isotope").css('display') == "none")
+        {
+            $("#backToResults").hide();
+            $(".backToResults").show();
+            $("#backToSearch").show();
+        }
+        else
+         {
+            $("#backToResults").show();
+            $(".backToResults").hide();
+            $("#backToSearch").hide();
+         }
+     }
+     else
+     {
+      if($(".isotope").css('display') == "none")
+         {
+            $("#backToResults").show();
+            $(".backToResults").hide();
+            $("#backToSearch").hide();
+         }
+     }
+
+  });
 }

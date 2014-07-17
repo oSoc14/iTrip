@@ -1033,7 +1033,9 @@ html {
           font-family: 'DINNextLTPro-MediumCond', sans-serif;
           font-size: 30px;
           font-size: 3rem; }
-        html body header #mobileNav .backToSearch {
+        html body header #mobileNav .backToResults {
+          display: none; }
+        html body header #mobileNav .backToSearch, html body header #mobileNav .backToResults {
           background-image: url('../../images/back.png');
           background-repeat: no-repeat;
           background-position: left top 7px;
@@ -1043,7 +1045,7 @@ html {
           font-size: 22px;
           font-size: 2.2rem;
           font-family: 'DINNextLTPro-MediumCond', sans-serif; }
-        html body header #mobileNav .backToSearch:hover {
+        html body header #mobileNav .backToSearch:hover, html body header #mobileNav .backToResults:hover {
           cursor: pointer;
           text-decoration: underline; }
         html body header #mobileNav .hamburger {
@@ -1059,15 +1061,16 @@ html {
           width: 100%;
           margin: 0;
           padding: 0;
-          /* margin-top: 32px; */
-          overflow: hidden;
+          /* margin-top: -10px; */
           /* position: relative; */ }
           html body header #mobileNav nav.mobileNavItems ul {
-            position: absolute;
-            top: -178px;
+            /* position: absolute;
+						top: -178px; */
+            margin-top: -10px;
+            display: none;
             width: 100%;
-            transition: -webkit-transform 1s;
-            transition: transform 1s; }
+            /* transition: -webkit-transform 1s;
+						transition: transform 1s; */ }
             html body header #mobileNav nav.mobileNavItems ul li {
               float: none;
               background-color: #ffbb00;
@@ -1540,12 +1543,14 @@ html {
       background: #ffffff 50% top repeat-x;
       color: #333333; }
 
-.moveDown {
-  -webkit-transform: translateY(208px);
-  transform: translateY(208px);
-  ms-transform: translateY(208px);
-  z-index: 6; }
-
+/* .moveDown
+{	
+	-webkit-transform: translateY(208px);
+   transform: translateY(208px);
+   ms-transform: translateY(208px);
+   z-index: 6;
+}
+ */
 html body {
   overflow: hidden; }
   html body #searchTripPart #searchPanel {
@@ -2155,6 +2160,8 @@ html body {
         padding: 0;
         border-left: none; }
         html body #searchTripPart #resultSection h2 {
+          display: none; }
+        html body #searchTripPart #resultSection #backToResults {
           display: none; }
         html body #searchTripPart #resultSection .searchExtraStyle {
           margin-top: 0;

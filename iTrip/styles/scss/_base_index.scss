@@ -93,7 +93,12 @@ html
 					@include font-size(3.0);
 				}
 
-				.backToSearch 
+				.backToResults
+				{
+					display: none;
+				}
+
+				.backToSearch, .backToResults
 				{
 					background-image: url('../../images/back.png');
 					background-repeat: no-repeat;
@@ -105,7 +110,7 @@ html
 					font-family: $font-title;
 				}
 
-				.backToSearch:hover
+				.backToSearch:hover, .backToResults:hover
 				{
 					cursor: pointer;
 					text-decoration: underline;
@@ -134,25 +139,28 @@ html
 					@include font-size(3.0);
 				} */
 
+
+
 				nav.mobileNavItems
 				{
 					width: 100%;
 					margin: 0;
 					padding: 0;
-					/* margin-top: 32px; */
+					/* margin-top: -10px; */
 
-					overflow: hidden;
 					/* position: relative; */
 				
 
 						
 					ul
 					{
-						position: absolute;
-						top: -178px;
+						/* position: absolute;
+						top: -178px; */
+						margin-top: -10px;
+						display: none;
 						width: 100%;
-						transition: -webkit-transform 1s;
-						transition: transform 1s;
+						/* transition: -webkit-transform 1s;
+						transition: transform 1s; */
 						li
 						{
 							float: none;
@@ -882,10 +890,11 @@ background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png
 
 
 // CSS ANIMATIONS
-.moveDown
+/* .moveDown
 {	
 	-webkit-transform: translateY(208px);
    transform: translateY(208px);
    ms-transform: translateY(208px);
    z-index: 6;
 }
+ */
