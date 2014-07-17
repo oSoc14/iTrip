@@ -24,15 +24,20 @@ $(document).ready( function (){
   initializeWelcomeBox();
 
 
-  $(".overlay").on('click', function (){
+  $(".overlay").on('click', function (event){
+    checkIfWelcomeBoxMustShow();
+    if($(".loginBox").css("display","block"))
+      $(".loginBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
+    if($(".registerBox").css("display","block"))
+      $(".registerBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
+    // $(".overlay").fadeOut();
+  });
+
+   $("#searchTripPart").on('click', 'span#closeImage', function (event){
     checkIfWelcomeBoxMustShow();
   });
 
-   $("#searchTripPart").on('click', 'span#closeImage', function (){
-    checkIfWelcomeBoxMustShow();
-  });
-
-  $("#planTripButton").on('click', function (){
+  $("#planTripButton").on('click', function (event){
     checkIfWelcomeBoxMustShow();
   });
 
@@ -80,59 +85,6 @@ $(document).ready( function (){
   // FUNCTION CALLED WHEN THE WINDOW IS RESIZED
   checkWidthWindowOnResize();
 
-  // WHEN CLICKED ON A RESULT, THAT DIV DISAPPEARS AND THE DETAILS SHOW
-  $("#resultDetail").hide();
-  $(".resultSubText").on("click", function(){
-      if($( window ).width() <= 818)
-      {      
-        $('#backToResults').hide();
-        $('.backToResults').show();
-        $('.backToSearch').hide();
-      }
-      else
-      {
-        $('#backToResults').show();
-        $('.backToResults').hide();
-        $('.backToSearch').show();
-      }
-      
-      $("#inputEvent").hide();
-      $("#searchEvent").hide();
-      $(".isotope").hide();
-      $("#resultDetail").show();
-      $(".addToMyTrips").show();
-      $(".shareTrip").show();
-      $("#resultcount").hide();
-      //$("#backToResults").show();
-      $(".searchExtraStyle").css("right","-220px");
-        var currentPage = window.location.pathname.split("/")[2];
-        if(currentPage == "results.html")
-        {
-          var street = $("p.street").text();
-          var city = $("p.city").text();
-          var address = city + ", " + street;
-          setLocationOnMap(address);
-          //if($(".isotope").css("display") == "none")
-          //$(".searchExtraStyle ").css("right","-23px");
-        }
-  });
-
-  $("#backToResults").on('click', function(){
-      if($( window ).width() > 818)
-      {   
-         $("#resultcount").show();
-      }
-      $('.backToSearch').show();
-      $('.backToResults').hide();
-      $("#inputEvent").show();
-      $("#searchEvent").show();
-      $(".isotope").show();
-      $("#resultDetail").hide();
-      $(".addToMyTrips").hide();
-      $(".shareTrip").hide();
-      $("#backToResults").hide();
-      $(".searchExtraStyle").css("right","-32px");
-  });
 
   // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
   //overlayLoseFocus();
@@ -408,7 +360,7 @@ function checkDate(p_dateElement)
   // THAT THE CURRENT PAGE/SECTION IS ACTIVE
 function changeActiveMenuLink()
 {
-  $("nav.navigation a").on('click', function (){
+  $("nav.navigation a").on('click', function (event){
     //console.log($(this).text());
    // $(".activePage").text($(this).text());
     if($(this)[0].id == "loginInLink")
@@ -431,7 +383,7 @@ function changeActiveMenuLink()
   // INSERTED INTO THE INPUT FIELD IN ORDER TO SAVE THIS LOCATION LATER ON
 function searchForCurrentLocation()
 {
-  $("#submitCurrentLocation").on('click', function(){
+  $("#submitCurrentLocation").on('click', function(event){
     requestCurrentPosition();
   });
 }
@@ -441,7 +393,7 @@ function searchForCurrentLocation()
   // INSERTED INTO THE INPUT FIELD IN ORDER TO SAVE THIS LOCATION LATER ON
 function searchForCustomLocation()
 {
-  $("#submitCustomLocation").on('click', function(){
+  $("#submitCustomLocation").on('click', function(event){
     var address = $("#customLocation").val();
       setLocationOnMap(address);
   });
@@ -461,7 +413,7 @@ function searchForCustomLocation()
   // REMOVE THE OVERLAY AND LOGIN WHEN THE CLOSEBUTTON IS CLICKED
 function removeLoginBoxBox()
 {
-  $("#searchTripPart").on('click', 'span#closeLoginImage', function (){
+  $("#searchTripPart").on('click', 'span#closeLoginImage', function (event){
     $(".loginBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
   });
 }
@@ -469,7 +421,7 @@ function removeLoginBoxBox()
   // REMOVE THE OVERLAY AND REGISTERBOX WHEN THE CLOSEBUTTON IS CLICKED
 function removeBoxRegisterBox()
 {
-  $("#searchTripPart").on('click', 'span#closeRegisterImage', function (){
+  $("#searchTripPart").on('click', 'span#closeRegisterImage', function (event){
     $(".registerBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove();});
   });
 }
@@ -589,7 +541,7 @@ function cookiesAreEnabled()
 // FUNCTION CALLED TO LOGOUT
 function logout()
 {
-  $("#logoutLink").on('click', function (){
+  $("#logoutLink").on('click', function (event){
     window.location.href = "index.html";
   });
 }
@@ -597,7 +549,7 @@ function logout()
 // FUNCTION THAT SHOW A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
 function register()
 {
-    $("#searchTripPart").on('click', '#registerUserButton', function(){
+    $("#searchTripPart").on('click', '#registerUserButton', function(event){
         var email = $("#registerUsername").val();
         var password = $("#registerUserPassword").val();
         var repeatPassword = $("#registerUserRepeatPassword").val();
@@ -642,7 +594,7 @@ function showRegisterBox()
 // FUNCTION CALLED TO LOG IN
 function login()
 {
-  $("#searchTripPart").on('click', '#loginButton', function(){
+  $("#searchTripPart").on('click', '#loginButton', function(event){
     var email = $("#userUsername").val();
     var password = $("#userPassword").val();
     // THIS IS WERE THE USERNAME AND PASSWORD HAVE TO BE CHECKED WITH
@@ -736,7 +688,7 @@ function switchCategory()
     var filters = [];
    
 
-   $("li.category").on('click', function (){
+   $("li.category").on('click', function (event){
 
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
@@ -815,7 +767,7 @@ function switchCategory()
   });*/
 
    // WHEN THE CURSOR ENTERS A CATEGORY, THE ICON DARKENS (ONLY IF THE CATEGORY ISN'T ACTIVE)
-   $("li.category").on('mouseenter', function (){
+   $("li.category").on('mouseenter', function (event){
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
     if(jQuery.inArray("active",$(this)[0].classList) <= -1)
@@ -829,7 +781,7 @@ function switchCategory()
   });
 
    // WHEN THE CURSOR LEAVES A CATEGORY? THE ICON BRIGHTENS (ONLY IS THE CATEGORY ISN'T ACTIVE)
-  $("li.category").on('mouseleave', function (){
+  $("li.category").on('mouseleave', function (event){
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
     if(jQuery.inArray("active",$(this)[0].classList) <= -1)
@@ -848,21 +800,21 @@ function switchCategory()
 // NEEDS TO BE ALTERED FOR INSERT/UPDATE IN DATABASE
 function editTripName()
 {
-  $("#saveTrip").on('click', function(){
+  $("#saveTrip").on('click', function(event){
     var newTripName = $("#editLocation").val();
      // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
     appendLoginBox();
     //alert(newTripName);
   });
 
-  $("#mobSaveTrip").on('click', function(){
+  $("#mobSaveTrip").on('click', function(event){
     var newTripName = $("#editLocation").val();
      // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
     appendLoginBox();
     //alert(newTripName);
   });
 
-  $("#mobEditTrip").on('click', function(){
+  $("#mobEditTrip").on('click', function(event){
     if($(this).hasClass("mobToggleView"))
     {
       $(this).removeClass("mobToggleView");
@@ -903,7 +855,7 @@ function loadIsotopeForResults()
     $(".isotope").isotope();
   }, 100 ) );
 
-    $("#searchEvent").on('click', function(){
+    $("#searchEvent").on('click', function(event){
           var fullsearch = $("#inputEvent").val();
             qsRegex = new RegExp( fullsearch, 'gi' );
               $(".isotope").isotope();
@@ -975,7 +927,7 @@ function setLocationOnMap(address)
 
 function showMobileNavigation()
 {
-  $(".hamburger").on('click', function(){
+  $(".hamburger").on('click', function(event){
     //$(".mobileNavItems").toggle();
    /* if($(".mobileNavItems ul").hasClass("moveDown"))
     {
@@ -993,20 +945,107 @@ function showMobileNavigation()
 // FUNCTION CALLED WHEN THE WINDOW IS RESIZED
 function checkWidthWindowOnResize()
 {
+
+  // WHEN CLICKED ON A RESULT, THAT DIV DISAPPEARS AND THE DETAILS SHOW
+  $("#resultDetail").hide();
+  $('#backToResults').hide();
+  $(".resultSubText").on("click", function(event){
+      if($( window ).width() <= 818)
+      {      
+        $('#backToResults').hide();
+        $('.backToResults').show();
+        $('.backToSearch').hide();
+        $("#searchPanel").hide();
+        $("#resultSection").css("height","100%");
+        $("#mobEditTrip").hide();
+        $("#mobSaveTrip").hide();
+        $(".addToMyTrips").val("Toevoegen");
+        $("#addToMyTrips").removeClass("addToMyTrips");
+        $("#addToMyTrips").addClass("mobAddToMyTrips");
+        $("#addToMyTrips").show();
+        
+      }
+      else
+      {
+        $('#backToResults').show();
+        $('.backToResults').hide();
+        $('.backToSearch').show();
+        $("#searchPanel").show();
+        $("#resultSection").css("height","100%");
+        $("#mobEditTrip").hide();
+        $("#mobSaveTrip").hide();
+        $(".addToMyTrips").val("");
+        $("#addToMyTrips").hide();
+        $("#addToMyTrips").addClass("addToMyTrips");
+        $("#addToMyTrips").removeClass("mobAddToMyTrips");
+      }
+      
+      $("#inputEvent").hide();
+      $("#searchEvent").hide();
+      $(".isotope").hide();
+      $("#resultDetail").show();
+      $(".addToMyTrips").show();
+      $(".shareTrip").show();
+      $("#resultcount").hide();
+      //$("#backToResults").show();
+      $(".searchExtraStyle").css("right","-220px");
+
+      
+        var currentPage = window.location.pathname.split("/")[2];
+        if(currentPage == "results.html")
+        {
+          var street = $("p.street").text();
+          var city = $("p.city").text();
+          var address = city + ", " + street;
+          setLocationOnMap(address);
+          //if($(".isotope").css("display") == "none")
+          //$(".searchExtraStyle ").css("right","-23px");
+        }
+  });
+
+  $("#backToResults").on('click', function(){
+      if($( window ).width() > 818)
+      {   
+         $("#resultcount").show();
+      }
+      $('.backToSearch').show();
+      $('.backToResults').hide();
+      $("#inputEvent").show();
+      $("#searchEvent").show();
+      $(".isotope").show();
+      $("#resultDetail").hide();
+      $(".addToMyTrips").hide();
+      $(".shareTrip").hide();
+      $("#backToResults").hide();
+      $(".searchExtraStyle").css("right","-32px");
+      $("#searchPanel").show();
+      $("#resultSection").css("height","100%");
+  });
+
   $(window).resize(function(){
+
+      $("#searchPanel").show();
      if($( window ).width() <= 818)
      {
         if($(".isotope").css('display') == "none")
         {
             $("#backToResults").hide();
             $(".backToResults").show();
-            $("#backToSearch").show();
+            $(".backToSearch").hide();
+            $("#mobEditTrip").hide();
+            $("#mobSaveTrip").hide();
+            $("#resultSection").css("height","100%");
+            $(".addToMyTrips").val("Toevoegen");
+            $("#addToMyTrips").removeClass("addToMyTrips");
+            $("#addToMyTrips").addClass("mobAddToMyTrips");
         }
         else
          {
-            $("#backToResults").show();
+            $("#backToResults").hide();
             $(".backToResults").hide();
-            $("#backToSearch").hide();
+            $(".backToSearch").show();
+            $("#mobEditTrip").show();
+            $("#mobSaveTrip").show();
          }
      }
      else
@@ -1016,6 +1055,9 @@ function checkWidthWindowOnResize()
             $("#backToResults").show();
             $(".backToResults").hide();
             $("#backToSearch").hide();
+            $(".addToMyTrips").val("");
+            $("#addToMyTrips").addClass("addToMyTrips");
+            $("#addToMyTrips").removeClass("mobAddToMyTrips");
          }
      }
 

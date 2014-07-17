@@ -1745,6 +1745,9 @@ html body {
       margin-top: 20px;
       /* right: -32px; */
       float: right; }
+      html body #searchTripPart #resultSection .searchExtraStyle #deleteEvent {
+        float: left;
+        margin-right: 10px; }
       html body #searchTripPart #resultSection .searchExtraStyle #inputEvent {
         border-radius: 5px 0 0 5px;
         border: 2px solid #033b93;
@@ -1774,12 +1777,30 @@ html body {
         background-size: 34px;
         border-radius: 5px;
         background-color: #033b93; }
+      html body #searchTripPart #resultSection .searchExtraStyle .mobAddToMyTrips {
+        display: none;
+        float: left;
+        padding: 3px 17px;
+        margin-right: 10px;
+        border: none;
+        width: 135px;
+        font-family: 'DINNextLTPro-MediumCond', sans-serif;
+        background-position: left 5px center;
+        background-color: #033b93;
+        background-size: 23px;
+        background-size: 2.3rem;
+        background-image: url('../../images/plus_2.png');
+        color: #ffffff;
+        font-size: 20px;
+        font-size: 2rem;
+        text-indent: 10px; }
       html body #searchTripPart #resultSection .searchExtraStyle .addToMyTrips {
         display: none;
         float: left;
         padding: 7px 17px;
         margin-right: 10px;
         border: none;
+        background-position: center center;
         background-image: url('../../images/placeholders/placeholders-36.png'); }
       html body #searchTripPart #resultSection .searchExtraStyle .shareTrip {
         display: none;
@@ -1865,7 +1886,7 @@ html body {
           font-size: 2rem; }
       html body #searchTripPart #resultSection #resultDetail #searchMap {
         height: 15%;
-        width: 50%; }
+        /* width: 50%; */ }
       html body #searchTripPart #resultSection #resultDetail .resultExtraInfo {
         color: #033b93;
         padding: 0 10px 10px 10px; }
@@ -1967,7 +1988,7 @@ html body {
               color: #3562A9; }
             html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
               float: left;
-              margin: 9px 0px;
+              margin: 9px 7px;
               line-height: 20px;
               font-family: 'DINNextLTPro-Condensed', sans-serif;
               font-size: 16px;
@@ -2064,10 +2085,15 @@ html body {
 			}
 	}
 } */
-@media only screen and (min-width: 819px) and (max-width: 990px) {
+@media only screen and (min-width: 819px) and (max-width: 991px) {
   html body #searchTripPart #searchPanel {
     width: 30%;
     float: left; }
+  html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+    background: none;
+    padding: 50px 0; }
+    html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
+      margin-left: 0; }
   html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
     font-size: 12spx;
     font-size: 1.2srem; } }
@@ -2102,6 +2128,10 @@ html body {
       -ms-flex-direction: column;
       -webkit-flex-direction: column;
       flex-direction: column; }
+      html body #searchTripPart .resultPage #searchPanel {
+        position: fixed; }
+      html body #searchTripPart .myTripsPage #resultSection {
+        display: none; }
       html body #searchTripPart #searchPanel {
         -webkit-box-ordinal-group: 2;
         -moz-box-ordinal-group: 2;
@@ -2113,7 +2143,10 @@ html body {
         height: auto;
         margin-top: 15px;
         margin: 0;
-        padding: 0; }
+        padding: 0;
+        /* position: fixed; */
+        bottom: 0;
+        /* height: 18%; */ }
         html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
           background-size: 100%;
           background-position: center center; }
@@ -2159,6 +2192,33 @@ html body {
         margin-top: -13px;
         padding: 0;
         border-left: none; }
+        html body #searchTripPart #resultSection #resultDetail .result {
+          width: 100%; }
+        html body #searchTripPart #resultSection #resultDetail .generalDetails {
+          margin-bottom: 20px; }
+          html body #searchTripPart #resultSection #resultDetail .generalDetails ul.firstUl {
+            float: left;
+            margin-right: 0px; }
+          html body #searchTripPart #resultSection #resultDetail .generalDetails ul {
+            float: right; }
+        html body #searchTripPart #resultSection #resultDetail .searchMap {
+          width: 100%; }
+        html body #searchTripPart #resultSection #resultDetail .resultDescription h2 {
+          display: block; }
+        html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+          background: none;
+          padding: 50px 0; }
+          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
+            margin-left: 0; }
+          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingDay {
+            font-size: 13px;
+            font-size: 1.3rem; }
+          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingHour {
+            font-size: 12px;
+            font-size: 1.2rem; }
+          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo p {
+            bottom: -11px;
+            right: 5px; }
         html body #searchTripPart #resultSection h2 {
           display: none; }
         html body #searchTripPart #resultSection #backToResults {

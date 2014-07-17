@@ -119,7 +119,7 @@
 	}
 } */
 
-@media only screen and (min-width:819px) and  (max-width : 990px) {
+@media only screen and (min-width:819px) and  (max-width : 991px) {
 	html
 	{
 		body
@@ -130,6 +130,26 @@
 				{
 					width: 30%;
 					float: left;
+				}
+
+				#resultSection
+				{
+					 #resultDetail
+					 {
+					 	 .resultExtraInfo
+					 	 {
+					 	 	 .resultSubInfo
+					 	 	 {
+					 	 	 	 background: none;
+					 	 	 	 padding: 50px 0;
+
+					 	 	 	 .resultOpeningHours:first-child
+					 	 	 	 {
+					 	 	 	 	margin-left: 0;
+					 	 	 	 }
+					 	 	 }
+					 	 }
+					 }
 				}
 			}
 
@@ -193,6 +213,28 @@
 					-ms-flex-direction: column;
 					-webkit-flex-direction: column;
 					flex-direction: column;
+
+					.resultPage
+					{
+						#searchPanel
+						{
+							position: fixed;
+						}
+					}
+
+					.myTripsPage
+					{
+						#searchPanel
+						{
+
+						}
+
+						#resultSection
+						{
+							display: none;
+						}
+					}
+
 					#searchPanel
 					{
 						// ENABLES TO SWITH GOOGLEMAP AND SEARCHPANEL IN POSITION
@@ -210,6 +252,10 @@
 
 						margin:0;
 						padding: 0;
+
+						/* position: fixed; */
+						bottom: 0;
+						/* height: 18%; */
 
 
 						 #searchPanelWrapper
@@ -298,6 +344,76 @@
 						margin-top: -13px;
 						padding: 0;
 						border-left: none;
+
+						#resultDetail
+						 {
+						 	.result
+						 	{
+						 		width: 100%;
+						 	}
+
+						 	.generalDetails
+						 	{
+						 		ul.firstUl
+						 		{
+						 			float: left;
+						 			margin-right: 0px;
+						 		}
+
+						 		ul
+						 		{
+						 			float: right;
+						 		}
+						 		margin-bottom: 20px;
+						 	}
+
+						 	.searchMap
+						 	{
+						 		width: 100%;
+						 	}
+
+						 	.resultDescription
+						 	{
+						 		h2
+						 		{
+						 			display: block;
+						 		}
+						 	}
+
+						 	 .resultExtraInfo
+						 	 {
+						 	 	 .resultSubInfo
+						 	 	 {
+						 	 	 	 background: none;
+						 	 	 	 padding: 50px 0;
+
+						 	 	 	 .resultOpeningHours:first-child
+						 	 	 	 {
+						 	 	 	 	margin-left: 0;
+						 	 	 	 }
+
+						 	 	 	 .resultOpeningHours
+						 	 	 	 {
+						 	 	 	 	.openingDay
+						 	 	 	 	{
+						 	 	 	 		@include font-size(1.3);
+						 	 	 	 	}
+
+						 	 	 	 	.openingHour
+						 	 	 	 	{
+						 	 	 	 		@include font-size(1.2);
+						 	 	 	 	}
+						 	 	 	 }
+
+						 	 	 	 p
+						 	 	 	 {
+						 	 	 	 	bottom: -11px;
+										right: 5px;
+						 	 	 	 }
+
+						 	 	 }
+						 	 }
+						 }
 						h2
 						{
 							display:none;
@@ -337,6 +453,7 @@
 
 						.isotope
 						{
+
 							.item
 							{
 								/* width: 100%; */

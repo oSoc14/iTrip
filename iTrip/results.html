@@ -38,6 +38,7 @@
                 <ul>
                     <li><a class="active" href="#">PLAN JE REIS</a></li>
                     <li><a id="loginInLink" href="#">AANMELDEN</a></li>
+                    <li><a href="my_trips.html">MIJN REIZEN</a></li>
                     <li><a href="#">CONTACT</a></li>
                 </ul>
             </nav>
@@ -47,7 +48,7 @@
 
      <div class="overlay"></div>
      <div id="searchTripPart" class="row">
-        <div id="searchPanel" class="col-md-3">
+        <div id="searchPanel" class="col-md-3" >
         <h1 class="title">Plan je reis</h1>
             <form class="extraStyleResultsSearchPanel" id="searchPanelWrapper">
                 <div class="row rowStyle saveTripInfoPart">
@@ -81,10 +82,10 @@
         </div> 
         <div id="resultSection" class="col-md-9 resultPage">
             <div class="row rowStyle">
-                    <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
+                    <!-- <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2> -->
                     <h2 id="backToResults" class="col-md-2">Resultaten</h2>
                     <div class="searchExtraStyle ">
-                        <input class="resultButtonClass addToMyTrips" type="button">
+                        <input id="addToMyTrips" class="resultButtonClass addToMyTrips" type="button">
                         <input class="resultButtonClass shareTrip" type="button">
                         <input id="inputEvent" type="text">
                         <input id="searchEvent" type="button">

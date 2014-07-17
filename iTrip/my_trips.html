@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/css/my_trips.css">
 </head>
 
-<body>
+<body class="myTripsPage">
 
   <header>
     <div id="regularNav" class="row">
@@ -59,7 +59,7 @@
 
   <div class="overlay"></div>
   <div id="searchTripPart" class="row">
-    <div id="searchPanel" class="col-md-3">
+    <div id="searchPanel" class="col-md-3 ">
       <h1 class="title">Mijn reizen
         <div class="pull-right">
           <input type="image" src="images/placeholders/placeholders-36.png" onclick="gotoAdd()">
@@ -130,11 +130,12 @@
     </div>
     <div id="resultSection" class="col-md-9 resultPage">
             <div class="row rowStyle">
-                    <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
-                    <h2 id="backToResults" class="col-md-2">Reis: Kortrijk</h2>
-                    <div class="searchExtraStyle col-md-4 col-md-offset-6">
-                        <input class="resultButtonClass addToMyTrips" type="button">
+                   <!--  <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2> -->
+                    <h2 id="backToResults" class="col-md-2">Resultaten</h2>
+                    <div class="searchExtraStyle">
+                       <!--  <input class="resultButtonClass addToMyTrips" type="button"> -->
                         <input class="resultButtonClass shareTrip" type="button">
+                        <input id="deleteEvent" type="image" src="images/placeholders/placeholders-38.png" onclick="startDelete(this)">
                         <input id="inputEvent" type="text">
                         <input id="searchEvent" type="button">
                     </div>

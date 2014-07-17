@@ -257,6 +257,12 @@ html
 					/* right: -32px; */
 					float: right;
 
+					#deleteEvent
+					{
+						float: left;
+						margin-right: 10px;
+					}
+
 					#inputEvent
 					{
 						border-radius: 5px 0 0 5px;
@@ -290,6 +296,25 @@ html
 						background-color: #033b93;
 					}
 
+					.mobAddToMyTrips
+					{
+						display: none;
+						float: left;
+						padding: 3px 17px;
+						margin-right: 10px;
+						border:none;
+						width: 135px;
+						font-family: $font-title;
+						//visibility: hidden; //displayed on the results details pages
+						background-position: left 5px center;
+						background-color: $mainBlueColor;
+						@include backgroundSize(2.3);
+						background-image: url('../../images/plus_2.png');
+						color: #ffffff;
+						@include font-size(2);
+						text-indent: 10px;
+					}
+
 					.addToMyTrips
 					{
 						//@include smallblueButton();
@@ -298,6 +323,7 @@ html
 						padding: 7px 17px;
 						margin-right: 10px;
 						border:none;
+						background-position: center center;
 						//visibility: hidden; //displayed on the results details pages
 						background-image: url('../../images/placeholders/placeholders-36.png');
 					}
@@ -441,7 +467,7 @@ html
 					#searchMap
 					{
 						height: 15%;
-						width: 50%;
+						/* width: 50%; */
 					}
 
 					.resultExtraInfo
@@ -584,7 +610,7 @@ html
 						  		.resultInfo
 						  		{
 						  			float: left;
-									margin: 9px 0px;
+									margin: 9px 7px;
 									line-height: 20px;
 									font-family: $font-subText;
 									@include font-size(1.6);
