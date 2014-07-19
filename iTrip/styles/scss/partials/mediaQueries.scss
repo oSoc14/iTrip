@@ -86,7 +86,7 @@
 					{
 						.searchExtraStyle
 						{
-							#mobSaveTrip,#mobEditTrip
+							#mobSaveTrip,#mobEditTrip, #mobSaveOptionsTrip
 							{
 								@include backgroundSize(3);
 								padding: 8px 17px;
@@ -445,7 +445,7 @@
 								padding: 12px 21px;
 							}
 
-							#mobEditTrip, #mobSaveTrip
+							#mobEditTrip, #mobSaveTrip, #mobSaveOptionsTrip
 							{
 								display: block;
 							}

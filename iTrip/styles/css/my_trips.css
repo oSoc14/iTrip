@@ -36,8 +36,115 @@ article.active h2{
     font-family: 'DINNextLTPro-MediumCond', sans-serif;
     font-size:1.5em;
 }
-/*@media (max-width: 960px){
+
+.optionsWrapper
+{
+	float: right;
+	background-color: #99A4B5;
+	padding: 10px;
+	border: 2px solid #ffffff;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:  5px;
+	-ms-border-radius:  5px;
+	border-radius:  5px;
+	
+	position: absolute;
+	z-index: 5;
+	right: 0;
+	top: 70px;
+	display: none;
+}
+
+/* STYLE TO CREATE A SPEECH BUBBLE LIKE THING */
+.extraSaveOptions:before,
+.extraSaveOptions:after {
+    content: "\0020";
+    display:block;
+    position:absolute;
+    top:-18px;
+    /*left:20px;*/
+    left: 53%;
+    z-index:1;
+    width: 0;
+    height: 0;
+    overflow:hidden;
+    border: solid 17px transparent;
+    border-top: 0;
+    border-bottom-color:#ffffff;
+}
+.extraSaveOptions:after {
+    top:-15px;
+    z-index:2;
+    border-bottom-color:#99A4B5;
+}
+
+.extraSaveOptions
+{
+	margin:0;
+}
+
+.extraSaveOptions li
+{
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 22px 25px;
+	float: left;
+}
+
+.extraSaveOptions li:hover
+{
+	cursor: pointer;
+}
+
+.shareTripOption
+{
+	background-image: url('../../images/mobile_icons/Mobile-34.png');
+}
+
+.deleteTripOption
+{
+	background-image: url('../../images/mobile_icons/Mobile-35.png');
+}
+
+.addLocationOption
+{
+	background-image: url('../../images/mobile_icons/Mobile-32.png');
+}
+
+.addPictureOption
+{
+	background-image: url('../../images/mobile_icons/Mobile-33.png');
+}
+
+#myTripsTitle
+{
+	display: block;
+}
+
+@media (max-width: 960px){
 	#searchPanel{
 		height: 50% !important;
 	}
-}*/
+}
+
+@media (max-width: 345px){
+	.extraSaveOptions li
+	{
+		background-size: 3.5rem;
+		background-size: 2.5em;
+		background-size: 30px;
+	}
+
+	.optionsWrapper
+	{
+
+		padding: 0;
+		top: 105px;
+	}
+
+	.extraSaveOptions:before, .extraSaveOptions:after
+	{
+		left: 79%;
+
+	}
+}

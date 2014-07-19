@@ -829,6 +829,12 @@ function editTripName()
     }  
 
   });
+
+  $("#mobSaveOptionsTrip").on('click', function(event){
+   $(".optionsWrapper").toggle(); 
+
+  });
+  
 }
 
 // FUNCTION TO LOAD ISOTOPE FOR RESULTS
@@ -956,7 +962,8 @@ function checkWidthWindowOnResize()
         $('.backToResults').show();
         $('.backToSearch').hide();
         $("#searchPanel").hide();
-        $("#resultSection").css("height","100%");
+        $("#resultSection").css("height","auto");
+        $("#resultSection").css("overflow","visible");
         $("#mobEditTrip").hide();
         $("#mobSaveTrip").hide();
         $(".addToMyTrips").val("Toevoegen");
@@ -978,6 +985,7 @@ function checkWidthWindowOnResize()
         $("#addToMyTrips").hide();
         $("#addToMyTrips").addClass("addToMyTrips");
         $("#addToMyTrips").removeClass("mobAddToMyTrips");
+
       }
       
       $("#inputEvent").hide();
@@ -1034,7 +1042,9 @@ function checkWidthWindowOnResize()
             $(".backToSearch").hide();
             $("#mobEditTrip").hide();
             $("#mobSaveTrip").hide();
-            $("#resultSection").css("height","100%");
+            /*$("#resultSection").css("height","100%");*/
+            $("#resultSection").css("height","auto");
+            $("#resultSection").css("overflow","visible");
             $(".addToMyTrips").val("Toevoegen");
             $("#addToMyTrips").removeClass("addToMyTrips");
             $("#addToMyTrips").addClass("mobAddToMyTrips");
@@ -1059,7 +1069,19 @@ function checkWidthWindowOnResize()
             $("#addToMyTrips").addClass("addToMyTrips");
             $("#addToMyTrips").removeClass("mobAddToMyTrips");
          }
+
+            $(".optionsWrapper").hide();
+            $("#mobEditTrip").hide();
      }
 
+  });
+
+
+  $("#searchTripPart").on('click', function(event){
+    if($("#mobileNav").css("display") == "block")
+      $(".mobileNavItems ul").hide();
+
+    // if($(".optionsWrapper").css("display") == "block")
+    //   $(".optionsWrapper").hide();
   });
 }
