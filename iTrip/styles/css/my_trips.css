@@ -121,9 +121,9 @@ article.active h2{
 	display: block;
 }
 
-@media (max-width: 960px){
-	#searchPanel{
-		height: 50% !important;
+@media (max-width: 345px){
+	.tripresults{
+		display: none;
 	}
 }
 

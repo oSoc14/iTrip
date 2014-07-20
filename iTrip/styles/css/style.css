@@ -1798,7 +1798,7 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .addToMyTrips {
         display: none;
         float: left;
-        padding: 7px 17px;
+        padding: 11px 20px;
         margin-right: 10px;
         border: none;
         background-position: center center;
@@ -2291,3 +2291,34 @@ html body {
 		}
 	}
 } */
+
+.additem{
+  float:right;
+  margin:20px;
+}
+div[id^="poi"]{
+  background-color:#033b93;
+  padding:10px;
+  visibility: hidden;
+}
+div[id^="poi"] > article{
+  background-color:#fff;
+  height:50px;
+}
+div[id^="poi"] > article img{
+  float:left;
+  margin: 5px 10px;
+}
+div[id^="poi"] > article h2{
+  margin: -2px 0 -19px 0;
+  color: #033b93;
+    font-family: 'DINNextLTPro-MediumCond', sans-serif;
+    font-size:1.5em;
+}
+div[id^="poi"] > article p{
+  color:#bfbfbf;
+  margin-right:0;
+}
+div[id^="poi"] img.pull-right{
+  margin-top:15px;
+}
