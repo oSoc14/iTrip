@@ -291,7 +291,7 @@ html
 					{
 						background-position: top center;
 						background-repeat: no-repeat;
-						background-size: 34px;
+						@include backgroundSize(4.2);
 						border-radius: 5px;
 						background-color: #033b93;
 					}
@@ -332,14 +332,15 @@ html
 					{
 						display: none;
 						float: left;
-						padding: 7px 17px;
+						/* padding: 7px 17px; */
+						padding: 11px 21px;
 						margin-right: 10px;
 						border:none;
 						//visibility: hidden; //displayed on the results details pages
 						background-image: url('../../images/placeholders/placeholders-37.png');
 					}
 
-					#mobSaveTrip, #mobEditTrip
+					#mobSaveTrip, #mobEditTrip, #mobSaveOptionsTrip
 					{
 						display: none;
 						background-color: $mainBlueColor;
@@ -353,7 +354,7 @@ html
 						@include backgroundSize(5.0);
 					}
 
-					#mobSaveTrip
+					#mobSaveTrip, #mobSaveOptionsTrip
 					{
 						background-image: url('../../images/mobile_icons/Mobile-18.png');
 					}

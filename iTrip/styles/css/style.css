@@ -1109,7 +1109,7 @@ html {
       width: 100%;
       z-index: 10;
       background-color: rgba(0, 0, 0, 0.5); }
-    html body #searchTripPart .title {
+    html body #searchTripPart .title, html body #searchTripPart #myTripsTitle {
       font-family: 'DINNextLTPro-MediumCond', sans-serif;
       font-size: 30px;
       font-size: 3rem;
@@ -1774,7 +1774,8 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .resultButtonClass {
         background-position: top center;
         background-repeat: no-repeat;
-        background-size: 34px;
+        background-size: 42px;
+        background-size: 4.2rem;
         border-radius: 5px;
         background-color: #033b93; }
       html body #searchTripPart #resultSection .searchExtraStyle .mobAddToMyTrips {
@@ -1805,11 +1806,12 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .shareTrip {
         display: none;
         float: left;
-        padding: 7px 17px;
+        /* padding: 7px 17px; */
+        padding: 11px 21px;
         margin-right: 10px;
         border: none;
         background-image: url('../../images/placeholders/placeholders-37.png'); }
-      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip {
+      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
         display: none;
         background-color: #033b93;
         padding: 12px 22px;
@@ -1821,7 +1823,7 @@ html body {
         background-position: center center;
         background-size: 50px;
         background-size: 5rem; }
-      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip {
+      html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
         background-image: url('../../images/mobile_icons/Mobile-18.png'); }
       html body #searchTripPart #resultSection .searchExtraStyle .mobEditTrip {
         background-image: url('../../images/mobile_icons/Mobile-14.png'); }
@@ -2063,7 +2065,7 @@ html body {
   html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultName {
     font-size: 17px;
     font-size: 1.7rem; }
-  html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip {
+  html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
     background-size: 30px;
     background-size: 3rem;
     padding: 8px 17px;
@@ -2235,7 +2237,7 @@ html body {
             width: 40%; }
           html body #searchTripPart #resultSection .searchExtraStyle #searchEvent {
             padding: 12px 21px; }
-          html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip {
+          html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
             display: block; }
         html body #searchTripPart #resultSection .isotope .item {
           /* width: 100%; */

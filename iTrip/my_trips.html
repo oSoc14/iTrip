@@ -60,7 +60,7 @@
   <div class="overlay"></div>
   <div id="searchTripPart" class="row">
     <div id="searchPanel" class="col-md-3 ">
-      <h1 class="title">Mijn reizen
+      <h1 id="myTripsTitle" >Mijn reizen
         <div class="pull-right">
           <input type="image" src="images/placeholders/placeholders-36.png" onclick="gotoAdd()">
           <input type="image" src="images/placeholders/placeholders-37.png">
@@ -138,6 +138,17 @@
                         <input id="deleteEvent" type="image" src="images/placeholders/placeholders-38.png" onclick="startDelete(this)">
                         <input id="inputEvent" type="text">
                         <input id="searchEvent" type="button">
+                        <input id="mobEditTrip" class="mobEditTrip" type="button">
+                        <input id="mobSaveOptionsTrip" type="button">
+
+                        <div class="optionsWrapper">
+                          <ul class="extraSaveOptions">
+                            <li class="shareTripOption"></li>
+                            <li class="deleteTripOption"></li>
+                            <li class="addLocationOption"></li>
+                            <li class="addPictureOption"></li>
+                          </ul>
+                        </div>
                     </div>
              </div>
 

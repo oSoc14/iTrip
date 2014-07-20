@@ -231,7 +231,7 @@ html
 
 		#searchTripPart
 		{
-			.title
+			.title, #myTripsTitle
 			{
 				font-family: $font-title;
 				@include font-size(3.0);
@@ -240,6 +240,7 @@ html
 				z-index: 2;
 			}
 
+		
 			#searchPanel
 			{
 				/* margin-top: -10px; */
