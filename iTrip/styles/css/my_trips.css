@@ -36,8 +36,8 @@ article.active h2{
     font-family: 'DINNextLTPro-MediumCond', sans-serif;
     font-size:1.5em;
 }
-/*@media (max-width: 960px){
-	#searchPanel{
-		height: 50% !important;
+@media (max-width: 960px){
+	#resultSection{
+		display: none !important;
 	}
-}*/
+}
