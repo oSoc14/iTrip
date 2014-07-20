@@ -827,7 +827,7 @@ function editTripName()
       $(this).removeClass(".mobEditTrip");
       $(".item").css("width","100%");
     }  
-
+    $(".isotope").isotope().arrange();
   });
 
   $("#mobSaveOptionsTrip").on('click', function(event){
@@ -844,6 +844,7 @@ function loadIsotopeForResults()
 
 
     $('.isotope').isotope({
+      isInitLayout: false,
         itemSelector: '.item',
         // layout mode options
         masonry: {
@@ -855,6 +856,8 @@ function loadIsotopeForResults()
       });
 
 
+  $(".isotope").isotope('layout');
+  
 
   var quicksearch = $('#inputEvent').keyup( debounce( function() {
     qsRegex = new RegExp( quicksearch.val(), 'gi' );
@@ -1031,7 +1034,6 @@ function checkWidthWindowOnResize()
   });
 
   $(window).resize(function(){
-
       $("#searchPanel").show();
      if($( window ).width() <= 818)
      {
