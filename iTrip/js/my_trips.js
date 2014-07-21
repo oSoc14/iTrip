@@ -54,8 +54,12 @@ function toTravels() {
     document.getElementById("searchPanel").style.setProperty("display", "initial");
 }
 
-function addmenu(e){
+function addmenu(e) {
     var numeric = e.id.replace('add', '');
     var poi = document.getElementById("poi" + numeric);
-    poi.style.setProperty("visibility", "visible");
+    if (poi.style.visibility == "hidden") {
+        poi.style.setProperty("visibility", "visible");
+    } else {
+        poi.style.setProperty("visibility", "hidden");
+    }
 }
