@@ -2141,183 +2141,186 @@ html body {
 
 @media only screen and (max-width: 818px) {
   /* @media only screen and (max-width : 768px) { */
-  html .resultPage {
-    overflow: hidden; }
-  html body {
-    overflow: visible;
-    background-color: #ffffff; }
-    html body header {
-      border-bottom: 5px solid #ffbb00;
-      margin-top: -25px;
-      border-top: none;
-      height: 60px; }
-      html body header #regularNav {
-        display: none; }
-      html body header #mobileNav {
-        display: block;
-        margin-top: -10px; }
-        html body header #mobileNav #homeButton {
-          padding: 13px 33px;
-          margin-left: 0px;
-          margin-top: 6px; }
-    html body #searchTripPart {
-      display: -moz-box-flex;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -moz-box-orient: vertical;
-      -webkit-box-orient: vertical;
-      -ms-flex-direction: column;
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      /* margin-top: -22px;
+  html {
+    /* .resultPage
+			{
+				overflow: hidden;
+			} */ }
+    html body {
+      overflow: visible;
+      background-color: #ffffff; }
+      html body header {
+        border-bottom: 5px solid #ffbb00;
+        margin-top: -25px;
+        border-top: none;
+        height: 60px; }
+        html body header #regularNav {
+          display: none; }
+        html body header #mobileNav {
+          display: block;
+          margin-top: -10px; }
+          html body header #mobileNav #homeButton {
+            padding: 13px 33px;
+            margin-left: 0px;
+            margin-top: 6px; }
+      html body #searchTripPart {
+        display: -moz-box-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -moz-box-orient: vertical;
+        -webkit-box-orient: vertical;
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        /* margin-top: -22px;
  */ }
-      html body #searchTripPart .resultPage #searchPanel {
-        position: fixed; }
-      html body #searchTripPart .myTripsPage #resultSection {
-        display: none; }
-      html body #searchTripPart #searchPanel {
-        -webkit-box-ordinal-group: 2;
-        -moz-box-ordinal-group: 2;
-        -ms-flex-order: 2;
-        -webkit-order: 2;
-        order: 2;
-        width: 100%;
-        overflow: visible;
-        height: auto;
-        margin-top: 15px;
-        margin: 0;
-        padding: 0;
-        /* position: fixed; */
-        bottom: 0;
-        /* height: 18%; */ }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
-          background-size: 100%;
-          background-position: center center; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper .changeTripInfoPart, html body #searchTripPart #searchPanel #searchPanelWrapper .saveTripInfoPart {
+        html body #searchTripPart .resultPage #searchPanel {
+          position: fixed; }
+        html body #searchTripPart .myTripsPage #resultSection {
           display: none; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper .categoryPart h2 {
-          display: none; }
-      html body #searchTripPart .googleMap {
-        -webkit-box-ordinal-group: 1;
-        -moz-box-ordinal-group: 1;
-        -ms-flex-order: 1;
-        -webkit-order: 1;
-        order: 1;
-        width: 100%;
-        /* margin-top: 0; */
-        margin-top: 0;
-        /* height: 50%; */
-        height: 140px;
-        overflow: visible; }
-        html body #searchTripPart .googleMap #searchMap {
-          border-left: none; }
-      html body #searchTripPart .title {
-        /* position: absolute;
+        html body #searchTripPart #searchPanel {
+          -webkit-box-ordinal-group: 2;
+          -moz-box-ordinal-group: 2;
+          -ms-flex-order: 2;
+          -webkit-order: 2;
+          order: 2;
+          width: 100%;
+          overflow: visible;
+          height: auto;
+          margin-top: 15px;
+          margin: 0;
+          padding: 0;
+          /* position: fixed; */
+          bottom: 0;
+          /* height: 18%; */ }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
+            background-size: 100%;
+            background-position: center center; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper .changeTripInfoPart, html body #searchTripPart #searchPanel #searchPanelWrapper .saveTripInfoPart {
+            display: none; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper .categoryPart h2 {
+            display: none; }
+        html body #searchTripPart .googleMap {
+          -webkit-box-ordinal-group: 1;
+          -moz-box-ordinal-group: 1;
+          -ms-flex-order: 1;
+          -webkit-order: 1;
+          order: 1;
+          width: 100%;
+          /* margin-top: 0; */
+          margin-top: 0;
+          /* height: 50%; */
+          height: 140px;
+          overflow: visible; }
+          html body #searchTripPart .googleMap #searchMap {
+            border-left: none; }
+        html body #searchTripPart .title {
+          /* position: absolute;
 						top: 0;
 						width: 100%;
 						text-align: center;
 						margin: 0; */
-        display: none; }
-      html body #searchTripPart #resultCount {
-        position: absolute;
-        width: 100%;
-        text-align: center; }
-      html body #searchTripPart #resultSection {
-        height: 75%;
-        /* margin-top: -13px; */
-        padding: 0;
-        border-left: none; }
-        html body #searchTripPart #resultSection #resultDetail .result {
-          width: 100%; }
-        html body #searchTripPart #resultSection #resultDetail .generalDetails {
-          margin-bottom: 20px; }
-          html body #searchTripPart #resultSection #resultDetail .generalDetails ul.firstUl {
-            float: left;
-            margin-right: 0px; }
-          html body #searchTripPart #resultSection #resultDetail .generalDetails ul {
-            float: right; }
-        html body #searchTripPart #resultSection #resultDetail .searchMap {
-          width: 100%; }
-        html body #searchTripPart #resultSection #resultDetail .resultDescription h2 {
-          display: block; }
-        html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
-          background: none;
-          padding: 50px 0; }
-          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
-            margin-left: 0; }
-          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingDay {
-            font-size: 13px;
-            font-size: 1.3rem; }
-          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingHour {
-            font-size: 12px;
-            font-size: 1.2rem; }
-          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo p {
-            bottom: -11px;
-            right: 5px; }
-        html body #searchTripPart #resultSection h2 {
           display: none; }
-        html body #searchTripPart #resultSection #backToResults {
-          display: none; }
-        html body #searchTripPart #resultSection .searchExtraStyle {
-          margin-top: 0;
-          background-color: #d8e1e5;
-          right: 0px;
-          padding: 10px;
-          width: 100%; }
-          html body #searchTripPart #resultSection .searchExtraStyle #inputEvent {
-            padding: 10px;
-            /* @include staticWidthSize(14.0); */
-            width: 40%; }
-          html body #searchTripPart #resultSection .searchExtraStyle #searchEvent {
-            padding: 12px 21px; }
-          html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
+        html body #searchTripPart #resultCount {
+          position: absolute;
+          width: 100%;
+          text-align: center; }
+        html body #searchTripPart #resultSection {
+          height: 75%;
+          /* margin-top: -13px; */
+          padding: 0;
+          border-left: none; }
+          html body #searchTripPart #resultSection #resultDetail .result {
+            width: 100%; }
+          html body #searchTripPart #resultSection #resultDetail .generalDetails {
+            margin-bottom: 20px; }
+            html body #searchTripPart #resultSection #resultDetail .generalDetails ul.firstUl {
+              float: left;
+              margin-right: 0px; }
+            html body #searchTripPart #resultSection #resultDetail .generalDetails ul {
+              float: right; }
+          html body #searchTripPart #resultSection #resultDetail .searchMap {
+            width: 100%; }
+          html body #searchTripPart #resultSection #resultDetail .resultDescription h2 {
             display: block; }
-        html body #searchTripPart #resultSection .isotope .item {
-          /* width: 100%; */
-          width: 50%; }
-          html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText {
-            min-height: 0; }
-            html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultCategory {
-              border: none;
-              background-size: 35px;
-              background-size: 3.5rem;
-              padding: 22px 20px; }
-            html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
-              float: none;
-              background-image: url('../../images/placeholders/placeholders-31.png');
-              background-position: right top 5px;
-              background-repeat: no-repeat;
-              line-height: inherit; }
-              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultName {
-                display: block;
-                /* @include font-size(2); */ }
-              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultLocation, html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultKm {
-                display: none; }
-    html body #ui-datepicker-div {
-      font-size: 12px;
-      font-size: 1.2rem; }
-    html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
-      width: 13%;
-      /* @include backgroundSize(4.5); */
-      padding: 45px 0px 0px 0px;
-      /* 
+          html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+            background: none;
+            padding: 50px 0; }
+            html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
+              margin-left: 0; }
+            html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingDay {
+              font-size: 13px;
+              font-size: 1.3rem; }
+            html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingHour {
+              font-size: 12px;
+              font-size: 1.2rem; }
+            html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo p {
+              bottom: -11px;
+              right: 5px; }
+          html body #searchTripPart #resultSection h2 {
+            display: none; }
+          html body #searchTripPart #resultSection #backToResults {
+            display: none; }
+          html body #searchTripPart #resultSection .searchExtraStyle {
+            margin-top: 0;
+            background-color: #d8e1e5;
+            right: 0px;
+            padding: 10px;
+            width: 100%; }
+            html body #searchTripPart #resultSection .searchExtraStyle #inputEvent {
+              padding: 10px;
+              /* @include staticWidthSize(14.0); */
+              width: 40%; }
+            html body #searchTripPart #resultSection .searchExtraStyle #searchEvent {
+              padding: 12px 21px; }
+            html body #searchTripPart #resultSection .searchExtraStyle #mobEditTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveTrip, html body #searchTripPart #resultSection .searchExtraStyle #mobSaveOptionsTrip {
+              display: block; }
+          html body #searchTripPart #resultSection .isotope .item {
+            /* width: 100%; */
+            width: 50%; }
+            html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText {
+              min-height: 0; }
+              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultCategory {
+                border: none;
+                background-size: 35px;
+                background-size: 3.5rem;
+                padding: 22px 20px; }
+              html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo {
+                float: none;
+                background-image: url('../../images/placeholders/placeholders-31.png');
+                background-position: right top 5px;
+                background-repeat: no-repeat;
+                line-height: inherit; }
+                html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultName {
+                  display: block;
+                  /* @include font-size(2); */ }
+                html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultLocation, html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText .resultInfo .resultKm {
+                  display: none; }
+      html body #ui-datepicker-div {
+        font-size: 12px;
+        font-size: 1.2rem; }
+      html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category {
+        width: 13%;
+        /* @include backgroundSize(4.5); */
+        padding: 45px 0px 0px 0px;
+        /* 
 					@include font-size(1.5);
 					background-position: center top; */ }
-    html body .loginBox, html body .registerBox {
-      width: 60%;
-      /* margin: 0% 20%; */
-      margin: 100px 20%; }
-      html body .loginBox #closeImage, html body .loginBox #closeLoginImage, html body .loginBox #closeRegisterImage, html body .registerBox #closeImage, html body .registerBox #closeLoginImage, html body .registerBox #closeRegisterImage {
-        margin-top: -20px;
-        margin-right: -5px; }
-    html body .welcomeBox {
-      width: 80%;
-      margin: 100px 10%; }
-      html body .welcomeBox #closeImage {
-        margin-top: -21px;
-        margin-right: 0px; } }
+      html body .loginBox, html body .registerBox {
+        width: 60%;
+        /* margin: 0% 20%; */
+        margin: 100px 20%; }
+        html body .loginBox #closeImage, html body .loginBox #closeLoginImage, html body .loginBox #closeRegisterImage, html body .registerBox #closeImage, html body .registerBox #closeLoginImage, html body .registerBox #closeRegisterImage {
+          margin-top: -20px;
+          margin-right: -5px; }
+      html body .welcomeBox {
+        width: 80%;
+        margin: 100px 10%; }
+        html body .welcomeBox #closeImage {
+          margin-top: -21px;
+          margin-right: 0px; } }
 
 /* @media only screen and (max-width : 993px) {
 	html 
