@@ -67,6 +67,12 @@ article.active h2 {
     border-top: 0;
     border-bottom-color: #ffffff;
 }
+
+.toggleOptionsMenu:before, .toggleOptionsMenu:after
+{
+    left: 78%;
+}
+
 .extraSaveOptions:after {
     top: -15px;
     z-index: 2;
@@ -99,19 +105,18 @@ article.active h2 {
 #myTripsTitle {
     display: block;
 }
+
 @media (max-width: 960px) {
-    .extraSaveOptions li {
-        background-size: 3.5rem;
-        background-size: 2.5em;
-        background-size: 30px;
-    }
-    .optionsWrapper {
-        padding: 0;
-        top: 105px;
-    }
-    .extraSaveOptions:before, .extraSaveOptions:after {
-        left: 79%;
-    }
+   
+  /*   .extraSaveOptions li {
+      background-size: 3.5rem;
+      background-size: 2.5em;
+      background-size: 30px;
+  }
+  .optionsWrapper {
+      padding: 0;
+      top: 105px;
+  } */
     .tripresults {
         display: none;
     }

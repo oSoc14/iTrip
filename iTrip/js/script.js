@@ -24,6 +24,8 @@ $(document).ready( function (){
   initializeWelcomeBox();
 
 
+  // WHEN CLICKED ON THE OVERLAY DIV, THE VISIBLE BOXES DISAPPEAR AND THIS WILL BE SAVED IN A COOKIE
+  // IF COOKIES ARE ENABLED
   $(".overlay").on('click', function (event){
     checkIfWelcomeBoxMustShow();
     if($(".loginBox").css("display","block"))
@@ -33,10 +35,14 @@ $(document).ready( function (){
     // $(".overlay").fadeOut();
   });
 
-   $("#searchTripPart").on('click', 'span#closeImage', function (event){
+  // WHEN CLICKED ON THE CLOSE BUTTON OF THE WELCOMEBOX, THIS WILL BE SAVED IN A COOKIE IF COOKIES ARE ENABLED
+  // SO IT WILL NOT APPEAR THE NEXT TIME YOU VISIT THE SITE
+   $("body").on('click', 'span#closeImage', function (event){
     checkIfWelcomeBoxMustShow();
   });
 
+  // WHEN CLICKED ON THE CLOSE BUTTON OF THE WELCOMEBOX, THIS WILL BE SAVED IN A COOKIE IF COOKIES ARE ENABLED
+  // SO IT WILL NOT APPEAR THE NEXT TIME YOU VISIT THE SITE
   $("#planTripButton").on('click', function (event){
     checkIfWelcomeBoxMustShow();
   });
@@ -195,6 +201,7 @@ function requestCurrentPosition()
 }
 
 
+// THE FUNCTION USED BY requestCurrentPosition
 function useGeoData(position) 
 { 
   var longitude = position.coords.longitude; 
@@ -319,6 +326,8 @@ function initialize(longitude, latitude, useLonLat)
                          ]
                        }
                       ];
+
+    // SETTING THE CUSTOM STYLE OF THE GOOGLE MAP, WITH CUSTOM MARKER
     map.setOptions({styles: mapStyles});
     var customMarker = new google.maps.Marker({
           position: myLatLng,
@@ -549,7 +558,8 @@ function logout()
   });
 }
 
-// FUNCTION THAT SHOW A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
+// FUNCTION THAT SHOWS A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
+// IT ALSO SHOW AN ERROR WHEN NONE OF THE REQUIRED FIELDS ARE FILLED IN CORRECTLY
 function register()
 {
     $("body").on('click', '#registerUserButton', function(event){
@@ -713,6 +723,8 @@ function switchCategory()
     }
     else
     {
+      // WHEN THE CLICKED CATEGORY IS EVERYTHING, THEN ALL OF THE OTHER CATEGORIES ARE UNCHECKED AND NOT ACTIVE ANYMORE
+      // ONLY THE EVERYTHING CATEGORY IS ACTIVE
       if($(this)[0].id == "everything")
       { 
         $(".categories li").each(function(key, value){
@@ -731,19 +743,23 @@ function switchCategory()
       $(this).addClass($(this)[0].id + "Active");
     }
 
-
+    // THE FILTER OF THE CHOSEN CATEGORY IS ADDED TO AN ARRAY
+    // WHEN IT IS ALREADY IN THE ARRAY, IT IS REMOVED (=TOGGLE)
     var currentDataFilter = $(this).attr('data-filter');
-    console.log("currentDataFilter: " + currentDataFilter);
+    //console.log("currentDataFilter: " + currentDataFilter);
     if(jQuery.inArray(currentDataFilter,filters) > -1)
       filters.pop(currentDataFilter);
     else
       filters.push(currentDataFilter);
 
-    console.log(filters);
-    console.log("filtersize " + filters.length);
+    //console.log(filters);
+    //console.log("filtersize " + filters.length);
+    // ALL THESE FILTERS ARE JOINED SO THAT THE ISOTOPE FILTER FUNCTION CAN FILTER THE RESULTS PROPERLY
     joinedFilters = filters.join(', ');
-    console.log("joinedfilters " + joinedFilters);
+    //console.log("joinedfilters " + joinedFilters);
       // SETTING THE FILTERING ON THE RESULTS WHEN CLICKED ON A CATEGORY
+      // WHEN THIS IS EVERYTHING, ALL THE RESULTS ARE SHOWN
+      // OTHERWISE, THE RESULTS MATCHING THE RIGHT CATEGORIES ARE SHOWN
     if($(this).hasClass("everything"))
     {
 
@@ -787,7 +803,7 @@ function switchCategory()
 
   });
 
-   // WHEN THE CURSOR LEAVES A CATEGORY? THE ICON BRIGHTENS (ONLY IS THE CATEGORY ISN'T ACTIVE)
+   // WHEN THE CURSOR LEAVES A CATEGORY, THE ICON BRIGHTENS (ONLY IF THE CATEGORY ISN'T ACTIVE)
   $("li.category").on('mouseleave', function (event){
     var elementClassList = $(this)[0].classList;
     var category = $(this)[0].classList[1];
@@ -807,6 +823,7 @@ function switchCategory()
 // NEEDS TO BE ALTERED FOR INSERT/UPDATE IN DATABASE
 function editTripName()
 {
+  // WHEN CLICKED ON THE SAVE TRIP BUTTON, IT HAS TO BE SAVED IN THE DATABASE
   $("#saveTrip").on('click', function(event){
     var newTripName = $("#editLocation").val();
      // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
@@ -814,6 +831,7 @@ function editTripName()
     //alert(newTripName);
   });
 
+  // WHEN CLICKED ON THE MOBILE SAVE TRIP BUTTON, IT HAS TO BE SAVED IN THE DATABASE
   $("#mobSaveTrip").on('click', function(event){
     var newTripName = $("#editLocation").val();
      // TEMPORARY LINK TO NEXT (RESULT PAGE) WHEN "SEARCH/ZOEKEN" IS CLICKED
@@ -821,6 +839,7 @@ function editTripName()
     //alert(newTripName);
   });
 
+  //WHEN CLICKED ON THE EDIT VIEW BUTTON, THE RESULTS ARE SHOW EITHER IN A SINGLE COLUMN OR IN 2 COLUMNS
   $("#mobEditTrip").on('click', function(event){
     if($(this).hasClass("mobToggleView"))
     {
@@ -834,12 +853,12 @@ function editTripName()
       $(this).removeClass(".mobEditTrip");
       $(".item").css("width","100%");
     }  
-    $(".isotope").isotope().arrange();
+    $(".isotope").isotope('layout');
   });
 
+  // WHEN CLICKED ON THE SAVE LIKE BUTTON (IN MOBILE VIEW), OTHER OPTIONS APPEAR/DISAPPEAR
   $("#mobSaveOptionsTrip").on('click', function(event){
    $(".optionsWrapper").toggle(); 
-
   });
   
 }
@@ -850,6 +869,7 @@ function loadIsotopeForResults()
       var qsRegex;
 
 
+      // WITH A REGEX FUNCTION TO HELP FILTER WHEN A USER ENTERS TEXT IN THE INPUT FIELD TO SEARCH
     $('.isotope').isotope({
       isInitLayout: false,
         itemSelector: '.item',
@@ -862,15 +882,16 @@ function loadIsotopeForResults()
         }
       });
 
-
+    // HELPS TO SET THE LAYOUT
   $(".isotope").isotope('layout');
   
-
+// WHEN EVERY SINGLE INPUT BY KEYBOARD THIS FUNCTION CHECKS FOR MATCHES AMONG THE RESULTS
   var quicksearch = $('#inputEvent').keyup( debounce( function() {
     qsRegex = new RegExp( quicksearch.val(), 'gi' );
     $(".isotope").isotope();
   }, 100 ) );
 
+// A USER CAN ALSO SEARCH BY FILLING IN THE INPUT AND CLICKING THE SEARCHBUTTON
     $("#searchEvent").on('click', function(event){
           var fullsearch = $("#inputEvent").val();
             qsRegex = new RegExp( fullsearch, 'gi' );
@@ -922,6 +943,7 @@ function debounce( fn, threshold ) {
 
 // FUCTION TO BE CALLED TO SEARCH FOR A CUSTOM LOCATION
 // AND SHOW IT ON A GOOGLE MAP
+// IT NEEDS A STRING LOCATION AND GIVES THE COORDINATES, WHICH CAN BE USED IN THE REQUESTPOSITION FUNCTION
 function setLocationOnMap(address)
 {
     var geocoder = new google.maps.Geocoder();
@@ -941,6 +963,7 @@ function setLocationOnMap(address)
 
 }
 
+// WHEN CLICKED IN THE HAMBURGER ICON IN MOBILE VIEW, THE MOBILE NAVAGATION APPEARS/DISAPPEARS
 function showMobileNavigation()
 {
   $(".hamburger").on('click', function(event){
@@ -949,6 +972,7 @@ function showMobileNavigation()
 
    /* $(".mobileNavItems ul").slideToggle();*/
    // $(".mobileNavItems ul").toggle();
+   // THE RIGHT CLASS HAS TO BE GIVEN TO THE SEPERATE GROUPS SO THAT THE RIGHT CSS ANIMATION IS GIVEN
     if($(".mobileNavItems").hasClass("moveDown"))
     {
       //$("#searchTripPart").css("margin-top","0px");
@@ -970,6 +994,8 @@ function showMobileNavigation()
     } 
   });
 
+  // WHEN CLICKED ON EVERYTHING BUT THE HAMBURGER ICON WHEN THE MOBILE NAVIGATION IS SHOWN
+  // THIS NAVIGATION CLOSES
   $("#searchTripPart").on('click', function(event){
     var currentPage = window.location.pathname.split("/")[2];
     if($(".mobileNavItems").hasClass("moveDown"))
@@ -996,11 +1022,13 @@ function checkWidthWindowOnResize()
 {
 
   // WHEN CLICKED ON A RESULT, THAT DIV DISAPPEARS AND THE DETAILS SHOW
+  // ALSO BUTTONS AND SEARCH FIELD THAT NEED TO BE SHOWN APPEAR AND ELEMENTS THAT NEED TO BE INVISIBLE DISAPPEAR
   $("#resultDetail").hide();
   $('#backToResults').hide();
   $(".resultSubText").on("click", function(event){
+    $("#resultDetail").show();
       if($( window ).width() <= 818)
-      {      
+      {    
         $('#backToResults').hide();
         $('.backToResults').show();
         $('.backToSearch').hide();
@@ -1013,6 +1041,9 @@ function checkWidthWindowOnResize()
         $("#addToMyTrips").removeClass("addToMyTrips");
         $("#addToMyTrips").addClass("mobAddToMyTrips");
         $("#addToMyTrips").show();
+        $(".extraSaveOptions").addClass("toggleOptionsMenu");
+        $("#resultDetail").isotope('layout');
+        $("#resultSection").show();
         
       }
       else
@@ -1028,6 +1059,9 @@ function checkWidthWindowOnResize()
         $("#addToMyTrips").hide();
         $("#addToMyTrips").addClass("addToMyTrips");
         $("#addToMyTrips").removeClass("mobAddToMyTrips");
+        //$(".extraSaveOptions:before").css("left","53%");
+        //$(".extraSaveOptions:after").css("left","53%");
+        $(".extraSaveOptions").removeClass("toggleOptionsMenu");
 
       }
       
@@ -1041,9 +1075,10 @@ function checkWidthWindowOnResize()
       //$("#backToResults").show();
       $(".searchExtraStyle").css("right","-220px");
 
-      
+      // WHEN THE CURRENT PAGE IS THE RESULTS PAGE OR THE MYTRIPS PAGE
+      // THE ADDRESS OF THE RESULT NEEDS TO BE SHOWN IN THE GOOGLE MAP
         var currentPage = window.location.pathname.split("/")[2];
-        if(currentPage == "results.html")
+        if(currentPage == "results.html" || currentPage == "my_trips.html")
         {
           var street = $("p.street").text();
           var city = $("p.city").text();
@@ -1054,6 +1089,9 @@ function checkWidthWindowOnResize()
         }
   });
 
+
+  // WHEN CLICKED A BACK BUTTON, THE DETAILS DISAPPEAR AND THE RESULT LIST APPEARS
+  // ALSO BUTTONS AND SEARCH FIELD THAT NEED TO BE SHOWN APPEAR AND ELEMENTS THAT NEED TO BE INVISIBLE DISAPPEAR
   $("#backToResults").on('click', function(){
       if($( window ).width() > 818)
       {   
@@ -1073,8 +1111,8 @@ function checkWidthWindowOnResize()
       $("#resultSection").css("height","100%");
   });
 
+// THESE SETTINGS NEED TO BE CHECKED WHEN THE WINDOW RESIZES
   $(window).resize(function(){
-      $("#searchPanel").show();
      if($( window ).width() <= 818)
      {
         if($(".isotope").css('display') == "none")
@@ -1102,7 +1140,7 @@ function checkWidthWindowOnResize()
      }
      else
      {
-
+      $("#searchPanel").show();
       // IF THE MOBILE NAV IS SHOWING WHEN THE WIDTH OF THE WINDOW IS LARGER THAN 818px
       if($(".mobileNavItems").hasClass("moveDown"))
       {

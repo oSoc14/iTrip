@@ -62,6 +62,9 @@ function changeTrip(trip) {
         document.getElementById("resultSection").style.setProperty("height", "100%");
         document.getElementById("searchPanel").style.setProperty("display", "none");
     }
+
+    // HELPS TO REDISTRIBUTE THE ISOTOPE ITEMS SO THEY DON'T FALL ON TOP OF EACH OTHER
+    $(".isotope").isotope('layout');
 }
 
 function toTravels() {

@@ -43,20 +43,8 @@
 
         <div id="mobileNav">
             <a class="backToSearch" href="my_trips.html">Mijn reizen</a>
-            <a class="backToResults" href="results.html">Resultaten</a>
+            <a class="backToResults" href="add_item.html">Resultaten</a>
             <h1 class="activePage">iTrip</h1>
-            <nav class="navigation mobileNavItems">
-                <ul>
-                    <li><a href="index.html">PLAN JE REIS</a>
-                    </li>
-                    <li><a class="active" href="my_trips.html">MIJN REIZEN</a>
-                    </li>
-                    <li><a id="loginInLink" href="#">AFMELDEN</a>
-                    </li>
-                    <li><a href="#">CONTACT</a>
-                    </li>
-                </ul>
-            </nav>
             <img class="hamburger" title="navigation" alt="navigation" src="images/menu.png" />
         </div>
     </header>
@@ -88,9 +76,9 @@
             </form>
         </div>
         <div id="resultSection" class="col-md-9 resultPage">
-            <div class="row rowStyle">
-                <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2>
-                <h2 id="backToResults" class="col-md-2">Reis: Kortrijk</h2>
+            <div class="row rowStyle"><!-- 
+                <h2 id="resultcount" class="col-md-2">Resultaten (14)</h2> -->
+                <h2 id="backToResults" class="col-md-2">Resultaten</h2>
                 <div class="searchExtraStyle ">
                     <input id="addToMyTrips" class="resultButtonClass addToMyTrips" type="button">
                     <input class="resultButtonClass shareTrip" type="button">
@@ -563,6 +551,19 @@
             </div>
         </div>
     </div>
+
+    <nav class="navigation mobileNavItems">
+                <ul>
+                    <li><a href="index.html">PLAN JE REIS</a>
+                    </li>
+                    <li><a class="active" href="my_trips.html">MIJN REIZEN</a>
+                    </li>
+                    <li><a id="loginInLink" href="#">AFMELDEN</a>
+                    </li>
+                    <li><a href="#">CONTACT</a>
+                    </li>
+                </ul>
+    </nav>
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/jquery-ui.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>

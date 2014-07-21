@@ -245,10 +245,6 @@
 
 					.myTripsPage
 					{
-						#searchPanel
-						{
-
-						}
 
 						#resultSection
 						{
@@ -457,6 +453,11 @@
 							#mobEditTrip, #mobSaveTrip, #mobSaveOptionsTrip
 							{
 								display: block;
+							}
+
+							#deleteEvent
+							{
+								display: none;
 							}
 						}
 
