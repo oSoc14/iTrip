@@ -8,9 +8,16 @@ function startDelete(e) {
             arrows[i].alt = "trashcan icon";
         }
         /*Delete images for every tripitem*/
-        var items = document.getElementsByClassName("resultInfo");
-        for (var j = 0; j < items.length; j++) {
-            items[j].style.setProperty("background-image", "url('images/placeholders/trash-43.png')");
+        if (document.documentElement.clientWidth < 960) {
+            var items = document.getElementsByClassName("resultInfo");
+            for (var j = 0; j < items.length; j++) {
+                items[j].style.setProperty("background-image", "url('images/placeholders/trash-43.png')");
+            }
+        } else {
+            var items = document.getElementsByClassName("delitem");
+            for (var j = 0; j < items.length; j++) {
+                items[j].style.setProperty("display", "block");
+            }
         }
     } else {
         e.src = "images/placeholders/placeholders-38.png";
@@ -20,9 +27,16 @@ function startDelete(e) {
             arrows[i].src = "images/placeholders/placeholders-39.png";
             arrows[i].alt = "arrow icon";
         }
-        var items = document.getElementsByClassName("resultInfo");
-        for (var j = 0; j < items.length; j++) {
-            items[j].style.setProperty("background-image", "url('images/placeholders/placeholders-31.png')");
+        if (document.documentElement.clientWidth < 960) {
+            var items = document.getElementsByClassName("resultInfo");
+            for (var j = 0; j < items.length; j++) {
+                items[j].style.setProperty("background-image", "url('images/placeholders/placeholders-31.png')");
+            }
+        } else {
+            var items = document.getElementsByClassName("delitem");
+            for (var j = 0; j < items.length; j++) {
+                items[j].style.setProperty("display", "none");
+            }
         }
     }
 }

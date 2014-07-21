@@ -132,6 +132,11 @@ article.active h2 {
     float: right;
     margin: 20px;
 }
+.delitem{
+	float:right;
+	margin: 20px;
+	display: none;
+}
 div[id^="poi"] {
     background-color: #033b93;
     padding: 10px;
