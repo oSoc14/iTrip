@@ -12,6 +12,7 @@ function startDelete(e) {
             var items = document.getElementsByClassName("resultInfo");
             for (var j = 0; j < items.length; j++) {
                 items[j].style.setProperty("background-image", "url('images/placeholders/trash-43.png')");
+                items[j].style.setProperty("background-repeat", "no-repeat");
             }
         } else {
             var items = document.getElementsByClassName("delitem");
@@ -31,6 +32,7 @@ function startDelete(e) {
             var items = document.getElementsByClassName("resultInfo");
             for (var j = 0; j < items.length; j++) {
                 items[j].style.setProperty("background-image", "url('images/placeholders/placeholders-31.png')");
+                items[j].style.setProperty("background-repeat", "no-repeat");
             }
         } else {
             var items = document.getElementsByClassName("delitem");
