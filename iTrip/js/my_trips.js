@@ -16,7 +16,7 @@ function startDelete(e) {
         } else {
             var items = document.getElementsByClassName("delitem");
             for (var j = 0; j < items.length; j++) {
-                items[j].style.setProperty("display", "block");
+                items[j].style.setProperty("visibility", "visible");
             }
         }
     } else {
@@ -35,7 +35,7 @@ function startDelete(e) {
         } else {
             var items = document.getElementsByClassName("delitem");
             for (var j = 0; j < items.length; j++) {
-                items[j].style.setProperty("display", "none");
+                items[j].style.setProperty("visibility", "hidden");
             }
         }
     }

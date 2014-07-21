@@ -135,7 +135,7 @@ article.active h2 {
 .delitem{
 	float:right;
 	margin: 20px;
-	display: none;
+	visibility: hidden;
 }
 div[id^="poi"] {
     background-color: #033b93;
