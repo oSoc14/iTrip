@@ -33,7 +33,8 @@ html
 		header
 		{
 			background-color: #ffffff; 
-			
+			position: relative;
+			z-index: 2;
 			height: 80px;
 			border-top: 10px solid #ffbb00;
 
@@ -85,12 +86,14 @@ html
 			#mobileNav
 			{
 				display: none;
+				height: 100%;
 
 				.activePage
 				{
 					text-align: center;
 					font-family: $font-title;
 					@include font-size(3.0);
+					padding: 10px;
 				}
 
 				.backToResults
@@ -108,6 +111,7 @@ html
 					left:5px;
 					@include font-size(2.2);
 					font-family: $font-title;
+					margin-top: 15px;
 				}
 
 				.backToSearch:hover, .backToResults:hover
@@ -121,8 +125,10 @@ html
 					@include staticWidthSize(4.0);
 					position: absolute;
 					z-index: 5;
-					top: 0;
-					right: 5px;
+					/* top: 0;
+					right: 5px; */
+					top: 15px;
+					right: 10px;
 				}
 
 				.hamburger:hover
@@ -139,53 +145,6 @@ html
 					@include font-size(3.0);
 				} */
 
-
-
-				nav.mobileNavItems
-				{
-					width: 100%;
-					margin: 0;
-					padding: 0;
-					/* margin-top: -10px; */
-
-					/* position: relative; */
-				
-
-						
-					ul
-					{
-						/* position: absolute;
-						top: -178px; */
-						margin-top: -10px;
-						display: none;
-						width: 100%;
-						/* transition: -webkit-transform 1s;
-						transition: transform 1s; */
-						li
-						{
-							float: none;
-							background-color: $mainYellowColor;
-							border-top: 1px solid #ffffff;
-							border-bottom: 1px solid #ffffff;
-							text-align: center;
-							width: 100%;
-							color: $mainBlueColor;
-							padding: 0;
-							a
-							{
-								width: 100%;
-								display: block;
-								padding: 10px 0;
-							}
-
-							a.active
-							{
-								background-color: #ffffff;
-								color: $mainYellowColor;
-							}
-						}
-					}
-				}
 			}
 
 			nav.navigation
@@ -231,6 +190,9 @@ html
 
 		#searchTripPart
 		{
+			transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+			
 			.title, #myTripsTitle
 			{
 				font-family: $font-title;
@@ -554,7 +516,7 @@ html
 				overflow: scroll;
 				height: 100%;
 				margin: 0; 
-	        	margin-top: -67px;
+	        	margin-top: -68px;
 	        	padding: 0px;
 
 				#searchMap
@@ -570,14 +532,70 @@ html
 				}
 			}
 
-			.loginBox, .registerBox
+		}
+
+
+		nav.mobileNavItems
+		{
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			/* height: 100%; */
+			position: absolute;
+			top: -128px;
+			/* top: -103px; */
+			transition: -webkit-transform 0.5s;
+			transition: transform 0.5s;
+			/* margin-top: -10px; */
+
+			/* position: relative; */
+						
+			ul
+			{
+				/* position: absolute;
+				top: -178px; */
+				/* margin-top: -10px; */
+				/* display: none; */
+				margin: 0;
+				width: 100%;
+				font-size: 18px;
+				font-family: $font-button;
+				/* transition: -webkit-transform 1s;
+				transition: transform 1s; */
+				li
+				{
+					float: none;
+					background-color: $mainYellowColor;
+					border-top: 1px solid #ffffff;
+					border-bottom: 1px solid #ffffff;
+					text-align: center;
+					width: 100%;
+					color: $mainBlueColor;
+					padding: 0;
+					a
+					{
+						width: 100%;
+						display: block;
+						padding: 10px 0;
+					}
+
+					a.active
+					{
+						background-color: #ffffff;
+						color: $mainYellowColor;
+					}
+				}
+			}
+		}
+
+		.loginBox, .registerBox
 			{
 				border-top: 1px solid  $mainBlueColor;
 				background-color: #ffffff;
 				/* width: 33%;
 				margin: 0% 37%; */
 				width: 36%;
-				margin: 0% 32%;
+				margin: 100px 32%;
 				padding: 15px 5px 5px 5px;
 				position: fixed;
 				color: #033b93;
@@ -586,6 +604,11 @@ html
 				line-height: 24px;
 				z-index: 15;
 				padding-bottom: 10px;
+
+				/* background-image: url('../../images/close.png');
+				background-position: top 5px right 5px;
+				background-repeat: no-repeat;
+				background-size: 20px; */
 
 				h1
 				{
@@ -624,9 +647,13 @@ html
 					background-repeat: no-repeat;
 					background-size: 20px;
 					padding: 15px;
-					position: absolute;
+					/* position: absolute;
 					top: -5px;
-					right: -25px;
+					right: -25px; */
+					float: right;
+					margin-top: 0px;
+					margin-right: -35px;
+
 				}
 
 				#closeImage:hover, #closeLoginImage:hover, #closeRegisterImage:hover
@@ -686,13 +713,9 @@ html
 			{
 				border-top: 1px solid  $mainBlueColor;
 				background-color: #ffffff;
-				/* width: 49%;
-				margin: 5% 25.5%; */
 				width: 33%;
-				/* margin: 3% 37%; */
-				margin: 0% 37%;
-			/* 	padding: 30px 5px 5px 5px; */
-				padding: 15px 5px 5px 5px;
+				margin: 100px 37%;
+				padding: 15px 5px 57px 5px;
 				position: fixed;
 				/* position: absolute; */
 				color: #033b93;
@@ -713,10 +736,13 @@ html
 					background-position: center center;
 					background-repeat: no-repeat;
 					background-size: 20px;
-					padding: 10px 12px;
+					padding: 10px 12px;/* 
 					position: absolute;
 					top: -10px;
-					right: -36px;
+					right: -36px; */
+					float: right;
+					margin-top: 0px;
+					margin-right: -35px;
 				}
 
 				#closeImage:hover
@@ -726,7 +752,7 @@ html
 
 				#planTripButton
 				{
-					margin: 9% 12.5%;
+					margin: 9% 12.5% 1% 12.5%;
 					width: 75%;
 					height: 78px;
 					background-size: 100%;
@@ -788,8 +814,6 @@ html
 				}	
 			}
 
-
-		}
 
 		#ui-datepicker-div
 		{
@@ -870,9 +894,10 @@ html
 				}
 			}
 
-			.ui-widget-header .ui-icon {
-background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png");
-}
+		    .ui-widget-header .ui-icon 
+		    {
+				background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png");
+			}
 		}
 
 		.ui-widget-content 
@@ -891,11 +916,39 @@ background-image: url("../../images/jquery_ui_images/ui-icons_ffffff_256x240.png
 
 
 // CSS ANIMATIONS
-/* .moveDown
+.moveDown
 {	
-	-webkit-transform: translateY(208px);
-   transform: translateY(208px);
-   ms-transform: translateY(208px);
-   z-index: 6;
+	/* -webkit-transform: translateY(165px);
+   transform: translateY(165px);
+   ms-transform: translateY(165px); */
+  /*  z-index: 6; */
+  -webkit-transform: translateY(186px);
+   transform: translateY(186px);
+   ms-transform: translateY(186px);
 }
- */
+
+
+.moveDownSearchPartHome
+{
+	   -webkit-transform: translateY(139px);
+   transform: translateY(139px);
+   ms-transform: translateY(139px);
+  /*  z-index: 6; */
+}
+
+// .moveDownNavigation
+// {	
+// 	-webkit-transform: translateY(165px);
+//    transform: translateY(165px);
+//    ms-transform: translateY(165px);
+//   /*  z-index: 6; */
+// }
+
+// .moveDownSearchPart
+// {	
+// 	-webkit-transform: translateY(144px);
+//    transform: translateY(144px);
+//    ms-transform: translateY(144px);
+//   /*  z-index: 6; */
+// }
+

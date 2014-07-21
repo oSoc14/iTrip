@@ -988,6 +988,8 @@ html {
     color: #033b93; }
     html body header {
       background-color: #ffffff;
+      position: relative;
+      z-index: 2;
       height: 80px;
       border-top: 10px solid #ffbb00; }
       html body header #homeButton {
@@ -1019,6 +1021,7 @@ html {
             text-decoration: underline; }
       html body header #mobileNav {
         display: none;
+        height: 100%;
         /* 
 				h2
 				{
@@ -1032,7 +1035,8 @@ html {
           text-align: center;
           font-family: 'DINNextLTPro-MediumCond', sans-serif;
           font-size: 30px;
-          font-size: 3rem; }
+          font-size: 3rem;
+          padding: 10px; }
         html body header #mobileNav .backToResults {
           display: none; }
         html body header #mobileNav .backToSearch, html body header #mobileNav .backToResults {
@@ -1044,7 +1048,8 @@ html {
           left: 5px;
           font-size: 22px;
           font-size: 2.2rem;
-          font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+          font-family: 'DINNextLTPro-MediumCond', sans-serif;
+          margin-top: 15px; }
         html body header #mobileNav .backToSearch:hover, html body header #mobileNav .backToResults:hover {
           cursor: pointer;
           text-decoration: underline; }
@@ -1053,40 +1058,12 @@ html {
           width: 4rem;
           position: absolute;
           z-index: 5;
-          top: 0;
-          right: 5px; }
+          /* top: 0;
+					right: 5px; */
+          top: 15px;
+          right: 10px; }
         html body header #mobileNav .hamburger:hover {
           cursor: pointer; }
-        html body header #mobileNav nav.mobileNavItems {
-          width: 100%;
-          margin: 0;
-          padding: 0;
-          /* margin-top: -10px; */
-          /* position: relative; */ }
-          html body header #mobileNav nav.mobileNavItems ul {
-            /* position: absolute;
-						top: -178px; */
-            margin-top: -10px;
-            display: none;
-            width: 100%;
-            /* transition: -webkit-transform 1s;
-						transition: transform 1s; */ }
-            html body header #mobileNav nav.mobileNavItems ul li {
-              float: none;
-              background-color: #ffbb00;
-              border-top: 1px solid #ffffff;
-              border-bottom: 1px solid #ffffff;
-              text-align: center;
-              width: 100%;
-              color: #033b93;
-              padding: 0; }
-              html body header #mobileNav nav.mobileNavItems ul li a {
-                width: 100%;
-                display: block;
-                padding: 10px 0; }
-              html body header #mobileNav nav.mobileNavItems ul li a.active {
-                background-color: #ffffff;
-                color: #ffbb00; }
       html body header nav.navigation {
         float: right;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
@@ -1109,56 +1086,59 @@ html {
       width: 100%;
       z-index: 10;
       background-color: rgba(0, 0, 0, 0.5); }
-    html body #searchTripPart .title, html body #searchTripPart #myTripsTitle {
-      font-family: 'DINNextLTPro-MediumCond', sans-serif;
-      font-size: 30px;
-      font-size: 3rem;
-      margin-left: 15px;
-      margin-top: 5px;
-      z-index: 2; }
-    html body #searchTripPart #searchPanel {
-      /* margin-top: -10px; */
-      margin-top: -13px;
-      overflow: scroll;
-      height: 100%;
-      /* overflow: scroll; */ }
-      html body #searchTripPart #searchPanel #searchPanelWrapper {
-        margin-top: -5px;
-        background-color: #ffffff; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper hr.upper {
-          border-bottom: 2px dotted #d8e1e5;
-          border-top: none;
-          margin-left: 15px;
-          margin-right: 15px; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper hr.lower {
-          border-top: 2px dotted #d8e1e5;
-          border-bottom: none;
-          margin-left: 15px;
-          margin-right: 15px; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper h2 {
-          font-size: 20px;
-          font-family: 'DINNextLTPro-MediumCond', sans-serif; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper p {
-          color: #bfbfbf;
-          font-size: 16px;
-          font-family: 'DINNextLTPro-Condensed', sans-serif; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper input#customLocation {
-          border-radius: 5px 0 0 5px;
-          border: 2px solid #033b93; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper input#submitCustomLocation {
-          border-radius: 0 5px 5px 0; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper input#submitCurrentLocation {
-          border-radius: 5px; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #customLocation {
-          float: left;
-          padding: 8px;
-          /* width: 165px; */
-          width: 67%; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #sliderPart {
-          /* margin-top: 20px; */
-          margin-top: -20px;
-          margin-bottom: 19px;
-          /* #slider
+    html body #searchTripPart {
+      transition: -webkit-transform 0.5s;
+      transition: transform 0.5s; }
+      html body #searchTripPart .title, html body #searchTripPart #myTripsTitle {
+        font-family: 'DINNextLTPro-MediumCond', sans-serif;
+        font-size: 30px;
+        font-size: 3rem;
+        margin-left: 15px;
+        margin-top: 5px;
+        z-index: 2; }
+      html body #searchTripPart #searchPanel {
+        /* margin-top: -10px; */
+        margin-top: -13px;
+        overflow: scroll;
+        height: 100%;
+        /* overflow: scroll; */ }
+        html body #searchTripPart #searchPanel #searchPanelWrapper {
+          margin-top: -5px;
+          background-color: #ffffff; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper hr.upper {
+            border-bottom: 2px dotted #d8e1e5;
+            border-top: none;
+            margin-left: 15px;
+            margin-right: 15px; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper hr.lower {
+            border-top: 2px dotted #d8e1e5;
+            border-bottom: none;
+            margin-left: 15px;
+            margin-right: 15px; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper h2 {
+            font-size: 20px;
+            font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper p {
+            color: #bfbfbf;
+            font-size: 16px;
+            font-family: 'DINNextLTPro-Condensed', sans-serif; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper input#customLocation {
+            border-radius: 5px 0 0 5px;
+            border: 2px solid #033b93; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper input#submitCustomLocation {
+            border-radius: 0 5px 5px 0; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper input#submitCurrentLocation {
+            border-radius: 5px; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #customLocation {
+            float: left;
+            padding: 8px;
+            /* width: 165px; */
+            width: 67%; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #sliderPart {
+            /* margin-top: 20px; */
+            margin-top: -20px;
+            margin-bottom: 19px;
+            /* #slider
 						{
 							margin-top: 5px;
 							height: 0;
@@ -1181,162 +1161,201 @@ html {
 								font-weight: bold;
 							}
 						} */ }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart {
-          margin-top: -20px; }
-          html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars {
-            background-image: url('../../images/arrow.png');
-            background-repeat: no-repeat;
-            background-size: 16px;
-            padding: 8px 10px;
-            background-position: center center; }
-            html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate {
-              float: left; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate p {
-                text-align: center; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper {
-                /* position:relative; */
-                font-family: 'DINNextLTPro-MediumCond', sans-serif; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedDay {
-                  position: absolute;
-                  top: -20px;
-                  width: 100%;
-                  font-family: 'HelveticaRounded-BoldCond', sans-serif;
-                  color: #ffbb00;
-                  font-size: 38px; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedMonth {
-                  position: absolute;
-                  top: -7px;
-                  width: 75px;
-                  font-size: 16px;
-                  color: #ffffff; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger {
-                  width: 75px;
-                  background-image: url('../../images/calendar.png');
-                  background-size: 100%;
-                  padding: 35px;
-                  background-repeat: no-repeat;
-                  border: none;
-                  background-color: #ffffff;
-                  font-family: 'HelveticaRounded-BoldCond', sans-serif;
-                  color: #ffbb00;
-                  font-size: 38px; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger:hover {
-                  cursor: pointer; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromCalendar {
-                /* background-color: #0000ff;
+          html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart {
+            margin-top: -20px; }
+            html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars {
+              background-image: url('../../images/arrow.png');
+              background-repeat: no-repeat;
+              background-size: 16px;
+              padding: 8px 10px;
+              background-position: center center; }
+              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate {
+                float: left; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate p {
+                  text-align: center; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper {
+                  /* position:relative; */
+                  font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedDay {
+                    position: absolute;
+                    top: -20px;
+                    width: 100%;
+                    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                    color: #ffbb00;
+                    font-size: 38px; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .showSelectedMonth {
+                    position: absolute;
+                    top: -7px;
+                    width: 75px;
+                    font-size: 16px;
+                    color: #ffffff; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger {
+                    width: 75px;
+                    background-image: url('../../images/calendar.png');
+                    background-size: 100%;
+                    padding: 35px;
+                    background-repeat: no-repeat;
+                    border: none;
+                    background-color: #ffffff;
+                    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                    color: #ffbb00;
+                    font-size: 38px; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromWrapper .ui-datepicker-trigger:hover {
+                    cursor: pointer; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #fromCalendar {
+                  /* background-color: #0000ff;
 									width: 70px;
 									height: 70px;
 									cursor:pointer;
 	 */
-                display: none; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #selectedToDate {
-                text-align: center; }
-            html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate {
-              float: right; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate p {
-                text-align: center; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper {
-                /* position:relative; */
-                font-family: 'DINNextLTPro-MediumCond', sans-serif; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedDay {
-                  position: absolute;
-                  top: -20px;
-                  width: 100%;
-                  font-family: 'HelveticaRounded-BoldCond', sans-serif;
-                  color: #ffbb00;
-                  font-size: 38px; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedMonth {
-                  position: absolute;
-                  top: -7px;
-                  width: 75px;
-                  font-size: 16px;
-                  color: #ffffff; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger {
-                  width: 75px;
-                  background-image: url('../../images/calendar.png');
-                  background-size: 100%;
-                  padding: 35px;
-                  background-repeat: no-repeat;
-                  border: none;
-                  background-color: #ffffff;
-                  font-family: 'HelveticaRounded-BoldCond', sans-serif;
-                  color: #ffbb00;
-                  font-size: 38px; }
-                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger:hover {
-                  cursor: pointer; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toCalendar {
-                /* background-color: #0000ff;
+                  display: none; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #fromDate #selectedToDate {
+                  text-align: center; }
+              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate {
+                float: right; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate p {
+                  text-align: center; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper {
+                  /* position:relative; */
+                  font-family: 'DINNextLTPro-MediumCond', sans-serif; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedDay {
+                    position: absolute;
+                    top: -20px;
+                    width: 100%;
+                    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                    color: #ffbb00;
+                    font-size: 38px; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .showSelectedMonth {
+                    position: absolute;
+                    top: -7px;
+                    width: 75px;
+                    font-size: 16px;
+                    color: #ffffff; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger {
+                    width: 75px;
+                    background-image: url('../../images/calendar.png');
+                    background-size: 100%;
+                    padding: 35px;
+                    background-repeat: no-repeat;
+                    border: none;
+                    background-color: #ffffff;
+                    font-family: 'HelveticaRounded-BoldCond', sans-serif;
+                    color: #ffbb00;
+                    font-size: 38px; }
+                  html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toWrapper .ui-datepicker-trigger:hover {
+                    cursor: pointer; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #toCalendar {
+                  /* background-color: #0000ff;
 									width: 70px;
 									height: 70px;
 
 									cursor:pointer;
 	 */
-                display: none; }
-              html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #selectedToDate {
-                text-align: center; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #submitCustomLocation {
-          float: left;
-          background-image: url('../../images/search.png');
-          background-position: top 4px center;
-          background-repeat: no-repeat;
-          background-size: 25px;
-          padding: 10px 20px;
-          background-color: #033b93;
-          border: none; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #submitCurrentLocation {
-          background-image: url('../../images/pin.png');
-          background-position: top 4px center;
-          background-repeat: no-repeat;
-          background-size: 25px;
-          padding: 10px 20px;
-          background-color: #033b93;
-          border: none;
-          float: right; }
-        html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
-          font-size: 28px;
-          font-size: 2.8rem;
-          text-align: center;
-          box-shadow: 3px 3px 0 #000000;
-          display: inline-block;
-          border: none;
-          /* background-image: url('../../images/travel_button.png');
+                  display: none; }
+                html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars #toDate #selectedToDate {
+                  text-align: center; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #submitCustomLocation {
+            float: left;
+            background-image: url('../../images/search.png');
+            background-position: top 4px center;
+            background-repeat: no-repeat;
+            background-size: 25px;
+            padding: 10px 20px;
+            background-color: #033b93;
+            border: none; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #submitCurrentLocation {
+            background-image: url('../../images/pin.png');
+            background-position: top 4px center;
+            background-repeat: no-repeat;
+            background-size: 25px;
+            padding: 10px 20px;
+            background-color: #033b93;
+            border: none;
+            float: right; }
+          html body #searchTripPart #searchPanel #searchPanelWrapper #searchTrip {
+            font-size: 28px;
+            font-size: 2.8rem;
+            text-align: center;
+            box-shadow: 3px 3px 0 #000000;
+            display: inline-block;
+            border: none;
+            /* background-image: url('../../images/travel_button.png');
 	background-position: center center; */
-          background-repeat: no-repeat;
-          /* 	background-size: 244px; */
-          background-color: #033b93;
-          color: #ffffff;
-          -webkit-border-radius: 5px;
-          -moz-border-radius: 5px;
-          -ms-border-radius: 5px;
-          border-radius: 5px;
-          font-family: 'HelveticaRounded-BoldCond', sans-serif;
-          background-size: 100%;
-          background-position: center center;
-          font-family: 'DINNextLTPro-MediumCond', sans-serif;
-          padding: 5px 18px;
-          margin: 10px 2.5%;
-          width: 95%;
-          border-radius: 5px; }
-    html body #searchTripPart .googleMap {
-      overflow: scroll;
-      height: 100%;
-      margin: 0;
-      margin-top: -67px;
-      padding: 0px; }
-      html body #searchTripPart .googleMap #searchMap {
-        /* margin-top: -20px; */
-        border-left: 2px solid #033b93;
+            background-repeat: no-repeat;
+            /* 	background-size: 244px; */
+            background-color: #033b93;
+            color: #ffffff;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            border-radius: 5px;
+            font-family: 'HelveticaRounded-BoldCond', sans-serif;
+            background-size: 100%;
+            background-position: center center;
+            font-family: 'DINNextLTPro-MediumCond', sans-serif;
+            padding: 5px 18px;
+            margin: 10px 2.5%;
+            width: 95%;
+            border-radius: 5px; }
+      html body #searchTripPart .googleMap {
+        overflow: scroll;
         height: 100%;
-        /* height: 87%; */
-        /* margin: 0px; */
-        z-index: 1; }
-    html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
+        margin: 0;
+        margin-top: -68px;
+        padding: 0px; }
+        html body #searchTripPart .googleMap #searchMap {
+          /* margin-top: -20px; */
+          border-left: 2px solid #033b93;
+          height: 100%;
+          /* height: 87%; */
+          /* margin: 0px; */
+          z-index: 1; }
+    html body nav.mobileNavItems {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      /* height: 100%; */
+      position: absolute;
+      top: -128px;
+      /* top: -103px; */
+      transition: -webkit-transform 0.5s;
+      transition: transform 0.5s;
+      /* margin-top: -10px; */
+      /* position: relative; */ }
+      html body nav.mobileNavItems ul {
+        /* position: absolute;
+				top: -178px; */
+        /* margin-top: -10px; */
+        /* display: none; */
+        margin: 0;
+        width: 100%;
+        font-size: 18px;
+        font-family: 'HelveticaRounded-BoldCond', sans-serif;
+        /* transition: -webkit-transform 1s;
+				transition: transform 1s; */ }
+        html body nav.mobileNavItems ul li {
+          float: none;
+          background-color: #ffbb00;
+          border-top: 1px solid #ffffff;
+          border-bottom: 1px solid #ffffff;
+          text-align: center;
+          width: 100%;
+          color: #033b93;
+          padding: 0; }
+          html body nav.mobileNavItems ul li a {
+            width: 100%;
+            display: block;
+            padding: 10px 0; }
+          html body nav.mobileNavItems ul li a.active {
+            background-color: #ffffff;
+            color: #ffbb00; }
+    html body .loginBox, html body .registerBox {
       border-top: 1px solid #033b93;
       background-color: #ffffff;
       /* width: 33%;
 				margin: 0% 37%; */
       width: 36%;
-      margin: 0% 32%;
+      margin: 100px 32%;
       padding: 15px 5px 5px 5px;
       position: fixed;
       color: #033b93;
@@ -1345,13 +1364,17 @@ html {
       font-size: 1.6rem;
       line-height: 24px;
       z-index: 15;
-      padding-bottom: 10px; }
-      html body #searchTripPart .loginBox h1, html body #searchTripPart .registerBox h1 {
+      padding-bottom: 10px;
+      /* background-image: url('../../images/close.png');
+				background-position: top 5px right 5px;
+				background-repeat: no-repeat;
+				background-size: 20px; */ }
+      html body .loginBox h1, html body .registerBox h1 {
         font-family: 'DINNextLTPro-MediumCond', sans-serif;
         font-size: 28px; }
-      html body #searchTripPart .loginBox .formGroup, html body #searchTripPart .registerBox .formGroup {
+      html body .loginBox .formGroup, html body .registerBox .formGroup {
         margin-left: -15px; }
-      html body #searchTripPart .loginBox .greySubText, html body #searchTripPart .registerBox .greySubText {
+      html body .loginBox .greySubText, html body .registerBox .greySubText {
         font-size: 16px;
         font-size: 1.6rem;
         color: #707070;
@@ -1359,24 +1382,27 @@ html {
         width: 100%;
         text-align: right;
         float: right; }
-      html body #searchTripPart .loginBox .errorMessage, html body #searchTripPart .registerBox .errorMessage {
+      html body .loginBox .errorMessage, html body .registerBox .errorMessage {
         color: red;
         display: none;
         font-family: 'DINNextLTPro-LightCondensed', sans-serif;
         font-size: 16px;
         font-size: 1.6rem; }
-      html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage {
+      html body .loginBox #closeImage, html body .loginBox #closeLoginImage, html body .loginBox #closeRegisterImage, html body .registerBox #closeImage, html body .registerBox #closeLoginImage, html body .registerBox #closeRegisterImage {
         background-image: url('../../images/close.png');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 20px;
         padding: 15px;
-        position: absolute;
-        top: -5px;
-        right: -25px; }
-      html body #searchTripPart .loginBox #closeImage:hover, html body #searchTripPart .loginBox #closeLoginImage:hover, html body #searchTripPart .loginBox #closeRegisterImage:hover, html body #searchTripPart .registerBox #closeImage:hover, html body #searchTripPart .registerBox #closeLoginImage:hover, html body #searchTripPart .registerBox #closeRegisterImage:hover {
+        /* position: absolute;
+					top: -5px;
+					right: -25px; */
+        float: right;
+        margin-top: 0px;
+        margin-right: -35px; }
+      html body .loginBox #closeImage:hover, html body .loginBox #closeLoginImage:hover, html body .loginBox #closeRegisterImage:hover, html body .registerBox #closeImage:hover, html body .registerBox #closeLoginImage:hover, html body .registerBox #closeRegisterImage:hover {
         cursor: pointer; }
-      html body #searchTripPart .loginBox input, html body #searchTripPart .registerBox input {
+      html body .loginBox input, html body .registerBox input {
         border-radius: 5px;
         border: 2px solid #033b93;
         display: block;
@@ -1387,9 +1413,9 @@ html {
         font-family: 'DINNextLTPro-Condensed', sans-serif;
         margin: 10px 0;
         float: right; }
-      html body #searchTripPart .loginBox input[type=text], html body #searchTripPart .loginBox input[type=password], html body #searchTripPart .registerBox input[type=text], html body #searchTripPart .registerBox input[type=password] {
+      html body .loginBox input[type=text], html body .loginBox input[type=password], html body .registerBox input[type=text], html body .registerBox input[type=password] {
         color: #ffbb00; }
-      html body #searchTripPart .loginBox #registerButton, html body #searchTripPart .loginBox #loginButton, html body #searchTripPart .loginBox #registerUserButton, html body #searchTripPart .registerBox #registerButton, html body #searchTripPart .registerBox #loginButton, html body #searchTripPart .registerBox #registerUserButton {
+      html body .loginBox #registerButton, html body .loginBox #loginButton, html body .loginBox #registerUserButton, html body .registerBox #registerButton, html body .registerBox #loginButton, html body .registerBox #registerUserButton {
         background-size: 100%;
         text-align: center;
         box-shadow: 3px 3px 0 #000000;
@@ -1410,7 +1436,7 @@ html {
         font-size: 2rem;
         background-position: center center;
         /* margin-right: 13px; */ }
-      html body #searchTripPart .loginBox label, html body #searchTripPart .registerBox label {
+      html body .loginBox label, html body .registerBox label {
         display: inline-block;
         width: 78px;
         text-align: right;
@@ -1419,21 +1445,17 @@ html {
         padding: 17px 0;
         font-size: 16px;
         font-size: 1.6rem; }
-      html body #searchTripPart .loginBox p, html body #searchTripPart .registerBox p {
+      html body .loginBox p, html body .registerBox p {
         clear: both;
         text-align: center;
         width: 50%;
         margin: 0 25%; }
-    html body #searchTripPart .welcomeBox {
+    html body .welcomeBox {
       border-top: 1px solid #033b93;
       background-color: #ffffff;
-      /* width: 49%;
-				margin: 5% 25.5%; */
       width: 33%;
-      /* margin: 3% 37%; */
-      margin: 0% 37%;
-      /* 	padding: 30px 5px 5px 5px; */
-      padding: 15px 5px 5px 5px;
+      margin: 100px 37%;
+      padding: 15px 5px 57px 5px;
       position: fixed;
       /* position: absolute; */
       color: #033b93;
@@ -1441,22 +1463,26 @@ html {
       font-size: 16px;
       line-height: 24px;
       z-index: 15; }
-      html body #searchTripPart .welcomeBox h1 {
+      html body .welcomeBox h1 {
         font-family: 'DINNextLTPro-MediumCond', sans-serif;
         font-size: 28px; }
-      html body #searchTripPart .welcomeBox #closeImage {
+      html body .welcomeBox #closeImage {
         background-image: url('../../images/close.png');
         background-position: center center;
         background-repeat: no-repeat;
         background-size: 20px;
         padding: 10px 12px;
-        position: absolute;
-        top: -10px;
-        right: -36px; }
-      html body #searchTripPart .welcomeBox #closeImage:hover {
+        /* 
+					position: absolute;
+					top: -10px;
+					right: -36px; */
+        float: right;
+        margin-top: 0px;
+        margin-right: -35px; }
+      html body .welcomeBox #closeImage:hover {
         cursor: pointer; }
-      html body #searchTripPart .welcomeBox #planTripButton {
-        margin: 9% 12.5%;
+      html body .welcomeBox #planTripButton {
+        margin: 9% 12.5% 1% 12.5%;
         width: 75%;
         height: 78px;
         background-size: 100%;
@@ -1470,15 +1496,15 @@ html {
         box-shadow: 3px 3px 0 #000000;
         font-family: 'HelveticaRounded-BoldCond', sans-serif;
         color: #ffffff; }
-      html body #searchTripPart .welcomeBox .extraInfo {
+      html body .welcomeBox .extraInfo {
         text-align: center;
         color: #707070;
         font-size: 18px; }
-        html body #searchTripPart .welcomeBox .extraInfo a {
+        html body .welcomeBox .extraInfo a {
           text-decoration: underline;
           color: #707070;
           font-weight: bold; }
-      html body #searchTripPart .welcomeBox .downloadApp {
+      html body .welcomeBox .downloadApp {
         /* position: absolute; */
         /* height: 100px; */
         position: absolute;
@@ -1486,7 +1512,7 @@ html {
         text-align: center;
         margin-top: 15px;
         margin-bottom: 15px; }
-        html body #searchTripPart .welcomeBox .downloadApp #iphoneApp {
+        html body .welcomeBox .downloadApp #iphoneApp {
           background-image: url('../../images/android_app.png');
           background-position: center center;
           background-repeat: no-repeat;
@@ -1494,7 +1520,7 @@ html {
           background-size: 100px;
           padding: 4px 0px;
           display: inline-block; }
-        html body #searchTripPart .welcomeBox .downloadApp #androidApp {
+        html body .welcomeBox .downloadApp #androidApp {
           background-image: url('../../images/iphone_app.png');
           background-position: center center;
           background-repeat: no-repeat;
@@ -1543,14 +1569,21 @@ html {
       background: #ffffff 50% top repeat-x;
       color: #333333; }
 
-/* .moveDown
-{	
-	-webkit-transform: translateY(208px);
-   transform: translateY(208px);
-   ms-transform: translateY(208px);
-   z-index: 6;
-}
- */
+.moveDown {
+  /* -webkit-transform: translateY(165px);
+   transform: translateY(165px);
+   ms-transform: translateY(165px); */
+  /*  z-index: 6; */
+  -webkit-transform: translateY(186px);
+  transform: translateY(186px);
+  ms-transform: translateY(186px); }
+
+.moveDownSearchPartHome {
+  -webkit-transform: translateY(139px);
+  transform: translateY(139px);
+  ms-transform: translateY(139px);
+  /*  z-index: 6; */ }
+
 html body {
   overflow: hidden; }
   html body #searchTripPart #searchPanel {
@@ -1798,7 +1831,7 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .addToMyTrips {
         display: none;
         float: left;
-        padding: 11px 20px;
+        padding: 7px 17px;
         margin-right: 10px;
         border: none;
         background-position: center center;
@@ -2098,7 +2131,13 @@ html body {
       margin-left: 0; }
   html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
     font-size: 12spx;
-    font-size: 1.2srem; } }
+    font-size: 1.2srem; }
+  html body .loginBox #closeImage, html body .loginBox #closeLoginImage, html body .loginBox #closeRegisterImage, html body .registerBox #closeImage, html body .registerBox #closeLoginImage, html body .registerBox #closeRegisterImage {
+    margin-top: -21px;
+    margin-right: 0px; }
+  html body .welcomeBox #closeImage {
+    margin-top: -21px;
+    margin-right: 0px; } }
 
 @media only screen and (max-width: 818px) {
   /* @media only screen and (max-width : 768px) { */
@@ -2109,12 +2148,14 @@ html body {
     background-color: #ffffff; }
     html body header {
       border-bottom: 5px solid #ffbb00;
+      margin-top: -25px;
       border-top: none;
-      height: 50px; }
+      height: 60px; }
       html body header #regularNav {
         display: none; }
       html body header #mobileNav {
-        display: block; }
+        display: block;
+        margin-top: -10px; }
         html body header #mobileNav #homeButton {
           padding: 13px 33px;
           margin-left: 0px;
@@ -2129,7 +2170,9 @@ html body {
       -webkit-box-orient: vertical;
       -ms-flex-direction: column;
       -webkit-flex-direction: column;
-      flex-direction: column; }
+      flex-direction: column;
+      /* margin-top: -22px;
+ */ }
       html body #searchTripPart .resultPage #searchPanel {
         position: fixed; }
       html body #searchTripPart .myTripsPage #resultSection {
@@ -2164,10 +2207,12 @@ html body {
         order: 1;
         width: 100%;
         /* margin-top: 0; */
-        margin-top: -13px;
+        margin-top: 0;
         /* height: 50%; */
         height: 140px;
         overflow: visible; }
+        html body #searchTripPart .googleMap #searchMap {
+          border-left: none; }
       html body #searchTripPart .title {
         /* position: absolute;
 						top: 0;
@@ -2179,19 +2224,9 @@ html body {
         position: absolute;
         width: 100%;
         text-align: center; }
-      html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
-        width: 60%;
-        /* margin: 0% 20%; */
-        margin: -350px 20%; }
-        html body #searchTripPart .loginBox #closeImage, html body #searchTripPart .loginBox #closeLoginImage, html body #searchTripPart .loginBox #closeRegisterImage, html body #searchTripPart .registerBox #closeImage, html body #searchTripPart .registerBox #closeLoginImage, html body #searchTripPart .registerBox #closeRegisterImage {
-          top: -20px;
-          right: 8px; }
-      html body #searchTripPart .welcomeBox {
-        width: 80%;
-        margin: 0% 10%; }
       html body #searchTripPart #resultSection {
         height: 75%;
-        margin-top: -13px;
+        /* margin-top: -13px; */
         padding: 0;
         border-left: none; }
         html body #searchTripPart #resultSection #resultDetail .result {
@@ -2269,7 +2304,20 @@ html body {
       padding: 45px 0px 0px 0px;
       /* 
 					@include font-size(1.5);
-					background-position: center top; */ } }
+					background-position: center top; */ }
+    html body .loginBox, html body .registerBox {
+      width: 60%;
+      /* margin: 0% 20%; */
+      margin: 100px 20%; }
+      html body .loginBox #closeImage, html body .loginBox #closeLoginImage, html body .loginBox #closeRegisterImage, html body .registerBox #closeImage, html body .registerBox #closeLoginImage, html body .registerBox #closeRegisterImage {
+        margin-top: -20px;
+        margin-right: -5px; }
+    html body .welcomeBox {
+      width: 80%;
+      margin: 100px 10%; }
+      html body .welcomeBox #closeImage {
+        margin-top: -21px;
+        margin-right: 0px; } }
 
 /* @media only screen and (max-width : 993px) {
 	html 
@@ -2291,34 +2339,3 @@ html body {
 		}
 	}
 } */
-
-.additem{
-  float:right;
-  margin:20px;
-}
-div[id^="poi"]{
-  background-color:#033b93;
-  padding:10px;
-  visibility: hidden;
-}
-div[id^="poi"] > article{
-  background-color:#fff;
-  height:50px;
-}
-div[id^="poi"] > article img{
-  float:left;
-  margin: 5px 10px;
-}
-div[id^="poi"] > article h2{
-  margin: -2px 0 -19px 0;
-  color: #033b93;
-    font-family: 'DINNextLTPro-MediumCond', sans-serif;
-    font-size:1.5em;
-}
-div[id^="poi"] > article p{
-  color:#bfbfbf;
-  margin-right:0;
-}
-div[id^="poi"] img.pull-right{
-  margin-top:15px;
-}
