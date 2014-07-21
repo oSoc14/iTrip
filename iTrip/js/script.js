@@ -413,7 +413,7 @@ function searchForCustomLocation()
   // REMOVE THE OVERLAY AND LOGIN WHEN THE CLOSEBUTTON IS CLICKED
 function removeLoginBoxBox()
 {
-  $("#searchTripPart").on('click', 'span#closeLoginImage', function (event){
+  $("body").on('click', 'span#closeLoginImage', function (event){
     $(".loginBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove(); });
   });
 }
@@ -421,7 +421,7 @@ function removeLoginBoxBox()
   // REMOVE THE OVERLAY AND REGISTERBOX WHEN THE CLOSEBUTTON IS CLICKED
 function removeBoxRegisterBox()
 {
-  $("#searchTripPart").on('click', 'span#closeRegisterImage', function (event){
+  $("body").on('click', 'span#closeRegisterImage', function (event){
     $(".registerBox").fadeOut(300, function(){  $(".overlay").fadeOut();$(this).remove();});
   });
 }
@@ -525,7 +525,9 @@ function appendWelcomeBox()
                 +"</div>";
 
     $(".overlay").css("display", "block");
-    $("#searchTripPart").append(welcomeBox);
+    /*$("#searchTripPart").append(welcomeBox);*/
+    /*$("body").append(welcomeBox);*/
+    $("body").prepend(welcomeBox);
 }
 
 
@@ -541,15 +543,16 @@ function cookiesAreEnabled()
 // FUNCTION CALLED TO LOGOUT
 function logout()
 {
-  $("#logoutLink").on('click', function (event){
+  $("a#logoutLink").on('click', function (event){
     window.location.href = "index.html";
+   
   });
 }
 
 // FUNCTION THAT SHOW A REGISTERBOX IF THE USER PRESSES THE BUTTON "REGISTREER"
 function register()
 {
-    $("#searchTripPart").on('click', '#registerUserButton', function(event){
+    $("body").on('click', '#registerUserButton', function(event){
         var email = $("#registerUsername").val();
         var password = $("#registerUserPassword").val();
         var repeatPassword = $("#registerUserRepeatPassword").val();
@@ -584,7 +587,7 @@ function register()
 // FUNCTION TO SHOW THE REGISTERBOX
 function showRegisterBox()
 {
-    $("#searchTripPart").on('click', '#registerButton', function(){
+    $("body").on('click', '#registerButton', function(){
       $(".loginBox").fadeOut(300, function(){ $(this).remove();});
       $(".overlay").fadeIn(300);
       appendRegisterBox();
@@ -594,7 +597,7 @@ function showRegisterBox()
 // FUNCTION CALLED TO LOG IN
 function login()
 {
-  $("#searchTripPart").on('click', '#loginButton', function(event){
+  $("body").on('click', '#loginButton', function(event){
     var email = $("#userUsername").val();
     var password = $("#userPassword").val();
     // THIS IS WERE THE USERNAME AND PASSWORD HAVE TO BE CHECKED WITH
@@ -646,7 +649,9 @@ function appendLoginBox()
                        + " </div>"
                    + " </div>";
     $(".overlay").css("display", "block");
-    $("#searchTripPart").append(loginBox);
+    /*$("#searchTripPart").append(loginBox);*/
+   /* $("body").append(loginBox);*/
+   $("body").prepend(loginBox);
 }
 
 // FUNCTION CALLED TO APPEND THE LOGINBOX WHEN THE USER IS NOT LOGGED IN
@@ -656,7 +661,7 @@ function appendRegisterBox()
                        + "<div class='row'>"
                        + "     <div class='col-md-10 col-md-offset-1'>"
                        + "         <span id='closeRegisterImage'></span>"
-                       + "         <h1>Aanmelden</h1>"
+                       + "         <h1>Registreer</h1>"
                        + "         <div class='row formGroup'>"
                      //  + "                 <label for='username'>E-mail</label>"
                      //  + "                 <label for='username'>Wachtwoord</label>"
@@ -673,7 +678,9 @@ function appendRegisterBox()
                        + " </div>"
                    + " </div>";
     $(".overlay").css("display", "block");
-    $("#searchTripPart").append(registerBox);
+    /*$("#searchTripPart").append(registerBox);*/
+   /* $("body").append(registerBox);*/
+   $("body").prepend(registerBox);
 }
 
 
@@ -937,19 +944,52 @@ function setLocationOnMap(address)
 function showMobileNavigation()
 {
   $(".hamburger").on('click', function(event){
+    var currentPage = window.location.pathname.split("/")[2];
     //$(".mobileNavItems").toggle();
-   /* if($(".mobileNavItems ul").hasClass("moveDown"))
+
+   /* $(".mobileNavItems ul").slideToggle();*/
+   // $(".mobileNavItems ul").toggle();
+    if($(".mobileNavItems").hasClass("moveDown"))
     {
-      $(".mobileNavItems ul").removeClass("moveDown");
+      //$("#searchTripPart").css("margin-top","0px");
+      $(".mobileNavItems").removeClass("moveDown");
+
+        if(currentPage == "index.html")
+          $("#searchTripPart").removeClass("moveDownSearchPartHome");
+        else
+          $("#searchTripPart").removeClass("moveDown");
     }  
     else
     {
-      $(".mobileNavItems ul").addClass("moveDown");
-    } */
-   /* $(".mobileNavItems ul").slideToggle();*/
-    $(".mobileNavItems ul").toggle();
-  })
+      $(".mobileNavItems").addClass("moveDown");
+      if(currentPage == "index.html")
+          $("#searchTripPart").addClass("moveDownSearchPartHome");
+        else
+          $("#searchTripPart").addClass("moveDown");
+      //$("#searchTripPart").css("margin-top","-22px");
+    } 
+  });
+
+  $("#searchTripPart").on('click', function(event){
+    var currentPage = window.location.pathname.split("/")[2];
+    if($(".mobileNavItems").hasClass("moveDown"))
+    {
+      //$("#searchTripPart").css("margin-top","0px");
+       if(currentPage == "index.html")
+         {
+          $(".mobileNavItems").removeClass("moveDown");
+          $("#searchTripPart").removeClass("moveDownSearchPartHome");
+         }
+        else
+        {
+          $(".mobileNavItems").removeClass("moveDown");
+          $("#searchTripPart").removeClass("moveDown");
+        }
+    }  
+  });
+
 }
+
 
 // FUNCTION CALLED WHEN THE WINDOW IS RESIZED
 function checkWidthWindowOnResize()
@@ -1062,6 +1102,24 @@ function checkWidthWindowOnResize()
      }
      else
      {
+
+      // IF THE MOBILE NAV IS SHOWING WHEN THE WIDTH OF THE WINDOW IS LARGER THAN 818px
+      if($(".mobileNavItems").hasClass("moveDown"))
+      {
+        //$("#searchTripPart").css("margin-top","0px");
+        var currentPage = window.location.pathname.split("/")[2];
+         if(currentPage == "index.html")
+         {
+          $(".mobileNavItems").removeClass("moveDown");
+          $("#searchTripPart").removeClass("moveDownSearchPartHome");
+         }
+        else
+        {
+          $(".mobileNavItems").removeClass("moveDown");
+          $("#searchTripPart").removeClass("moveDown");
+        }
+      }  
+
       if($(".isotope").css('display') == "none")
          {
             $("#backToResults").show();
@@ -1076,14 +1134,5 @@ function checkWidthWindowOnResize()
             $("#mobEditTrip").hide();
      }
 
-  });
-
-
-  $("#searchTripPart").on('click', function(event){
-    if($("#mobileNav").css("display") == "block")
-      $(".mobileNavItems ul").hide();
-
-    // if($(".optionsWrapper").css("display") == "block")
-    //   $(".optionsWrapper").hide();
   });
 }
