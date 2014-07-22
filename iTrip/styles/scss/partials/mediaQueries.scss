@@ -102,23 +102,6 @@
 }
 
 
-/* @media only screen and (max-width : 440px) {
-
-	html
-	{
-			body
-			{
-
-				#searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories .category
-				{
-					@include backgroundSize(3.5);
-					@include font-size(1);
-					background-position: center center;
-				}
-			}
-	}
-} */
-
 @media only screen and (min-width:819px) and  (max-width : 991px) {
 	html
 	{
@@ -130,6 +113,23 @@
 				{
 					width: 30%;
 					float: left;
+
+					#searchPanelWrapper
+					{
+						 #calendarPart
+						 {
+						 	 #calendars 
+						 	 {
+								margin: 0;
+								width: 100%;
+							}
+						 }
+					}
+				}
+
+				.googleMap
+				{
+					width: 70%;
 				}
 
 				#resultSection
@@ -296,6 +296,15 @@
 								{
 								 	display: none;
 								 }
+							}
+
+							#calendarPart
+							{
+								#calendars
+								{
+									margin: 0 30%;
+									width: 40%;
+								}
 							}
 						 }
 					}
@@ -548,6 +557,64 @@
 				}
 			}
 
+	}
+}
+
+@media only screen and  (max-width : 530px)  {
+/* @media only screen and (max-width : 768px) { */
+	html
+	{
+			body
+			{
+				#searchTripPart
+				{					
+					#searchPanel
+					{
+						 #searchPanelWrapper
+						 {
+
+							#calendarPart
+							{
+								#calendars
+								{
+									margin: 0 17.5%;
+									width: 65%;
+								}
+							}
+						 }
+					}
+
+				}
+			}
+	}
+}
+
+@media only screen and  (max-width : 325px)  {
+/* @media only screen and (max-width : 768px) { */
+	html
+	{
+			body
+			{
+				#searchTripPart
+				{					
+					#searchPanel
+					{
+						 #searchPanelWrapper
+						 {
+
+							#calendarPart
+							{
+								#calendars
+								{
+									margin: 0;
+									width: 100%;
+								}
+							}
+						 }
+					}
+
+				}
+			}
 	}
 }
 

@@ -218,13 +218,19 @@ function initialize(longitude, latitude, useLonLat)
   var chosenLocLatitude;
   var chosenLocLongitude;
   var geocoder;
+
+  var currentPage = window.location.pathname.split("/")[2];
+  var enableZoomScroll = true;
+    if(currentPage == "my_trips.html" || currentPage == "results.html")
+      enableZoomScroll = false;
   // IF THE USER SHARED HIS LOCATION, THEN THOSE COORDINATES ARE PASSED TO THE GOOGLE MAP
   // OTHERWISE JUST THE STANDARD COORDINATES OF OSTEND ARE USED
   if(useLonLat)
   {
     var mapOptions = {
       zoom: 10,
-      center: new google.maps.LatLng(latitude, longitude)
+      center: new google.maps.LatLng(latitude, longitude),
+      scrollwheel: enableZoomScroll
     };
 
     chosenLocLatitude = latitude;
@@ -246,6 +252,7 @@ function initialize(longitude, latitude, useLonLat)
     geocoder = new google.maps.Geocoder();
     var map = new google.maps.Map(document.getElementById('searchMap'),
         mapOptions);
+
     var myLatLng = new google.maps.LatLng(chosenLocLatitude, chosenLocLongitude);
     var pinShadow = new google.maps.MarkerImage(
       "images/icon-11.png",
@@ -255,6 +262,7 @@ function initialize(longitude, latitude, useLonLat)
       new google.maps.Point(10, 60), 
       new google.maps.Size(29, 39)
     ); 
+
 
   // THE GOOGLE MAP ALSO HAS A CUSTOM STYLE
     var mapStyles = [ {

@@ -64,8 +64,8 @@ function changeTrip(trip) {
         document.getElementById("resultSection").style.setProperty("display", "initial");
         document.getElementById("resultSection").style.setProperty("height", "100%");
         document.getElementById("searchPanel").style.setProperty("display", "none");
+        $(".backToSearch").css("visibility","visible");
     }
-
     // HELPS TO REDISTRIBUTE THE ISOTOPE ITEMS SO THEY DON'T FALL ON TOP OF EACH OTHER
     $(".isotope").isotope('layout');
 }
@@ -74,6 +74,7 @@ function toTravels() {
     document.getElementById("resultSection").style.setProperty("display", "none");
     document.getElementById("searchPanel").style.setProperty("height", "100%");
     document.getElementById("searchPanel").style.setProperty("display", "initial");
+    $(".backToSearch").css("visibility","hidden");
 }
 
 function addmenu(e) {

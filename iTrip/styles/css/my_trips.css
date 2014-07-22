@@ -106,7 +106,12 @@ article.active h2 {
     display: block;
 }
 
-@media (max-width: 960px) {
+.backToSearch
+{
+    visibility: hidden;
+}
+
+@media (max-width: 818px) {
    
   /*   .extraSaveOptions li {
       background-size: 3.5rem;
