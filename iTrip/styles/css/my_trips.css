@@ -132,6 +132,9 @@ article.active h2 {
     div[id^="poi"] > article h2{
     	display: block !important;
     }
+    .full{
+        height:100% !important;
+    }
 }
 .additem {
     float: right;

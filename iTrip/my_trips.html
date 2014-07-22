@@ -55,7 +55,7 @@
       <h1 id="myTripsTitle" >Mijn reizen
         <div class="pull-right">
           <input type="image" src="images/placeholders/placeholders-36.png" onclick="gotoAdd()">
-          <input type="image" src="images/placeholders/placeholders-37.png">
+          <input type="image" src="images/placeholders/placeholders-37.png" onclick="gotoShared()">
           <input type="image" src="images/placeholders/placeholders-38.png" onclick="startDelete(this)">
         </div>
       </h1>
@@ -136,7 +136,7 @@
 
                         <div class="optionsWrapper">
                           <ul class="extraSaveOptions">
-                            <li class="shareTripOption"></li>
+                            <li class="shareTripOption" onclick="gotoShared()"></li>
                             <li class="deleteTripOption"></li>
                             <li class="addLocationOption" onclick="gotoAdd()"></li>
                             <li class="addPictureOption"></li>

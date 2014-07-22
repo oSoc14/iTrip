@@ -46,6 +46,9 @@ function startDelete(e) {
 function gotoAdd() {
     window.location = "add_item.html";
 }
+function gotoShared(){
+    window.location = "sharedtrip.html";
+}
 
 function changeTrip(trip) {
     var articles = document.getElementsByTagName("article");
