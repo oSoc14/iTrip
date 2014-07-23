@@ -221,7 +221,7 @@ function initialize(longitude, latitude, useLonLat)
 
   var currentPage = window.location.pathname.split("/")[2];
   var enableZoomScroll = true;
-    if(currentPage == "my_trips.html" || currentPage == "results.html")
+    if(currentPage == "my_trips.html" || currentPage == "results.html" || currentPage == "add_item.html")
       enableZoomScroll = false;
   // IF THE USER SHARED HIS LOCATION, THEN THOSE COORDINATES ARE PASSED TO THE GOOGLE MAP
   // OTHERWISE JUST THE STANDARD COORDINATES OF OSTEND ARE USED
