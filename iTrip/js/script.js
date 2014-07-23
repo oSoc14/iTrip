@@ -1,13 +1,5 @@
 $(document).ready( function (){
 
-  // FUCNTION TO ENABLE ISOTOPE
-  // FUCTION CALLED WHILE TYPING IN THE INPUTFIELD TO SEARCH FOR EVENT
-  loadIsotopeForResults();
-
-  // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
-  loadIsotopeForResultDetail();
-
-
   // TEMPORARY LINK TO NEXT RESULTS PAGE WHEN CLICKED ON SEARCH
   $(".searchTrip").on('click', function(e){
     window.location.href = "results.html";
@@ -46,6 +38,8 @@ $(document).ready( function (){
   $("#planTripButton").on('click', function (event){
     checkIfWelcomeBoxMustShow();
   });
+
+
 
 
   // SHOW THE LOGIN POPUP
@@ -91,6 +85,13 @@ $(document).ready( function (){
   // FUNCTION CALLED WHEN THE WINDOW IS RESIZED
   checkWidthWindowOnResize();
 
+    //  $(window).trigger('resize');
+  // FUCNTION TO ENABLE ISOTOPE
+  // FUCTION CALLED WHILE TYPING IN THE INPUTFIELD TO SEARCH FOR EVENT
+  loadIsotopeForResults();
+
+  // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
+  //loadIsotopeForResultDetail();
 
   // REMOVE THE OVERLAY AND WELCOMEBOX WHEN THE OVERLAY ITSELF OR THE CLOSEBUTTON IS CLICKED
   //overlayLoseFocus();
@@ -876,10 +877,23 @@ function loadIsotopeForResults()
 {
       var qsRegex;
 
+      var $container = $('.isotope').imagesLoaded( function() {
+        $container.isotope({
+        /*isInitLayout: false,*/
+          itemSelector: '.item',
+          // layout mode options
+          masonry: {
+            columnWidth: '.item'
+          },
+          filter: function() {
+            return qsRegex ? $(this).text().match( qsRegex ) : true;
+          }
+        });
+      });
+
 
       // WITH A REGEX FUNCTION TO HELP FILTER WHEN A USER ENTERS TEXT IN THE INPUT FIELD TO SEARCH
-    $('.isotope').isotope({
-      isInitLayout: false,
+/*    $('.isotope').isotope({
         itemSelector: '.item',
         // layout mode options
         masonry: {
@@ -888,10 +902,10 @@ function loadIsotopeForResults()
         filter: function() {
           return qsRegex ? $(this).text().match( qsRegex ) : true;
         }
-      });
+      });*/
 
     // HELPS TO SET THE LAYOUT
-  $(".isotope").isotope('layout');
+  //$(".isotope").isotope('layout');
   
 // WHEN EVERY SINGLE INPUT BY KEYBOARD THIS FUNCTION CHECKS FOR MATCHES AMONG THE RESULTS
   var quicksearch = $('#inputEvent').keyup( debounce( function() {
@@ -908,19 +922,38 @@ function loadIsotopeForResults()
 
     });
 
+   
+
+    //$(window).load(function(){$(".isotope").isotope('reLayout');});
+
 }
 
 // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
 function loadIsotopeForResultDetail()
 {
-      var qsRegex;
+/*
     $('#resultDetail').isotope({
         itemSelector: '.result',
         // layout mode options
         masonry: {
           columnWidth: '.result'
         }
-    });
+    });*/
+
+     var $container = $('#resultDetail').imagesLoaded( function() {
+        $container.isotope({
+            itemSelector: '.result',
+            // layout mode options
+            masonry: {
+              columnWidth: '.result'
+            }
+        });
+      });
+
+     $('#resultDetail').isotope('layout');
+
+
+   // $(window).load(function(){$('#resultDetail').isotope('reLayout');});
 }
 
 
@@ -1033,7 +1066,9 @@ function checkWidthWindowOnResize()
   // ALSO BUTTONS AND SEARCH FIELD THAT NEED TO BE SHOWN APPEAR AND ELEMENTS THAT NEED TO BE INVISIBLE DISAPPEAR
   $("#resultDetail").hide();
   $('#backToResults').hide();
-  $(".resultSubText").on("click", function(event){
+  $(".item").on("click", function(event){
+       // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
+  loadIsotopeForResultDetail();
     $("#resultDetail").show();
       if($( window ).width() <= 818)
       {    

@@ -1982,6 +1982,8 @@ html body {
     html body #searchTripPart #resultSection .isotope {
       /* display: none; */
       margin-bottom: 20px; }
+      html body #searchTripPart #resultSection .isotope .item:hover {
+        cursor: pointer; }
       html body #searchTripPart #resultSection .isotope .item {
         width: 33.333%;
         padding: 10px;
@@ -1989,11 +1991,13 @@ html body {
         border-color: rgba(0, 0, 0, 0.7); }
         html body #searchTripPart #resultSection .isotope .item .resultItem {
           border: 1px solid #d4e1e5;
-          background: #ffffff; }
+          background: #ffffff;
+          /* .resultSubText:hover
+						  	{
+						  		cursor:pointer;
+						  	} */ }
           html body #searchTripPart #resultSection .isotope .item .resultItem .resultImage {
             width: 100%; }
-          html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText:hover {
-            cursor: pointer; }
           html body #searchTripPart #resultSection .isotope .item .resultItem .resultSubText {
             padding: 6px;
             margin: 0;

@@ -566,6 +566,12 @@ html
 					{
 						/* display: none; */ // TEMPORARY FOR PREVIEWING THE DETAILS DIV
 						margin-bottom: 20px;
+
+						.item:hover
+						{
+							cursor:pointer;
+						}
+
 						.item 
 						{
 						  width: 33.333%;
@@ -583,10 +589,10 @@ html
 						  		width: 100%;
 						  	}
 
-						  	.resultSubText:hover
+						  	/* .resultSubText:hover
 						  	{
 						  		cursor:pointer;
-						  	}
+						  	} */
 
 						  	.resultSubText
 						  	{
