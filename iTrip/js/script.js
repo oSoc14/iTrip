@@ -1066,70 +1066,13 @@ function checkWidthWindowOnResize()
   // ALSO BUTTONS AND SEARCH FIELD THAT NEED TO BE SHOWN APPEAR AND ELEMENTS THAT NEED TO BE INVISIBLE DISAPPEAR
   $("#resultDetail").hide();
   $('#backToResults').hide();
-  $(".item").on("click", function(event){
-       // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
-  loadIsotopeForResultDetail();
-    $("#resultDetail").show();
-      if($( window ).width() <= 818)
-      {    
-        $('#backToResults').hide();
-        $('.backToResults').show();
-        $('.backToSearch').hide();
-        $("#searchPanel").hide();
-        $("#resultSection").css("height","auto");
-        $("#resultSection").css("overflow","visible");
-        $("#mobEditTrip").hide();
-        $("#mobSaveTrip").hide();
-        $(".addToMyTrips").val("Toevoegen");
-        $("#addToMyTrips").removeClass("addToMyTrips");
-        $("#addToMyTrips").addClass("mobAddToMyTrips");
-        $("#addToMyTrips").show();
-        $(".extraSaveOptions").addClass("toggleOptionsMenu");
-        $("#resultDetail").isotope('layout');
-        $("#resultSection").show();
-        
-      }
-      else
-      {
-        $('#backToResults').show();
-        $('.backToResults').hide();
-        $('.backToSearch').show();
-        $("#searchPanel").show();
-        $("#resultSection").css("height","100%");
-        $("#mobEditTrip").hide();
-        $("#mobSaveTrip").hide();
-        $(".addToMyTrips").val("");
-        $("#addToMyTrips").hide();
-        $("#addToMyTrips").addClass("addToMyTrips");
-        $("#addToMyTrips").removeClass("mobAddToMyTrips");
-        //$(".extraSaveOptions:before").css("left","53%");
-        //$(".extraSaveOptions:after").css("left","53%");
-        $(".extraSaveOptions").removeClass("toggleOptionsMenu");
+  /*$(".item").on("click", function(event){*/
+  $(".resultSubText").on("click", function(event){
+    goToDetailsView();
+  });
 
-      }
-      
-      $("#inputEvent").hide();
-      $("#searchEvent").hide();
-      $(".isotope").hide();
-      $("#resultDetail").show();
-      $(".addToMyTrips").show();
-      $(".shareTrip").show();
-      $("#resultcount").hide();
-      //$("#backToResults").show();
-      $(".searchExtraStyle").css("right","-220px");
-
-      // WHEN THE CURRENT PAGE IS THE RESULTS PAGE OR THE MYTRIPS PAGE
-      // THE ADDRESS OF THE RESULT NEEDS TO BE SHOWN IN THE GOOGLE MAP
-        var currentPage = window.location.pathname.split("/")[2];
-        if(currentPage == "results.html" || currentPage == "my_trips.html")
-        {
-          var street = $("p.street").text();
-          var city = $("p.city").text();
-          var address = city + ", " + street;
-          setLocationOnMap(address);
-          //if($(".isotope").css("display") == "none")
-          //$(".searchExtraStyle ").css("right","-23px");
-        }
+  $(".resultImage").on("click", function(event){
+    goToDetailsView();
   });
 
 
@@ -1216,4 +1159,71 @@ function checkWidthWindowOnResize()
      }
 
   });
+}
+
+function goToDetailsView()
+{
+       // FUNCTION TO LOAD ISOTOPE FOR RESULTDETAIL
+  loadIsotopeForResultDetail();
+    $("#resultDetail").show();
+      if($( window ).width() <= 818)
+      {    
+        $('#backToResults').hide();
+        $('.backToResults').show();
+        $('.backToSearch').hide();
+        $("#searchPanel").hide();
+        $("#resultSection").css("height","auto");
+        $("#resultSection").css("overflow","visible");
+        $("#mobEditTrip").hide();
+        $("#mobSaveTrip").hide();
+        $(".addToMyTrips").val("Toevoegen");
+        $("#addToMyTrips").removeClass("addToMyTrips");
+        $("#addToMyTrips").addClass("mobAddToMyTrips");
+        $("#addToMyTrips").show();
+        $(".extraSaveOptions").addClass("toggleOptionsMenu");
+        $("#resultDetail").isotope('layout');
+        $("#resultSection").show();
+        
+      }
+      else
+      {
+        $('#backToResults').show();
+        $('.backToResults').hide();
+        $('.backToSearch').show();
+        $("#searchPanel").show();
+        $("#resultSection").css("height","100%");
+        $("#mobEditTrip").hide();
+        $("#mobSaveTrip").hide();
+        $(".addToMyTrips").val("");
+        $("#addToMyTrips").hide();
+        $("#addToMyTrips").addClass("addToMyTrips");
+        $("#addToMyTrips").removeClass("mobAddToMyTrips");
+        //$(".extraSaveOptions:before").css("left","53%");
+        //$(".extraSaveOptions:after").css("left","53%");
+        $(".extraSaveOptions").removeClass("toggleOptionsMenu");
+
+      }
+      
+      $("#inputEvent").hide();
+      $("#searchEvent").hide();
+      $(".isotope").hide();
+      $("#resultDetail").show();
+      $(".addToMyTrips").show();
+      $(".shareTrip").show();
+      $("#resultcount").hide();
+      //$("#backToResults").show();
+      $(".searchExtraStyle").css("right","-220px");
+
+      // WHEN THE CURRENT PAGE IS THE RESULTS PAGE OR THE MYTRIPS PAGE
+      // THE ADDRESS OF THE RESULT NEEDS TO BE SHOWN IN THE GOOGLE MAP
+        var currentPage = window.location.pathname.split("/")[2];
+        if(currentPage == "results.html" || currentPage == "my_trips.html")
+        {
+          var street = $("p.street").text();
+          var city = $("p.city").text();
+          var address = city + ", " + street;
+          setLocationOnMap(address);
+          //if($(".isotope").css("display") == "none")
+          //$(".searchExtraStyle ").css("right","-23px");
+        }
 }
