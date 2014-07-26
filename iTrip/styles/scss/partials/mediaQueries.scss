@@ -17,6 +17,34 @@
 	}
 }
 
+
+@media only screen and  (max-width : 310px)  {
+	html 
+	{
+		body 
+		{
+			#searchTripPart 
+			{
+				#resultSection 
+				{
+					#resultDetail 
+					{
+						.generalDetails 
+						{
+							ul
+							 {
+								float:left;
+								clear: both;
+
+							 }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 @media only screen and (max-width : 430px) {
 	html 
 	{
@@ -140,8 +168,8 @@
 					 	 {
 					 	 	 .resultSubInfo
 					 	 	 {
-					 	 	 	 background: none;
-					 	 	 	 padding: 50px 0;
+					 	 	 	/*  background: none; */
+					 	 	 	/*  padding: 50px 0; */
 
 					 	 	 	 .resultOpeningHours:first-child
 					 	 	 	 {
@@ -178,6 +206,73 @@
 		}
 	}
 }
+
+@media only screen and (max-width:1153px) {
+	html
+	{
+		body
+		{
+			#searchTripPart
+			{
+				#resultSection
+				{
+					 #resultDetail
+					 {
+					 	 .resultExtraInfo
+					 	 {
+					 	 	 .resultSubInfo
+					 	 	 {
+					 	 	 	 background: none;
+					 	 	 	 padding: 50px 0;
+
+					 	 	 	 .resultOpeningHours:first-child
+					 	 	 	 {
+					 	 	 	 	margin-left: 0;
+					 	 	 	 }
+					 	 	 }
+					 	 }
+					 }
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width:957px) {
+	html
+	{
+		body
+		{
+			#searchTripPart
+			{
+				#resultSection
+				{
+					 #resultDetail
+					 {
+					 	 .resultExtraInfo
+					 	 {
+					 	 	 .resultSubInfo
+					 	 	 {
+					 	 	 	 background: none;
+					 	 	 	 padding: 50px 0;
+
+					 	 	 	 .resultOpeningHours
+					 	 	 	 {
+					 	 	 	 	float: none;
+									clear: both;
+									margin: -24px 0 -24px 0;
+									display: initial;
+					 	 	 	 }
+					 	 	 }
+					 	 }
+					 }
+				}
+			}
+		}
+	}
+}
+
+
 
 
 @media only screen and (max-width : 818px)  {
@@ -398,12 +493,22 @@
 						 	 {
 						 	 	 .resultSubInfo
 						 	 	 {
-						 	 	 	 background: none;
+						 	 	 	 /* background: none; */
 						 	 	 	 padding: 50px 0;
+						 	 	 	 background-image: url('../../images/placeholders/placeholders-27.png');
+									background-position: left 20px center;
+									background-repeat: no-repeat;
+
+						 	 	 	 .resultOpeningHours
+						 	 	 	 {
+						 	 	 	 	float: left;
+										margin: -24px 0 -24px 0;
+										clear:none;
+						 	 	 	 }
 
 						 	 	 	 .resultOpeningHours:first-child
 						 	 	 	 {
-						 	 	 	 	margin-left: 0;
+						 	 	 	 	margin-left: 75px;
 						 	 	 	 }
 
 						 	 	 	 .resultOpeningHours
@@ -589,6 +694,41 @@
 	}
 }
 
+@media only screen and  (max-width : 367px)  {
+/* @media only screen and (max-width : 768px) { */
+	html
+	{
+		body
+		{
+			#searchTripPart
+			{
+				#resultSection
+				{
+					 #resultDetail
+					 {
+					 	 .resultExtraInfo
+					 	 {
+					 	 	 .resultSubInfo
+					 	 	 {
+					 	 	 	 background: none;
+					 	 	 	 padding: 50px 0;
+
+					 	 	 	 .resultOpeningHours
+					 	 	 	 {
+					 	 	 	 	float: none;
+									clear: both;
+									margin: -24px 0 -24px 0;
+									display: initial;
+					 	 	 	 }
+					 	 	 }
+					 	 }
+					 }
+				}
+			}
+		}
+	}
+}
+
 @media only screen and  (max-width : 325px)  {
 /* @media only screen and (max-width : 768px) { */
 	html
@@ -617,6 +757,13 @@
 			}
 	}
 }
+
+
+
+
+
+
+
 
 /* @media only screen and (max-width : 993px) {
 	html 

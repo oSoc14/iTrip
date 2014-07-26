@@ -1817,7 +1817,7 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .mobAddToMyTrips {
         display: none;
         float: left;
-        padding: 3px 17px;
+        padding: 7px 17px;
         margin-right: 10px;
         border: none;
         width: 135px;
@@ -1834,7 +1834,8 @@ html body {
       html body #searchTripPart #resultSection .searchExtraStyle .addToMyTrips {
         display: none;
         float: left;
-        padding: 7px 17px;
+        /* padding: 7px 17px; */
+        padding: 11px 21px;
         margin-right: 10px;
         border: none;
         background-position: center center;
@@ -1942,7 +1943,8 @@ html body {
             float: left;
             padding: 10px 20px 10px 20px; }
           html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
-            margin-left: 40px; }
+            /* margin-left: 40px; */
+            margin-left: 20px; }
           html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours {
             float: left;
             margin: -24px 0 -24px 0; }
@@ -2072,6 +2074,11 @@ html body {
     width: 13%;
     padding: 45px 0px 0px 0px; } }
 
+@media only screen and (max-width: 310px) {
+  html body #searchTripPart #resultSection #resultDetail .generalDetails ul {
+    float: left;
+    clear: both; } }
+
 @media only screen and (max-width: 430px) {
   html body #searchTripPart .loginBox, html body #searchTripPart .registerBox {
     /* label
@@ -2121,8 +2128,8 @@ html body {
   html body #searchTripPart .googleMap {
     width: 70%; }
   html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
-    background: none;
-    padding: 50px 0; }
+    /*  background: none; */
+    /*  padding: 50px 0; */ }
     html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
       margin-left: 0; }
   html body #searchTripPart #searchPanel #searchPanelWrapper.extraStyleResultsSearchPanel .rowStyle .categories {
@@ -2134,6 +2141,23 @@ html body {
   html body .welcomeBox #closeImage {
     margin-top: -21px;
     margin-right: 0px; } }
+
+@media only screen and (max-width: 1153px) {
+  html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+    background: none;
+    padding: 50px 0; }
+    html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
+      margin-left: 0; } }
+
+@media only screen and (max-width: 957px) {
+  html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+    background: none;
+    padding: 50px 0; }
+    html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours {
+      float: none;
+      clear: both;
+      margin: -24px 0 -24px 0;
+      display: initial; } }
 
 @media only screen and (max-width: 818px) {
   /* @media only screen and (max-width : 768px) { */
@@ -2245,10 +2269,17 @@ html body {
           html body #searchTripPart #resultSection #resultDetail .resultDescription h2 {
             display: block; }
           html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
-            background: none;
-            padding: 50px 0; }
+            /* background: none; */
+            padding: 50px 0;
+            background-image: url('../../images/placeholders/placeholders-27.png');
+            background-position: left 20px center;
+            background-repeat: no-repeat; }
+            html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours {
+              float: left;
+              margin: -24px 0 -24px 0;
+              clear: none; }
             html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours:first-child {
-              margin-left: 0; }
+              margin-left: 75px; }
             html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours .openingDay {
               font-size: 13px;
               font-size: 1.3rem; }
@@ -2328,6 +2359,17 @@ html body {
   html body #searchTripPart #searchPanel #searchPanelWrapper #calendarPart #calendars {
     margin: 0 17.5%;
     width: 65%; } }
+
+@media only screen and (max-width: 367px) {
+  /* @media only screen and (max-width : 768px) { */
+  html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo {
+    background: none;
+    padding: 50px 0; }
+    html body #searchTripPart #resultSection #resultDetail .resultExtraInfo .resultSubInfo .resultOpeningHours {
+      float: none;
+      clear: both;
+      margin: -24px 0 -24px 0;
+      display: initial; } }
 
 @media only screen and (max-width: 325px) {
   /* @media only screen and (max-width : 768px) { */

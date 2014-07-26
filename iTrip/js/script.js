@@ -1079,6 +1079,8 @@ function checkWidthWindowOnResize()
   // WHEN CLICKED A BACK BUTTON, THE DETAILS DISAPPEAR AND THE RESULT LIST APPEARS
   // ALSO BUTTONS AND SEARCH FIELD THAT NEED TO BE SHOWN APPEAR AND ELEMENTS THAT NEED TO BE INVISIBLE DISAPPEAR
   $("#backToResults").on('click', function(){
+    $('#resultDetail').isotope('layout');
+    $('.isotope').isotope('layout');
       if($( window ).width() > 818)
       {   
          $("#resultcount").show();
@@ -1094,7 +1096,7 @@ function checkWidthWindowOnResize()
       $("#backToResults").hide();
       $(".searchExtraStyle").css("right","-32px");
       $("#searchPanel").show();
-      $("#resultSection").css("height","100%");
+      //$("#resultSection").css("height","100%");
   });
 
 // THESE SETTINGS NEED TO BE CHECKED WHEN THE WINDOW RESIZES
@@ -1109,8 +1111,8 @@ function checkWidthWindowOnResize()
             $("#mobEditTrip").hide();
             $("#mobSaveTrip").hide();
             /*$("#resultSection").css("height","100%");*/
-            $("#resultSection").css("height","auto");
-            $("#resultSection").css("overflow","visible");
+           // $("#resultSection").css("height","auto");
+            //$("#resultSection").css("overflow","visible");
             $(".addToMyTrips").val("Toevoegen");
             $("#addToMyTrips").removeClass("addToMyTrips");
             $("#addToMyTrips").addClass("mobAddToMyTrips");

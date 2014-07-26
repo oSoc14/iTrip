@@ -300,7 +300,7 @@ html
 					{
 						display: none;
 						float: left;
-						padding: 3px 17px;
+						padding: 7px 17px;
 						margin-right: 10px;
 						border:none;
 						width: 135px;
@@ -320,7 +320,8 @@ html
 						//@include smallblueButton();
 						display: none;
 						float: left;
-						padding: 7px 17px;
+						/* padding: 7px 17px; */
+						padding: 11px 21px;
 						margin-right: 10px;
 						border:none;
 						background-position: center center;
@@ -499,7 +500,8 @@ html
 
 							.resultOpeningHours:first-child
 							{
-								margin-left: 40px;
+								/* margin-left: 40px; */
+								margin-left: 20px;
 							}
 
 							.resultOpeningHours
