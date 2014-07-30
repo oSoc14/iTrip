@@ -23,13 +23,16 @@ Main advantage: summary of trips and tourist attractions
 
 ##Installation
 
-Just download the iTrip zip and extract it locally. [Gulp](http://gulpjs.com/) is used to compress and convert [SASS](http://sass-lang.com/) files into CSS.
-So when modifying the source code CSS, make sure Gulp is installed.
+Just download the iTrip zip and extract it locally. [Gulp](http://gulpjs.com/) and [Gulp-Sass](https://www.npmjs.org/package/gulp-sass/) are used to compress and convert [SASS](http://sass-lang.com/) files into CSS.
+So when modifying the source code CSS, make sure Gulp and Gulp-Sass are installed.
 
 #####To install Gulp enter the following statement in a terminal:
 `npm install –g gulp`
 
 To run Gulp a gulpfile is required at the root of your project (included in the iTrip project).
+
+#####To install Gulp-Sass enter the following statement in a terminal:
+`npm install gulp-sass`
 
 #####Run gulp:
 `gulp`
@@ -40,4 +43,4 @@ More information on Gulp and how to install or use it go to the [Gulp Github pag
 #Credit
 Authors: [Laetitia Van Espen](https://github.com/L-VE), [Jasper De Rocker](https://github.com/JasperDR)
 
-Copyright 2014 OKFN Belgium
+
